@@ -1,0 +1,365 @@
+% edc.tex (RMCG20040427)
+
+\mag1200 % OPTIONAL MAGNIFICATION
+
+\input explain
+\input fonts
+\input index
+\input metatex
+
+\def\[{\string\[} % to allow ^álgebra de \[Boole]^
+\files
+
+% Fonts
+
+\cmfonts
+\font\frakx=eufm10
+\font\frakvii=eufm7
+\newfam\frakfam \textfont\frakfam=\frakx \scriptfont\frakfam=\frakvii
+\def\frak{\fam\frakfam\frakx}
+
+\font\logo=logo10
+
+\pdfcode
+ \pdfmapline{+SkakNew-DiagramT SkakNew-DiagramT <SkakNew-DiagramT.pfb}
+\pdfendcode
+
+\catcode`\ö=13 \defö{\"o} % Gödel, Schrödinger
+\toks0=\expandafter{\doaccents\do^^f6}\edef\doaccents{\the\toks0}
+
+\catcode`\@=11
+
+% Layout
+
+\def\pdfsetpagesize{\pdfcode \pdfpageheight=\vsize
+  \advance\pdfpageheight2in \advance\pdfpageheight2\voffset
+ \pdfpagewidth=\hsize \advance\pdfpagewidth2in
+  \advance\pdfpagewidth2\hoffset \pdfendcode}
+
+\let\docinfo\relax \let\infodoc\relax
+
+\headline={\hfil}
+\footline={\tenrm\ifodd\pageno \docinfo\hfil\folio
+            \else \folio\hfil\infodoc \fi\strut}
+\hsize=10.5cm \hoffset=-1in \advance\hoffset by 21.75mm
+\vsize=41\baselineskip \advance\vsize\topskip % 41 + 1 lines
+\voffset=-1in \advance\voffset by 16.76mm
+\pdfsetpagesize \advance\vsize -2\baselineskip % - 2 = 40 lines
+\parskip=0pt plus 0.0001pt minus 0.0001pt
+\parindent=20pt 
+\raggedbottom
+
+\def\breakif#1{\vskip#1\baselineskip \penalty-250 \vskip-#1\baselineskip}
+
+\input crops % OPTIONAL CROPS
+
+%\colors      % OPTIONAL COLORS
+\def\RED{\ifx\Yellow\relax\else
+ \hbox to0pt{\Yellow\vrule width20pt height8pt depth2pt\Black\hss}\fi}
+
+% Grid
+
+%\tracingpages=1 % to check that the lines are on the grid
+
+\abovedisplayskip=12pt
+\belowdisplayskip=12pt
+\abovedisplayshortskip=0pt
+\belowdisplayshortskip=12pt
+
+\newbox\displaybox
+\newdimen\displayht
+\newdimen\displaydp
+
+% if \baselineskip is 12pt,
+% the strut height is 8.5pt     17/24 = 0.7083..3
+% and its depth is 3.5pt.        7/24 = 0.2916..6
+
+% It doesn't work with alignment displays (The {\TeX}book, pg 190)
+
+\def\griddisplay#1$${%
+ \setbox\displaybox=\hbox{$\displaystyle{#1}$}%
+ \displayht=\ht\displaybox \displaydp=\dp\displaybox
+ \advance\displayht by \lineskiplimit
+ \advance\displayht by 0.75\baselineskip
+ \divide\displayht by \baselineskip
+ \multiply\displayht by \baselineskip
+ \advance\displaydp by \lineskiplimit
+ \advance\displaydp by 0.25\baselineskip
+ \divide\displaydp by \baselineskip
+ \multiply\displaydp by \baselineskip
+ \ht\displaybox=0pt \dp\displaybox=0pt
+ \baselineskip=\displayht
+ \box\displaybox
+ \ifdim\displaydp=0pt\else \vadjust{\kern\displaydp}\fi$$}
+\everydisplay{\griddisplay}
+
+\def\nodepth#1{\setbox0=\hbox{#1}\dp0=0pt\box0}
+
+% Maths
+
+\def\eqalign#1{\vbox{\openup1\jot \m@th
+ \ialign{\strut\hfil$\displaystyle{##}$&$\displaystyle{{}##}$\hfil
+ \crcr#1\crcr}}}
+
+\def\inmmode$#1${\ifmmode #1\else $#1$\fi}
+\def\llave#1{\inmmode$\left\lbrace\vcenter{\normalbaselines \m@th
+ \halign{&\hbox{\rm##}\hfil\crcr#1\crcr}}\right.$} %$
+
+\def\frac(#1/#2){\leavevmode % The TeXbook, exercise 11.6, page 311
+ \raise.5ex\hbox{\the\scriptfont0 #1}\kern-.1em
+ /\kern-.15em\lower.25ex\hbox{\the\scriptfont0 #2}}
+
+\let\implies=\Longrightarrow
+\let\evalsto=\longrightarrow
+
+% Emphasis with automatic italic correction (\/).
+% Use: {\em italic, but {\em roman}, text}.
+\def\em{\ifdim \fontdimen1\font>0pt \rm
+ \else \it \expandafter\aftergroup \fi \itcor}
+\def\itcor{\ifhmode \expandafter\itpuncl@ok \fi}
+\def\itpuncl@ok{\begingroup\futurelet\ITCt@mpa\itcort@st}
+\def\itcort@st{\def\ITCt@mpb{\ITCt@mpa}%
+ \ifcat\noexpand\ITCt@mpa,\setbox0=\hbox{\ITCt@mpb}%
+  \ifdim\ht0<0.3ex \let\itc@rdo=\endgroup \fi\fi \itc@rdo}
+\def\itc@rdo{\skip0=\lastskip \ifdim\skip0=0pt \/\else
+ \unskip \/\hskip\skip0 \fi \endgroup}
+
+% Sectioning
+
+\def\Title<#1>{\vfill\break\pdflabel\toc0{#1}\vglue36pt % 10+12+12 no
+ \begincenter \fontzero\baselineskip24pt #1\endcenter
+ \nobreak\vskip0pt\relax}
+\def\Subtitle<#1>{\par
+ \begincenter \fonttwo\baselineskip24pt #1\endcenter
+ \nobreak\vskip0pt\relax}
+\def\Author<#1>{\par
+ \begincenter \fontone\baselineskip24pt #1\endcenter
+ \nobreak\vskip12pt\relax}
+
+\newcount\secno \secno=0
+\newcount\parno \parno=0
+
+\def\section{\number\secno}
+
+\font\fonttwosym=cmbsy10 scaled\magstep1
+\def\Stitle{{\fonttwosym \char"78}} %"
+
+\def\Section#1 \par{\everypar{}\parno=0  \advance\secno1 
+ \vskip0pt plus 4\baselineskip\penalty-43
+ \vskip0pt plus-4\baselineskip \vskip\baselineskip
+ \titleline{\noindent\Stitle\fonttwo\section\space}%
+   {\fonttwo#1\pdflabel\toc1{#1}\lbl{#1}{\section}}%
+ \everypar{\numberedpars}\nobreak}
+
+\def\titleline#1#2{\setbox0\hbox{#1}\dimen0=\hsize \advance\dimen0 -\wd0
+ \line{\box0\hss\vtop{\hsize=\dimen0 \raggedright\let\\=\ \noindent #2}}}
+
+\newdimen\oldparindent \oldparindent=\parindent \parindent=0pt
+
+\def\numberedpars{\global\advance\parno1 \pdflabel
+ \noindent\hbox to\oldparindent{{\sevensy\char"7B %" little par sign
+  \teni\number\parno}\hfil$\cdot$\hfil}\ignorespaces}
+
+% Index
+
+\def\latin#1{{\it #1}\itcor}
+\def\point{\subitem*$\bullet$*}
+
+\def\[#1]{\leavevmode\ndx{#1}2\penalty\@M\hskip\z@skip{\sc #1}} % \[Descartes]
+\def\(#1){{\sl#1}\itcor} % \(On Freedom)
+
+%\def\<#1>{} % \<label>
+%\def\>#1>{} % en la \S6, página 34
+
+\def\specialhat{\ifmmode\def\next{^}\else\let\next=\beginvref\fi\next}
+\def\specialund{\ifmmode\def\next{_}\else\let\next=\beginhref\fi\next}
+\catcode`\^=13 \let^\specialhat \catcode`\_=13 \let_\specialund
+
+\def\index#1#2{\leavevmode\ndx{#1}{#2}\RED\penalty\@M\hskip\z@skip
+ \ignorespaces}
+
+\def\beginvref#1^{{\def\[{\string\[}\index{#1}{1}}#1} % ^word^, ^álgebra de \[Boole]^
+\def\beginhref#1<#2>{{\def\[{\string\[}\index{#1=#2}{1}}#1} % _word<sub>
+
+\def\hname{[}\def\hbook{(}\def\hlabel{<}\def\href{>}
+\def\|#1#2|{\def\1{#1}% \|+información| #1 is a code
+ \ifx\1\hname [#2]\else
+ \ifx\1\hbook (#2)\else
+ \ifx\1\hlabel $\langle$#2$\rangle$\else 
+ \ifx\1\href #2$>$\else %$
+ \errmesage{Unknown code #1}\fi\fi\fi\fi}
+
+% Pdf Watermark
+\newtoks\oldheadline \oldheadline=\headline
+\pdfcode
+ \def\watermark{% 
+  \pdfliteral{q 1 G 1 g 169 -32 m}%% ®
+  \pdfliteral{82 -97 109 -111 110 -32 c}% Ramon
+  \pdfliteral{67 -97 115 -97 114 -101 c}% Casare
+  \pdfliteral{115 -32 50 -48 48 -55 c}% % s 2007
+  \pdfliteral{b Q}%
+ }
+ %\headline={\watermark\the\oldheadline } %%%%%%%%%%%%%%%%%%%%%%%
+\pdfendcode
+
+\catcode`\@=12
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input edc0.tex
+
+\Title<El doble compresor>
+\Subtitle<La teoría de la información>
+\Author<Ramón Casares>
+
+\input edc1.tex
+\input edc2.tex
+\input edc3.tex
+\input edc4.tex
+\input edc5.tex
+\input edc6.tex
+
+\vskip1pc
+\centerline{\bf Fin}
+
+
+\vfill\break %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\dimen0=\topskip \advance\dimen0 by2\baselineskip
+\vbox to\dimen0{\kern\baselineskip
+ \centerline{\fontone Índice alfabético\pdflabel
+                \toc3{Índice alfabético}}\vss}
+\vskip 2\baselineskip
+
+%Texto explicatorio, si es preciso.
+
+\catcode`\@=11 \catcode`\^=7
+\everypar={}\normalbottom
+\def\[#1]{{\sc #1}} % \[Descartes]
+\def\vea{{\it vea\/}}
+\def\yvea{{\it vea también\/}}
+
+% Output for INDEX adapted from [417]
+
+\newdimen\fullhsize \fullhsize=\hsize
+\newdimen\fullvsize \fullvsize=\vsize
+\def\fullline{\hbox to\fullhsize}
+
+\newdimen\gutter \gutter=1pc
+\newbox\partialpage
+\def\begindoublecolumns{\begingroup
+ \output={\global\setbox\partialpage=\vbox{\unvbox255\bigskip}}\eject
+ \output={\doublecolumnout}%
+ \hsize=\fullhsize \advance\hsize by-\gutter \divide\hsize by2
+ \vsize=\fullvsize \multiply\vsize by2 \advance\vsize by2pc}
+\def\enddoublecolumns{\output={\balancecolumns}\eject
+ \endgroup \pagegoal=\vsize}
+
+\def\doublecolumnout{\splittopskip=\topskip \splitmaxdepth=\maxdepth
+ \dimen0=\fullvsize \advance\dimen0 by-\ht\partialpage
+ \setbox0=\vsplit255 to\dimen0 \setbox2=\vsplit255 to\dimen0
+ \shipout\vbox{\vbox to 0pt{\vskip-22.5pt
+  \fullline{\vbox to8.5pt{}\the\headline}\vss}\nointerlineskip
+  \vbox to\fullvsize{\boxmaxdepth=\maxdepth \pagesofar}
+  \baselineskip=24pt \fullline{\the\footline}}\advancepageno
+ \unvbox255 \penalty\outputpenalty}
+\def\balancecolumns{\setbox0=\vbox{\unvbox255}\dimen0=\ht0
+ \advance\dimen0 by\topskip \advance\dimen0 by-\baselineskip
+ \divide\dimen0 by2 \splittopskip=\topskip
+ {\vbadness=10000 \loop \global\setbox3=\copy0
+  \global\setbox1=\vsplit3 to\dimen0
+  \ifdim\ht3>\dimen0 \global\advance\dimen0 by1pt \repeat}
+ \setbox0=\vbox to\dimen0{\unvbox1}%
+ \setbox2=\vbox to\dimen0{\dimen2=\dp3 \unvbox3 \kern-\dimen2 \vfil}%
+ \pagesofar}
+\def\pagesofar{\unvbox\partialpage
+ \wd0=\hsize \wd2=\hsize \fullline{\box0\hfil\box2}}
+
+%%%
+
+\newcount\lastpgno \lastpgno=0
+\newcount\thispgno \thispgno=0
+\newcount\level \level=0
+\newif\ifrange\rangefalse
+
+\def\bibbreak{\par\vskip-2pt plus 1fil \penalty-200 \vskip2pt plus -1fil\relax}
+\def\newentry{\par\vskip-2pt plus 1fil \penalty-200 \vskip2pt plus -1fil\hang\noindent}
+\def\newsubentry{\par\hang\noindent\kern10pt}
+
+%\ndxline{abogada}{1}{0007}{1}{7}
+
+\def\ndxline#1#2#3#4#5{\let\oldkey=\newkey \def\newkey{#1}\level=#2 %
+ \ifnum\level<0 % is not an index enter
+  \ifrange --\number\lastpgno \fi \rangefalse
+  #1%
+ \else
+  \ifx\newkey\oldkey \thispgno=#5 %
+   \ifnum\lastpgno=\thispgno \else \advance\lastpgno1
+    \ifnum\lastpgno=\thispgno \rangetrue \else
+     \ifrange \advance\lastpgno-1 --\number\lastpgno\fi
+     \lastpgno=#5\rangefalse
+     , \pdfgoto{\ifnum\level=3 {\bf#5}\else #5\fi}{#3}\fi\fi
+  \else % \newkey<>\oldkey
+   \ifrange --\number\lastpgno\fi \rangefalse
+   \ifnum\level<10 \newentry \else \newsubentry \fi
+   \lastpgno=#5 %
+   \ifnum\level>9 \advance\level-10 \fi
+   \ifcase\level {\tt\newkey}\or{\rm\newkey}\or{\sc\newkey}\or
+                 {\bf\newkey}\or{\it\newkey}\or{\sl\newkey}\else
+                 {\Red \newkey\Black}\fi ,\space\space
+   \pdfgoto{\ifnum\level=3 {\bf#5}\else #5\fi}{#3}\fi\fi\ignorespaces}
+
+\begindoublecolumns
+\parindent=20pt \rightskip=0pt plus 4pc \hyphenpenalty=250
+\input auxiliar.abc
+ \ifrange --\number\lastpgno \fi \rangefalse
+\enddoublecolumns
+
+
+\vfill\break %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\dimen0=\topskip \advance\dimen0 by2\baselineskip
+\vbox to\dimen0{\kern\baselineskip
+ \centerline{\fontone Índice\pdflabel\toc3{Índice}}\vss}
+\vskip 2\baselineskip
+
+\def\tocline#1{\ifcase #1\let\next=\toclinezero \or
+ \let\next=\toclineone \else \let\next=\toclineindex \fi \next}
+
+\def\toclinezero#1#2#3#4{\bigbreak \pdftocline{#1}{#2}%
+ \line{\bf \pdfgoto{#1}{#2}\hfil}\ignorespaces}
+\def\toclineone#1#2#3#4{\par \pdftocline{\noexpand§#3 #1}{#2}%
+ \contentsline{#1}{#2}{$\S#3$\quad}{#4}\ignorespaces}
+\def\toclineindex#1#2#3#4{\par \pdftocline{#1}{#2}%
+ \contentsline{{\bf #1}}{#2}{}{#4}\ignorespaces}
+
+\newdimen\tridig \setbox0=\hbox{$\S123$\quad}\tridig=\wd0
+
+\def\contentsline#1#2#3#4{\setbox2\hbox{#1}%
+ \setbox0\hbox to\tridig{\hfil#3}%
+ \dimen0=\hsize \advance\dimen0 by -\wd0
+ \multiply\dimen0 by 8 \divide\dimen0 by 10
+ \ifdim\dimen0>\wd2 \line{\box0 #1\tocleaders \pdfgoto{#4}{#2}}\else
+  \line{\box0 \vtop{\hsize=\dimen0 \raggedright \normalbaselines
+   \let\\=\ \noindent #1\strut}\tocleaders \pdfgoto{#4}{#2}}\fi}
+\def\tocleaders{\leaders\hbox to\baselineskip{\hss\bf.\hss}\hfil}
+
+\input auxiliar.toc
+
+ \vfill % Colofón
+
+ \centerline{\hbox{%
+  \pdfximage width 8cm {1938-Bugatti-Type-57SC-Atlantic-Rear.jpg}%
+  \pdfrefximage\pdflastximage}}
+ \vskip 3pc
+
+ {\parindent=0pt \obeylines \normalbottom %\baselineskip=12pt
+ Este libro ha sido compuesto por el autor
+ utilizando el programa {\TeX}
+ del Profesor D.~E.~Knuth (Stanford University).
+ Los tipos son de la familia Computer Modern.
+ Las figuras están descritas en {\logo METAFONT}.
+ \par}
+
+\let\vfill=\relax
+\bye

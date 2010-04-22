@@ -1,0 +1,20 @@
+# .gitignore (RMCG20100422)
+# ignore generated files
+*.pdf
+*.ps
+*.dvi
+# ignore archives
+*.tar
+*.gz
+*.bz2
+*.zip
+*.Z
+# ignore auxiliaries
+auxiliar.*
+*~
+*.log
+# ignore binaries
+*.jpg
+*.pfb
+*.tfm
+# end of file

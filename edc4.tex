@@ -1,0 +1,1104 @@
+% ufo4.tex (RMCG20040812)
+
+
+\Section La oración
+
+En un ^lenguaje semántico^ la ^palabra^ es una propiedad del ^objeto^,
+su nombre. Y, como los objetos se reconocen por sus propiedades, al
+escuchar la palabra que es el nombre de un objeto, se hace ^presente^
+tal objeto, del mismo modo que se hace presente al ver la forma de ese
+objeto o al percibir cualquiera de sus propiedades distintivas. En
+definitiva, en los lenguajes semánticos las palabras tienen un único
+uso: ser etiquetas de los objetos.
+
+Si habláramos un lenguaje semántico, y yo viera signos de agua, entonces
+diría la palabra `agua'. Usted al oirme, aunque no la viera, también la
+percibiría, porque captaría un signo del agua, a saber, la palabra
+`agua' que yo había pronunciado. Podría acumular palabras si viera
+varios objetos, `agua, pez', pero teniendo cada palabra el único
+propósito de significar un objeto percibido, no habría necesidad de
+oraciones.
+
+Cuando las palabras pasaron a ser meras etiquetas, algunas pudieron
+seguir siendo las etiquetas de los objetos, pero otras pudieron ser
+etiquetas libres de objeto. Le he dicho que esta liberación es decisiva,
+y le he mostrado que la incógnita, que es la libertad del problema,
+tiene que ser una de estas etiquetas liberadas, como la palabra `qué' o
+la $x$ matemática. Pero es obvio que una de estas etiquetas libres de
+objeto, por sí sola, no sirve para nada. Ha de combinarse de un modo
+estructurado con otras etiquetas para que pueda ser utilizada con
+provecho, ya sea como ^pronombre^ interrogativo de una ^pregunta^ o como
+^variable libre^ de una ^condición^. Estas combinaciones de etiquetas se
+llaman ^oraciones^, y se denomina ^sintaxis^ al conjunto de estructuras
+aceptables.
+
+Yo aquí, para determinar las estructuras válidas, o sea, para dar forma
+a la sintaxis, voy a utilizar un único criterio: que puedan
+representarse ^resoluciones^ en la sintaxis. Y ya verá usted qué lejos
+llegamos con tan exiguos requisitos.
+
+
+\Section La solución final es semántica
+
+El final de la ^resolución^ es la ^solución^. Y no es sólo que las
+últimas letras de la palabra `resolución' formen la palabra `solución',
+sino que, cuando se ha alcanzado la solución, el proceso de resolución
+ha finalizado y se ha terminado con el ^problema^. Cuando hay solución,
+ya no hay problema.
+
+Los problemas no se pueden percibir, y por este motivo no pueden
+expresarse en un ^lenguaje semántico^. Para percibir una resolución
+habría que empezar por percibir su punto de partida, que es un problema,
+de manera que tampoco pueden percibirse las resoluciones. Pero, como
+decíamos, cuando una resolución ha alcanzado la solución, el problema ha
+sido ^aniquilado^. De modo que la imperceptibilidad del problema, que
+comparte la resolución, no afecta necesariamente a la solución. No puede
+decirse, por consiguiente, que es imposible percibir las soluciones. Hay
+soluciones perceptibles y, obviamente, las representaremos usando
+palabras semánticas. Las palabras semánticas representan a las
+soluciones definitivas, porque, cuando el proceso de resolución alcanza
+un ^objeto semántico^, es que ha abandonado la ^sintaxis^.
+
+También hay soluciones que no son semánticas, y le daré tres ejemplos.
+El primero es el de un profesor de matemáticas componiendo un ^examen^.
+Su problema es encontrar un problema que cumpla una serie de
+condiciones, como, por ejemplo, que se requiera conocer el temario para
+solucionarlo, y que por su dificultad sea asequible a sus alumnos. Aquí
+la solución del problema es un problema. El segundo ejemplo es el de un
+^ingeniero^ que quiere elaborar un procedimiento para resolver, no un
+caso concreto, sino todo un conjunto de problemas de cierto tipo. Ahora
+la solución del problema es una resolución. Y, en tercer lugar, tampoco
+son semánticas las soluciones de los problemas completamente teóricos,
+como por ejemplo el problema ya visto de buscar un número que sea igual
+doblado que cuadrado. Una solución teórica puede ser una palabra
+definida en el ^diccionario^, o una ^función^, o cualquier otro objeto
+sintáctico.
+
+En conclusión, la solución puede ser semántica o sintáctica. Para
+representar las soluciones semánticas usaremos palabras semánticas, que
+son definitivas porque terminan el proceso sintáctico. Pero una solución
+sintáctica puede ser cualquier ^objeto sintáctico^, incluso un problema
+o una resolución. Y cómo expresar cada uno de los objetos sintácticos
+es, justamente, lo que seguimos investigando.
+
+
+\Section El par ordenado
+
+Si sustituimos la expresión abierta que es la ^condición^ de un
+^problema^ por otra expresión equivalente, hemos transformado el
+problema en otro equivalente. Es lo que hicimos antes para convertir en
+dos subproblemas triviales el problema de averiguar qué números son
+iguales doblados que cuadrados:
+$$x?\; 2x=x^2 \evalsto (x?\; x=2) \lor (x?\; x=0) .$$
+
+Por muy complicada que haya sido una resolución, cuando finalmente
+solucionamos el problema, nos basta memorizar la solución, `los dos
+únicos números que son iguales doblados que cuadrados son el dos y el
+cero', para poder resolverlo la próxima vez de manera ^rutinaria^, esto
+es, directamente de memoria y sin tener que volver a trasladarlo
+repetidamente. Por esta razón, lo que es ^trivial^ para un matemático,
+no lo es para usted ni para mi.
+
+Para representar una traslación concreta, basta poder representar el
+^par ordenado^ compuesto por la expresión origen, digamos que fuera
+$\xi$, y la expresión destino, sea $\xi'$, resultando en general
+$(\xi,\xi')$, que, en el caso del ejemplo de arriba, queda:
+$$\left( x?\; 2x=x^2,\; (x?\; x=2) \lor (x?\; x=0) \right) .$$
+
+Este par ordenado no representa los razonamientos considerados para
+elegir el itinerario cuando lo resolvimos por primera vez, y ni siquiera
+representa todos los jalones de aquella primera ruta. Se limita a anotar
+el atajo rutinario que podemos utilizar cuando conocemos de memoria la
+solución del ^problema^. Por lo tanto, el par ordenado sirve para
+expresar la resolución rutinaria, que es una de las tres maneras de
+resolver.
+
+
+\Section La función
+
+Otra manera consiste en resolver por ^tanteo^. Para probar si un
+determinado valor cumple la ^condición^ o no, hay que ligar dicho valor
+a la ^variable libre^.
+
+Voy a introducir, sin su permiso, más conceptos matemáticos; los
+necesitaremos. Para anotar matemáticamente expresiones abiertas, también
+llamadas funciones, se utilizan las expresiones ^lambda^, así $\lambda_x
+\xi$, que, en el caso de nuestro problema, queda
+ $$\lambda_x [2x=x^2].$$
+
+Para anotar que ligamos a la variable libre un valor $a$ se usa
+$\lambda_x \xi(a)$, y se dice que aplicamos a la ^función^ el valor $a$.
+Probar si el número $2$ es igual doblado que cuadrado se anota
+$\lambda_x [2x=x^2](2)$ y se desarrolla básicamente sustituyendo las
+apariciones de la variable libre por el valor al que se liga ($x
+\gets 2$), así:
+$$\lambda_x [2x=x^2](2) \evalsto 2.2 = 2^2 \evalsto 4 = 4
+ \evalsto \hbox{\sc sí} .$$
+Llamando, por ejemplo, $f$ a la función $\lambda_x [2x=x^2]$, obtenemos
+la notación más común: $$f(2) = \hbox{\sc sí} .$$
+
+Una ^condición^, como sabemos, solo puede tener dos resultados, que
+anotamos {\sc sí} y {\sc no}, de manera que, si queremos que la
+condición haga una diferencia, entonces hemos de actuar de un modo
+cuando {\sc sí} se cumple, y de otra manera cuando {\sc no} se cumple.
+Para ello vale el comando {\bf if}:
+$$\hbox{\bf if} \left< \hbox{\it condición} \right>
+  \hbox{\bf then} \left< \hbox{\it caso \sc sí}\, \right>
+  \hbox{\bf else} \left< \hbox{\it caso \sc no} \right> .$$
+
+Con la posibilidad de expresar la aplicación de valores a expresiones
+abiertas y condicionadas y un comando ^condicional^, como {\bf if}, ya
+podemos anotar completamente un tanteo.
+
+Supongamos que sospechamos que la solución al ^problema^ es uno de los
+cuatro primeros números, o sea, que la solución pertenece al conjunto
+formado por esos números, $\{1, 2, 3, 4\}$. Si el gobierno del tanteador
+determina probar en orden creciente, entonces podemos anotar la
+resolución anidando cuatro comandos {\bf if}, así:
+
+\newline\bf
+\cleartabs\settabs\+\kern20pt&\cr
+\+&if $\lambda_x [2x=x^2](1)$ then $1$\cr
+\+&else &if $\lambda_x [2x=x^2](2)$ then $2$\cr
+\+&     &else &if $\lambda_x [2x=x^2](3)$ then $3$\cr
+\+&     &     &else &if $\lambda_x [2x=x^2](4)$ then $4$\cr
+\+&     &     &     &else \hbox{\sc no} \hbox{\rm .}\cr
+\rm\newline
+
+
+\Section La condición inversa
+
+Una ^condición^ conocida es una ^función^ con dos resultados, el querido
+{\sc sí} y el aborrecido {\sc no}. Esto quiere decir que en cada
+aplicación obtenemos un {\sc sí} o un {\sc no}. Por ejemplo:
+$$\eqalign{
+ \lambda_x [2x=x^2](0) &\evalsto \hbox{\sc sí}\cr
+ \lambda_x [2x=x^2](1) &\evalsto \hbox{\sc no}\cr
+ \lambda_x [2x=x^2](2) &\evalsto \hbox{\sc sí}\cr
+ \lambda_x [2x=x^2](3) &\evalsto \hbox{\sc no}\cr
+ \lambda_x [2x=x^2](4) &\evalsto \hbox{\sc no}\cr
+ \omit\hfil\vdots\hfil\span\omit\cr}
+ $$
+
+Lo que resuelve definitivamente un ^problema^ es la ^función^ inversa de
+la condición de ese problema. Porque la función inversa funciona justo
+al revés que la condición, trocando un
+ $0\evalsto \hbox{\sc sí}$
+por un
+ $\hbox{\sc sí}\evalsto 0$,
+de modo que cuando le aplicamos el {\sc sí} obtenemos sus soluciones, y
+cuando le aplicamos el {\sc no} conseguimos el conjunto de sus no
+soluciones. Así, llamando $f$ a la función $\lambda_x [2x=x^2]$:
+$$\eqalign{
+ f^{-1}(\hbox{\sc sí}\,) &\evalsto \{0, 2\}\cr
+ f^{-1}(\hbox{\sc no}) &\evalsto \{1, 3, 4, \dots\} .\cr
+ }$$
+
+La condición puede usarse en los dos sentidos: en el sentido natural,
+que es el que utilizamos cuando le aplicamos un valor, y en el sentido
+contrario, que es el que empleamos cuando queremos averiguar qué valores
+la cumplen. Para anotar un ^problema^ basta anotar la condición y
+señalar cuáles son las variables libres, y para resolverlo basta usar la
+condición en el sentido contrario.
+
+Es fácil escribir que `la resolución de un problema es la función
+inversa de su condición', ya está hecho. Desgraciadamente, casi siempre
+es imposible calcular tal función inversa, y a veces, como en los
+problemas aparentes, ni siquiera se conoce la condición. De modo que,
+dado un problema, buscarle una resolución es un problema.
+
+Buscar la ^resolución^ de un problema es un ^problema^ porque contiene
+los dos ingredientes imprescindibles. Hay ^libertad^, porque hay muchas
+formas posibles de resolver un problema, y hay una ^condición^, ya que
+no vale cualquier resolución, sino aquélla que efectivamente encuentre
+las soluciones del problema. Entonces, como es un problema, necesitamos
+una resolución para buscar la resolución a un problema. Y, para buscar
+una resolución para buscar la resolución a un problema, necesitamos
+---¿no lo adivina?--- otra resolución. ¿Qué le parece? La respuesta más
+adecuada no es `tortuoso', sino `^recursivo^'.
+
+
+\Section El árbol de resolución
+
+Si conocemos un procedimiento de ^resolución^ que soluciona un problema,
+entonces podemos aplicar el método ^rutinario^ y anotarlo con un ^par
+ordenado^. O, con un comando {\bf if}, como una ^función^:
+ $$\lambda_\pi \left[ \hbox{\bf if}\;
+  \pi \equiv \langle x?\; 2x=x^2 \rangle
+  \;\hbox{\bf then}\; (x?\; x=2) \lor (x?\; x=0)
+  \;\hbox{\bf else}\; \hbox{\sc no} \right] .$$
+En donde $\pi$ es una ^variable libre^ que puede ligarse a una expresión
+cualquiera, que entonces se compara ($\equiv$), no con el ^problema^,
+sino con la expresión del problema que sabemos cómo resolver y, si ({\bf
+if}) la comparación {\sc sí} que resulta exitosa, entonces ({\bf then})
+se transforma en dos subproblemas triviales. En la comparación de
+expresiones abiertas ha de tenerse en cuenta que el nombre de las
+^variables libres^ es irrelevante; por ejemplo,
+ $\lambda_x [2x=x^2] \equiv \lambda_y [2y=y^2]$.
+
+Sobre el ^tanteo^ no añadiré nada nuevo, porque ya sabemos que puede
+expresarse anidando aplicaciones de valores a funciones de comandos
+condicionales, como {\bf if}. Debo también recordarle que, en la mayoría
+de los casos, la determinación del orden de las pruebas de tanteo es un
+problema.
+
+Y la ^traslación^ de un problema es otro u otros problemas. La
+traslación puede dar lugar a más de un problema porque, con frecuencia,
+el criterio del dicho `divide y vencerás' es útil en la resolución de
+problemas complejos. De manera que, en general, la resolución de un
+problema será un árbol, en cuya raíz está el problema. Si para
+resolverlo lo trasladamos, de tal suerte que queda dividido, por
+ejemplo, en otros cuatro más sencillos, entonces hemos abierto cuatro
+ramas desde la raíz. Y cada rama puede, de nuevo, subdividirse por
+traslado, o resolverse por rutina o por tanteo. Se resuelven por rutina
+aquéllos de los que conocemos su solución, quedando solucionados; éstas
+son las hojas del ^árbol de resolución^. El tanteo \dots
+
+¿Se pierde? No se preocupe, hasta yo me pierdo en este árbol
+^recurrente^. Y tiene su gracia, porque lo normal es perderse en un
+^bosque^, y no en un ^árbol^. En fin, quédese con lo que sigue, que es
+fácil y cierto: las expresiones que representan resoluciones de
+problemas tienen una estructura de árbol, porque han de describir el
+árbol de resolución. Y sepa que basta con permitir que los elementos de
+un ^par ordenado^ puedan ser pares ordenados, para que podamos
+representar árboles binarios con los pares ordenados.
+
+
+\Section La recursividad
+
+La ^resolución^ es un proceso que, cuando tiene éxito, transforma un
+^problema^ en una ^solución^. Las palabras semánticas son soluciones
+definitivas, pero la solución puede ser cualquier ^objeto sintáctico^,
+incluido un problema o una resolución. Entonces, una resolución parcial
+puede comenzar con cualquier objeto sintáctico, y finalizar con
+cualquier otro. La semántica es la salida definitiva del laberinto
+sintáctico, pero, mientras no se encuentra la salida, la resolución debe
+ser capaz de transformar problemas, resoluciones y soluciones en
+problemas, resoluciones y soluciones. Y, por lo tanto, la expresión de
+una resolución ha de anotar la transformación de cualquier ^expresión
+sintáctica^ en cualquiera otra.
+$$\left.\vcenter{\halign{\hfil\rm#\crcr
+ Problema\cr Resolución\cr Solución\cr}}\right\}
+ \mathop{\hbox to 80pt{\rightarrowfill}}\limits^{\hbox{\rm Resolución}}
+ \left\{\vcenter{\halign{\rm#\hfil\crcr
+ Problema\cr Resolución\cr Solución\cr}}\right.
+$$
+
+Nótese que la resolución puede ser tanto la transformación, como el
+transformando, como lo transformado. A esta necesidad de que las
+transformaciones sean transformables se le denomina ^recursividad^. La
+recursividad es la causa de que los lenguajes simbólicos necesiten de un
+mecanismo de ^entrecomillado^. Es para distinguir si una expresión se
+está utilizando para anotar una transformación, o como mera expresión a
+ser transformada.
+
+ Chiste:\newline
+ ---Dígame su nombre.\newline
+ ---Su nombre.\newline
+Quien contesta ha entendido ``dígame `su nombre'\thinspace'', que bien
+podría ser el caso. Observe que ``dígame cuál es su nombre'' tampoco
+resuelve el asunto definitivamente, pero que la pregunta directa,
+``¿cuál es su nombre?'', sí que lo zanja.
+
+\setbox2=\hbox{$\vdots$}\ht2=0pt\dp2=0pt
+
+El entrecomillado es enormente potente. Suponga que
+escribo:\newline
+\newline
+ {\sl En cuanto llegué, el inglés me dijo:
+  ``I was waiting you to tell you something. \dots\newline
+ \centerline{\copy2}
+ \centerline{\rm[doscientas páginas de historia en ^inglés^]}
+ \centerline{\raise-2pt\box2}
+ \dots And even if you don't believe me, it is true''.
+ Y se fue, sin dejarme decirle ni una sola palabra.}\newline
+\newline
+Técnicamente habría escrito una novela en ^castellano^.
+
+Técnicamente, y merced al mecanismo del entrecomillado, todos los
+lenguajes simbólicos son uno. Como nos enseñó el lingüista
+norteamericano \[Chomsky], solamente hay un ^idioma^. Y, como dijo el
+inglés de la novela, incluso si usted no me cree, es cierto.
+
+
+\Section El lenguaje simbólico
+
+Ahora vamos a dar un paso decisivo hacia nuestra meta, que ---después de
+tantas recursiones y recurrencias no sé si la recuerda--- es explicar la
+^introspección^ y la ^consciencia^. Porque ya es hora de resumir las
+condiciones que nos impone el criterio de que el ^lenguaje simbólico^
+sea capaz de representar resoluciones.
+
+Las anotaciones que aparecen entre paréntesis traducen esas condiciones
+a ^Lisp^, dialecto ^Scheme^. Al final de esta sección le quedará
+explicado por qué hago estas anotaciones. Lisp es un lenguaje de
+computadora, basado en el cálculo~$\lambda$ de \[Church] e inventado
+sobre 1960 por el matemático estadounidense \[McCarthy], en el que la
+primera palabra de las oraciones es siempre un verbo.
+
+El lenguaje simbólico tiene tres tipos de ^palabras^:
+ {\medskipamount=0pt \everypar={} \parindent=20pt
+\point las palabras semánticas (autoevaluables),
+\point las palabras sintácticas (palabras reservadas),
+ como {\tt lambda}, que permite introducir variables libres,
+ o sea, meras etiquetas, y
+\point las palabras definidas en el diccionario.
+ \par \noindent}%
+Necesita, por tanto, un ^diccionario^ y operaciones, o sea, verbos,
+tanto para añadir entradas al diccionario que liguen una palabra con una
+expresión cualquiera ({\tt define}), como para cambiar o eliminar las
+entradas ({\tt set!}).
+
+Los átomos del lenguaje simbólico son las palabras, que se pueden
+componer en ^oraciones^. Las oraciones tienen estructura de ^árbol^, o
+sea, que dentro de una oración puede haber otras oraciones llamadas
+^frases^. Tanto a las palabras como a las oraciones las denominamos
+^expresiones^. Se necesitan operaciones para componer oraciones con
+expresiones ({\tt cons}), y para extraer las expresiones que componen
+las oraciones ({\tt car}, {\tt cdr}). Además, habiendo palabras y
+oraciones, es necesario disponer de una ^condición^ para discriminar
+unas de las otras ({\tt atom?}). También se necesita una condición para
+averiguar si dos expresiones son iguales ({\tt equal?}).
+
+Las oraciones pueden ser expresiones abiertas ({\tt ^lambda^}), llamadas
+funciones, ^condicionadas^ ({\tt cond}) o no, a las que se puede aplicar
+cualquier expresión. Y la ^recursividad^, esto es, que las
+transformaciones de expresiones sean expresiones del lenguaje simbólico
+y sigan siendo transformaciones, obliga a disponer de algún método para
+evitar el desarrollo de la transformación cuando interese tratarla como
+una mera expresión ({\tt _quote<entrecomillado>}).
+
+Los tres párrafos anteriores recogen justamente los requisitos mínimos
+del lenguaje Lisp, ni más, ni menos. Y ese Lisp, siendo mínimo, ya es
+tan potente como una ^máquina universal^ de \[Turing]. Es decir, que los
+requisitos necesarios para poder representar cualquier resolución de un
+problema son suficientes para definir la máquina universal de \[Turing].
+Podría ser una casualidad, pero tendría que ser una enorme casualidad.
+
+
+\Section Dos requisitos prácticos
+
+Después del fantástico anuncio de la sección anterior, y antes de que
+usted reaccione y salga de su asombro, he de hacerle un par de
+precisiones. Seguramente, cuando investigue a fondo sobre este asunto, a
+usted le sorprenderá, como a mi, que nuestros requisitos para
+representar resoluciones coincidan con los de un ^Lisp^ mínimo, y no con
+los requerimientos aun más reducidos del _cálculo<lambda>~$\lambda$ de
+\[Church]. Esto sucede porque algunos de los requisitos provienen de
+nuestras propias limitaciones.
+
+El ^diccionario^ no es estrictamente necesario. Si revisa cómo lo
+introduje, se percatará de que, más bien, lo que argumenté es que, en
+contra de lo que la ^paradoja del diccionario^ nos induce a creer, el
+diccionario no es el sitio natural de todas las palabras. Y, en verdad,
+las definiciones son meras abreviaturas que sólo acortan las oraciones
+sin alterar su expresividad. Sin embargo, otra cosa es cierta: sin
+definiciones, ^Lisp^ es inutilizable por las personas, debido, sin duda,
+a las limitaciones de la ^memoria a corto plazo^ que sufrimos y que,
+según el psicólogo \[Miller], no nos permiten retener más que siete
+datos, dos arriba o dos abajo. Pero, lo definitivo es que, cuando se
+aplican valores a una ^función^, se necesita un mecanismo para ligar,
+aunque sea provisionalmente, los valores aplicados a las variables
+libres, siendo cada ^variable libre^ un nombre, o sea, una palabra, y
+cada valor una ^expresión^ cualquiera. Es decir, que aunque no
+permanentemente, sí que se necesita un diccionario, y ya que se dispone
+de él, lo más inteligente es sacarle partido.
+
+Algo similar ocurre con las funciones para sintetizar ({\tt cons}) y
+analizar ({\tt car}, {\tt cdr}) ^oraciones^. Es posible construir
+funciones que se comporten como ellas y las sustituyan, por lo que no es
+estrictamente preciso disponer de ellas. Pero, aunque exteriormente
+podamos prescindir de todas las operaciones que manejan directamente las
+oraciones, internamente necesitamos mecanismos eficaces para manipular
+oraciones, de modo que lo más inteligente es no ocultarlas, y lo más
+solidario es ofrecerlas.
+
+En resumen, que al ir recogiendo los requisitos precisos para la
+repesentación de resoluciones, hemos añadido algunos que son prácticos,
+de uso, y, por lo tanto, teóricamente irrelevantes. Si, por ejemplo,
+dispusiéramos de una cantidad enorme de memoria a corto plazo, entonces
+no necesitaríamos usar definiciones para abreviar las expresiones, nos
+sobrarían los diccionarios permanentes, y nunca habríamos hablado de
+ellos en nuestra argumentación. En el caso de Lisp, como tiene la
+vocación de ser útil a las personas, los requisitos de diseño también
+han de añadir estos requisitos prácticos a los estrictamente necesarios
+teóricamente para construir un lenguaje simbólico.
+
+Por último, tampoco debe fijarse usted en las primitivas Lisp elegidas.
+No tienen que ser exactamente ésas, aunque sí un conjunto equivalente
+que satisfaga los requisitos allí resumidos.
+
+
+\Section El autómata finito
+
+Le he hablado de la ^máquina universal^ de \[Turing] como si supiese
+usted de que se trata. Le explicaré lo fundamental para que, cuando
+profundice su estudio, sepa relacionar sus lecturas sobre
+^computabilidad^ y ^funciones recursivas^ con los asuntos filosóficos
+aquí tratados.
+
+Lo primero es entender qué es un ^autómata finito^. El nombre es
+sugerente, pero no se fíe. El concepto de autómata finito es matemático
+y sirve para modelar mecanismos y ^comportamientos^. Los modelos son
+simplificaciones, y éste ignora todos los aspectos físicos y se queda,
+únicamente, con la capacidad de la ^máquina^ para tratar datos. Un
+autómata finito toma datos y produce datos. Los datos producidos
+dependen de los datos tomados en ese instante y de su propio ^estado^.
+También el estado siguiente depende de los datos de entrada y del estado
+actual. Lo de finito quiere decir que tanto los posibles valores de los
+datos de entrada, como los posibles valores de los datos de salida, como
+los posibles estados, están todos limitados y son todos conocidos de
+antemano al diseñar el autómata. Es algo complicado de explicar, pero el
+concepto es muy sencillo, y tiene usted que convencerse de que es muy
+sencillo, así que usaré un ejemplo.
+
+Un ^imparificador^ es un artefacto empleado en algunas comunicaciones
+digitales. Estas comunicaciones sólo usan dos signos, $1$ y $0$, y el
+imparificador sirve para añadir, a cada paquete de signos, un signo
+adicional, llamado ^redundancia^, que hace que el número de signos~$1$
+del paquete sea impar. De este modo, si se recibe un paquete con un
+número par de signos~$1$, se sabe que se ha producido un error durante
+la transmisión. Y si el paquete recibido trae un número impar de
+signos~$1$, entonces se supone que no ha habido errores y se descarta la
+redundancia para recuperar el paquete original.
+
+El imparificador ha de ir recordando si el número de signos~$1$ enviados
+hasta el momento es par o impar, para determinar la redundancia cuando
+se complete el paquete. Si entonces el número de signos~$1$ es par, hay
+que añadir un~$1$ adicional como redundancia, y un~$0$ si ya es impar.
+Así que el imparificador necesita dos estados, uno que le indica que
+hasta el momento se ha enviado un número {\sc impar} de signos~$1$, y
+otro que se ha enviado un número {\sc par}, y los datos de entrada sólo
+pueden tomar en cada instante uno de dos valores, $1$ o $0$. El diseño
+del imparificador nos exige determinar el estado siguiente y el dato de
+salida de estos cuatro casos, quedando definido por la siguiente tabla:
+$$\vbox{\halign{\strut
+   \vrule\quad\hfil#\hfil\quad&
+   \hfil#\hfil\quad \vrule&
+   \quad\hfil#\hfil\quad&
+   \hfil#\hfil\quad \vrule \cr
+    \noalign{\hrule}
+ estado actual& entrada& estado siguiente& salida\cr
+    \noalign{\hrule}
+ {\sc impar}& $1$& {\sc par}&   $1$\cr
+ {\sc impar}& $0$& {\sc impar}& $0$\cr
+ {\sc par}&   $1$& {\sc impar}& $0$\cr
+ {\sc par}&   $0$& {\sc par}&   $1$\cr
+    \noalign{\hrule}
+ }}%
+$$
+
+
+\Section El comportamiento
+
+Cualquier ^comportamiento^ queda definido, sin ambigüedad, por la tabla
+que determina el valor del estado siguiente y el valor de salida para
+cada posible combinación del valor del estado actual y el valor de
+entrada. Y no hay nada más en el concepto de ^autómata finito^. Sin
+embargo, es enormemente potente, ya que cualquier tratamiento de datos
+puede especificarse como un autómata finito. No siga leyendo si no es
+capaz de ver cómo podría especificarse una ^calculadora^ como un
+autómata finito. Entiéndame, no intente usted escribir la tabla, porque
+sería largo y de poco interés, pero vea que, de alguna manera, el diseño
+de la calculadora consiste en determinar el contenido de la ^memoria^ y
+el contenido de la pantalla, para cada posible contenido de la memoria y
+cada posible pulsación de una tecla.
+
+El concepto de autómata finito supone que el ^tiempo^ está encadenado,
+de tal suerte que en el instante presente sólo influye lo que sucede en
+dos instantes: el propio instante presente y el instante justamente
+anterior. Por supuesto, en el instante anterior ha influido el
+anteanterior, y por esto hablo de encadenamiento, pero lo que no podría
+modelar el autómata finito es un comportamiento que tomara en
+consideración sucesos ocurridos en instantes anteriores al anterior y
+que no han dejado traza alguna en el instante anterior, ¿me sigue?
+
+Hay una restricción espacial, denominada ^principio de localidad^,
+semejante a ésta. El principio de localidad espacial asegura que lo que
+ocurre en un punto del ^espacio^ sólo puede ser influido por lo que
+ocurre en el propio punto y lo que ocurre en los puntos contiguos. Así,
+para que una ^causa^ lejana afecte a un punto, la causa debe afectar
+también, de uno u otro modo, a todos los puntos intermedios.
+
+Una diferencia entre el principio de localidad espacial y el temporal,
+es que el espacial es simétrico, o ^isótropo^, y el temporal asimétrico,
+porque la localidad espacial considera todos los puntos contiguos sin
+distinción, mientras que la localidad temporal sólo tiene en
+consideración el instante anterior, y no el posterior. Es decir, que un
+autómata finito no puede modelar un comportamiento ^teleológico^. Los
+comportamientos teleológicos son aquellos que toman en consideración lo
+sucedido en instantes futuros.
+
+La ^ciencia^ sostiene tanto el principio de localidad espacial como el
+principio de localidad temporal, aunque es ambigua con respecto a la
+asimetría temporal. La ambiguedad se debe a que el ^materialismo^ es
+contradictorio, ya que por un lado aborrece las explicaciones
+teleológicas, mientras que por el otro sus teorías fundamentales
+presentan un tiempo simétrico que viene forzado, como vimos, por la
+necesidad materialista de negar la libertad para preservar así su
+sagrado ^principio de legalidad total^. Yo, libre de tales imperativos,
+asumo los dos principios de localidad y la asimetría temporal, y
+asumirlos significa que cualquier comportamiento físicamente posible
+puede ser modelado, sin excepciones, como un autómata finito.
+
+Un ejemplo filosóficamente importante es el de los seres ^vivos^. ¿Cree
+usted que se puede modelar el comportamiento de un animal como un
+autómata finito? La primera impresión es que sí. En definitiva, la
+finitud es obligada, y lo que cualquier ser vivo hace en un momento,
+sólo puede depender de su estado actual, que incluye su ^memoria^, y de
+los datos que reciba del exterior en ese momento. Porque interiormente
+no puede depender de algo que no le haya dejado huella alguna en su
+estado, ni tampoco puede depender de aquello que no reciba desde fuera
+en ese instante. Y, a pesar de lo dicho en el párrafo anterior, la
+respuesta del materialismo es más afirmativa que sí, mientras que la
+mía, como ^gallego^ que ejerce, es un sí pero no.
+
+
+\Section La máquina Turing
+
+\[Turing] fue un matemático inglés que planteó en 1936 la utilización de
+autómatas finitos para la transformación de expresiones sintácticas. La
+expresión sintáctica se escribe en una cinta ilimitada que está dividida
+en casillas, ocupando una casilla cada palabra de la expresión. El
+^autómata finito^ puede leer en cada instante el contenido de una
+casilla, y en función de lo que lee y de su estado determina su nuevo
+estado y lo que hace, esto en dos etapas. Primero escribe el nuevo
+contenido de la casilla, que puede ser el mismo que el leído, y después
+ejecuta un movimiento, que puede ser a la casilla que está justo a la
+{\sc derecha} de la actual, o justo a la {\sc izquierda} de la actual, o
+bien {\sc parar} y entonces da por finalizada la transformación de la
+expresión. Pero, si no se para, después del movimiento reinicia el
+ciclo, leyendo el contenido de la casilla a la que se ha movido. Por lo
+tanto, la expresión escrita en la cinta en el momento de {\sc parar} es
+el resultado de transformar la expresión escrita inicialmente en la
+cinta obedeciendo las prescripciones contenidas en la tabla del autómata
+finito.
+
+A un autómata finito así acoplado a una cinta infinita se le denomina
+^máquina de \[Turing]^. Al autómata finito de la máquina de
+\[Turing]~{\frak T} se le denomina ^procesador^~${\cal P}_{\frak T}$.
+$$\hbox{Máquina de \[Turing]~$\frak T$}
+  \llave{\hbox{Procesador~${\cal P}_{\frak T}$}\cr
+         \hbox{Cinta infinita}}
+$$
+
+Para anotar que, si escribimos la expresión sintáctica~$\frak e$ en la
+cinta de la máquina de \[Turing]~{\frak T} cuyo procesador es~${\cal
+P}_{\frak T}$ y lo dejamos funcionar, cuando se pare encontraremos en la
+cinta la expresión sintáctica~$\frak r$, usaremos la notación:
+$${\cal P}_{\frak T}[{\frak e}] \rightarrow {\frak r} .$$
+Si, por el contrario, al escribir la expresión $\frak x$, la máquina de
+\[Turing]~{\frak T} no se llegara a {\sc parar} nunca, entonces diríamos
+que $\frak x$ es una paradoja para $\frak T$, y lo anotaríamos:
+$${\cal P}_{\frak T}[{\frak x}] \rightarrow \infty .$$
+Hay más casos, pero si, por ejemplo, en la tabla del procesador~${\cal
+P}_{\frak Q}$ de una máquina de \[Turing]~$\frak Q$ no aparece la salida
+{\sc parar}, entonces es obvio que cualquier expresión es paradójica
+para $\frak Q$.
+
+
+\Section La máquina universal
+
+Lo más sorprendente del artículo de \[Turing] de 1936, es la máquina
+universal que allí presentó. Una ^máquina universal^ de \[Turing]~$\frak
+U$ es también una máquina de \[Turing], con su cinta infinita y su
+procesador~${\cal P}_{\frak U}$, que es un simple ^autómata finito^. Lo
+peculiar de la máquina universal de \[Turing] es que, siendo ella misma
+una máquina de \[Turing], es capaz de imitar perfectamente a todas las
+máquinas de \[Turing]. Es decir, es capaz de transformar todas y cada
+una de las expresiones posibles exactamente del mismo modo que cualquier
+posible máquina de \[Turing]. La imitación es fiel y sin excepciones, de
+manera que si se para una, la otra también se para y el contenido final
+de ambas cintas es idéntico, y si una no se para, tampoco se para la
+otra.
+
+Para conseguirlo, la máquina universal de \[Turing]~$\frak U$ necesita
+representar en su cinta la situación completa, esto es, tanto la máquina
+de \[Turing]~$\frak T$ a imitar, como el contenido de la cinta. Así que
+${\cal P}_{\frak T}[{\frak d}]$ queda expresado dentro de la cinta como
+${\frak P}_{\frak T}({\frak d})$, en donde la expresión a
+transformar~$\frak d$ no tiene que ser traducida porque ya era una
+expresión, y a la que se ha añadido la representación de la máquina de
+\[Turing]~$\frak T$ a imitar. Para representar una máquina de \[Turing]
+es suficiente representar su procesador, que queda completamente
+definido por su tabla. Llamaremos ^algoritmo^ a la expresión~${\frak
+P}_{\frak T}$ que representa al ^procesador^ de una máquina de
+\[Turing]~${\cal P}_{\frak T}$ en la cinta de una máquina universal de
+\[Turing]~$\frak U$.
+
+\[Turing] demostró en 1936 que existe una máquina universal de
+\[Turing]~$\frak U$ tal que, dadas cualquier expresión~$\frak d$ y
+cualquier máquina de \[Turing]~$\frak T$, siempre es posible representar
+su procesador ${\cal P}_{\frak T}$ en la cinta de la máquina
+universal~$\frak U$, sea con la expresión ${\frak P}_{\frak T}$, de tal
+modo que el resultado de transformar $\frak d$ con $\frak T$ es
+exactamente el mismo que el de transformar ${\frak P}_{\frak T}({\frak
+d})$ con $\frak U$. Abreviaremos lo dicho, así:
+$${\cal P}_{\frak U}[{\frak P}_{\frak T}({\frak d})] \equiv
+  {\cal P}_{\frak T}[{\frak d}] .$$
+
+Llamaremos ^motor sintáctico^ al ^procesador^~${\cal P}_{\frak U}$ de
+una máquina universal de \[Turing], porque es capaz de cualquier
+manipulación sintáctica.
+
+La prueba de \[Turing] es constructiva, ya que no se limita a demostrar
+que ha de existir una máquina universal, sino que explica detalladamante
+cómo construir una. Otra cosa que le interesa saber, es que en el núcleo
+de cada ^computadora^ está el procesador de una máquina universal de
+\[Turing], o sea, un motor sintáctico~${\cal P}_{\frak U}$. Obviamente,
+y sin que podamos culpar a \[Turing] por ello, no ha sido posible
+construir ninguna cinta infinita.
+
+
+\Section Gödel
+
+Me parece que usted sí que me está culpando a mi por haberle introducido
+asuntos tan abstrusos como los autómatas finitos y las máquinas de
+\[Turing]. Pero es necesario y espero que, finalmente, me lo agradezca.
+No son temas fáciles, lo sé, pero los descubrimientos de \[Gödel],
+\[Church], \[Kleene] y \[Turing] son, sin duda alguna, los más
+importantes del siglo {\sc xx}, por encima incluso de la ^teoría de la
+relatividad^ de \[Einstein] y la ^física cuántica^ de \[Bohr],
+\[Heisenberg] y \[Schrödinger]. Y, sin embargo, ha finalizado el siglo
+{\sc xx} sin el reconocimiento que se merecen. Recordemos sus hazañas.
+
+Todo comenzó con el deseo de los ^matemáticos^ de alcanzar el máximo
+rigor en sus demostraciones. Éste se alcanza con los sistemas
+axiomáticos. Los ^sistemas axiomáticos^ definen un número finito de
+^axiomas^, que son expresiones dadas por verdaderas, y proporcionan un
+número finito de reglas de deducción que, aplicadas a expresiones
+verdaderas, producen otras expresiones verdaderas. El objetivo de la
+escuela formalista de \[Hilbert] era reducir todas las matemáticas a un
+sistema axiomático capaz de producir todas las ^verdades matemáticas^.
+
+\[Gödel] demostró en 1931 que el objetivo formalista no podía ser
+alcanzado. Demostró, en su famoso ^teorema de incompletitud^, que
+cualquier sistema axiomático consistente y que incluya la ^aritmética^
+no puede ser completo, porque contiene necesariamente expresiones
+indecidibles. Una expresión es ^indecidible^ cuando ni ella ni su
+negación pueden ser producidas por el sistema axiomático. Y un sistema
+axiomático es consistente si no produce contradicciones. Observe que si
+un sistema axiomático produce la negación de una expresión, y es
+consistente, entonces la expresión ha de ser falsa.
+
+Por cierto, la expresión elegida por \[Gödel] en su demostración viene a
+significar `esta expresión no puede ser producida'. Y a mi me es más
+fácil recordar el descubrimiento de \[Gödel] con una ^tautología^ que lo
+generaliza: en cualquier lenguaje lo bastante potente como para poder
+expresar `esta frase es falsa', existen ^paradojas^.
+
+Quedaba la posibilidad de que hubiera alguna manera de decidir las
+expresiones indecidibles. Porque el teorema de \[Gödel] había mostrado
+que, aplicando las reglas de deducción en su sentido natural, era
+imposible alcanzar todas las proposiciones verdaderas, pero tal vez
+fuera posible hacer el camino en el sentido contrario. Quizás se pudiera
+encontrar un modo de determinar si una expresión cualquiera es decidible
+o indecidible en un sistema axiomático. Éste es el llamado ^problema de
+la decisión^ o {\it Entscheidungsproblem} ---no he podido resistirme a
+escribirlo--- que resolvieron en 1936 por separado \[Church] y
+\[Turing]. Lo resolvieron pero no lo solucionaron, porque descubrieron
+que no tiene solución, es decir, demostraron que no hay ninguna manera
+de decidir todas las expresiones.
+
+
+\Section La sintaxis recursiva
+
+\[Turing] convirtió el {\it Entscheidungsproblem} en el {\it halting
+problem}. Una expresión indecidible en una máquina universal de
+\[Turing] es una expresión que nunca llega a {\sc parar}. Y probó que no
+hay manera de diseñar un ^algoritmo^~$\frak E$ que él mismo siempre se
+pare, y que diga de cualquier algoritmo~$\frak P$ y de cualquier
+expresión~$\frak d$, si se parará o no la máquina universal cuando
+transforme la expresión~${\frak P}({\frak d})$. O sea:
+$$\not\!\exists {\frak E}: \forall{\frak P}: \forall{\frak d}: \;
+ \cases{
+   {\cal P}_{\frak U}[{\frak E}({\frak P}({\frak d}))]
+       \rightarrow \hbox{\sc sí}
+      & si ${\cal P}_{\frak U}[{\frak P}({\frak d})]$ se para\cr
+      \noalign{\vskip2\jot}%
+   {\cal P}_{\frak U}[{\frak E}({\frak P}({\frak d}))]
+       \rightarrow \hbox{\sc no}
+      & si ${\cal P}_{\frak U}[{\frak P}({\frak d})] \rightarrow \infty$ .
+ }
+$$
+
+\[Church], trabajando con las funciones recursivas en su
+_cálculo<lambda>~$\lambda$, llegó antes que \[Turing] a la misma
+conclusión, o más precisamente, la publicó antes. Tanto que \[Turing] en
+su artículo ya mencionaba el resultado de \[Church] y, además,
+demostraba la equivalencia expresiva del cálculo $\lambda$ con sus
+máquinas.
+
+Aunque las comparaciones son odiosas, el trabajo de \[Turing] es mucho
+más importante que el de \[Church], porque los autómatas finitos de las
+máquinas de \[Turing] se pueden realizar. De hecho, las computadoras se
+construyen alrededor del procesador de una máquina universal de
+\[Turing]. Esto asegura que cualquier ^computadora^ puede realizar
+cualquier transformación sintáctica, siempre que sea posible determinar
+la transformación completamente, porque así es como hay que definir la
+tabla de un autómata finito. Como chascarrillo irreverente y
+doblemente falso, puede quedarse con que `\[Turing] inventó la
+computadora, y \[Church] inventó Lisp'.
+
+Además de la equivalencia expresiva del cálculo $\lambda$ con las
+máquinas de \[Turing] mencionada arriba, éstos dos también son
+equivalentes a la ^lógica sin restricciones^ que permite predicar los
+predicados. Y, definiendo ^sintaxis recursiva^ como aquella ^sintaxis^
+en la que las transformaciones de expresiones sintácticas son expresables
+sintácticamente, podemos generalizar: todas las las sintaxis recursivas
+son igualmente expresivas. Como todas las sintaxis recursivas tienen la
+misma capacidad expresiva, y además cada una de ellas puede
+representarse en sí misma, resulta que en cualquiera de ellas se puede
+representar cualquiera de ellas. Por esta razón podemos evaluar
+cualquier expresión del lenguaje ^Lisp^, basado en el cálculo $\lambda$,
+en cualquier computadora, basada en las máquinas universales de
+\[Turing].
+
+Las sintaxis recursivas tienen la máxima expresividad pero, como
+demostró \[Gödel], en todas ellas existen expresiones indecidibles, o
+sea, ^paradojas^, que, como demostraron \[Church] y \[Turing], son
+imposibles de detectar desde dentro de la propia sintaxis recursiva. En
+toda sintaxis recursiva existen paradojas indetectables.
+
+
+\Section La computadora
+
+Las ^computadoras^ son máquinas universales, o sea, tan capaces como la
+más capaz de las máquinas. Son tan potentes que hay personas que temen
+ser superadas por las computadoras, y a menudo se debate sobre la
+capacidad de las computadoras en comparación con la capacidad humana.
+Con todo lo visto hasta aquí, creo que ya estamos en disposición de
+extraer algunas conclusiones.
+
+Hay quien se tranquiliza al apuntar que una computadora sólo hace lo que
+el programa le dice que haga y que los programas los escriben personas
+---el ^programa^ es lo que hasta aquí hemos venido llamando pomposamente
+^algoritmo^.
+
+Es cierto que, como hemos visto, la tabla del ^autómata finito^ debe
+estar totalmente definida. De no estar completa, simplemente podría
+darse el caso de que el autómata no supiera cómo continuar sin haber
+terminado. Pero, ¿y nosotros? ¿Qué hacemos cuando no sabemos qué hacer?
+Unas veces abandonamos la tarea que no sabemos cómo continuar y pasamos
+a otra que sí sabemos hacer, y otras veces preguntamos a alguien, o
+suponemos algo. Pues esto mismo también puede hacerlo la computadora.
+Basta programarla para que abandone cuando le faltan datos, o pida
+ayuda, o tome un valor por defecto, y esto es justo lo que hacen los
+programas bien diseñados cuando interesa realizar el esfuerzo adicional
+necesario para cubrir todas las eventualidades. Tal vez, entonces, la
+única diferencia sea que el programa que rige el comportamiento humano
+es más completo que los de las computadoras.
+
+La otra suposición, que todos los programas están escritos por personas,
+es falsa. Es casi al revés, ya que todos los programas ejecutados por
+las computadoras son producidos por computadoras, excepto aquellos
+poquísimos escritos directamente en ^código máquina^ por programadores
+humanos. Precisamente, en una sintaxis recursiva los algoritmos son
+expresiones sintácticas, lo que significa que están al alcance de las
+computadoras.
+
+
+\Section La paradoja
+
+\[Lucas] y \[Penrose] afirman que el ^teorema de incompletitud^ y el
+^problema de la decisión^ muestran los límites de las ^computadoras^, a
+la vez que sostienen que no se aplican a las personas. Por ejemplo,
+nosotros los humanos sabemos que la expresión elegida por \[Gödel] en su
+demostración, `esta expresión no puede ser producida', es verdadera.
+Nosotros podemos decidir sobre su veracidad y, en cambio, es indecidible
+desde dentro del sistema axiomático, así que ganamos los humanos.
+
+Pues no, porque el teorema de \[Gödel] sólo se aplica a ^sistemas
+axiomáticos^ consistentes, sean personas o computadoras.
+Es decir, se aplica a una computadora ejecutando un programa de
+generación automática de teoremas matemáticos,
+pero no a la misma computadora ejecutando, por ejemplo, un 
+programa de generación de ^hipótesis^, ya que no se exige que éstas
+sean necesariamente verdaderas. También se aplica a un matemático
+probando consistentemente teoremas, pero no a la misma persona
+conjeturando.
+
+Lo que nos aseguran los ^teoremas de indecidibilidad^ es que las
+sintaxis recursivas, que son auto-referentes, sufren necesariamente
+de paradojas. Y las personas no somos inmunes a las ^paradojas^;
+usted y yo tampoco. Veamos.
+
+Puedo darle una definición de `indefinible': es ^indefinible^ lo
+que no puede ser definido. Luego es posible definir lo indefinible, ¿o
+no? Yo no lo creo, pero, en todo caso y aunque se lo parezca, esto no es
+una paradoja, ya que lo único que sucede es que `indefinible' es una
+palabra definible. Así que se trata de un mero problema de
+^entrecomillado^. También puedo decir lo ^indecible^, acabo de hacerlo.
+Y referirme a lo irreferible, ¿o no? ¿Qué piensa usted? Parecen
+paradojas, pero, ¿lo son? ¿Está seguro?
+
+Una ^paradoja^ segura es la proposición `esta frase es falsa', porque no
+puede ser verdadera ni falsa. Sin embargo, al estudiar su veracidad no
+nos quedamos atrapados en un bucle ^infinito^. Vemos que si fuera verdad
+lo que dice, entonces habría de ser falsa, y que si fuera falsa,
+entonces sería verdadera. Llegados a este punto ya nos percatamos de que
+un caso lleva al otro y este otro de vuelta al uno, de modo que se forma
+un ^círculo vicioso^, y resolvemos que no hay ^solución^. Ajá, volvemos
+a ganar.
+
+Bueno, en primer lugar no {\em volvemos} a ganar, porque antes no
+habíamos ganado, ¿se acuerda? Pero es que tampoco ganamos esta
+vez, porque también se puede programar una ^computadora^ para que
+detecte los círculos viciosos de dos casos, como éste. Y, lo que es peor
+para nosotros, es que también podemos programarlas para hacer cosas que
+nosotros no alcanzamos, como detectar los círculos viciosos de cien, o
+de mil, pasos. Esto no contradice los ^teoremas de indecidibilidad^,
+porque sigue habiendo paradojas indetectables. Sólo digo que en esta
+tarea una computadora es mejor que una persona.
+
+
+\Section Chomsky
+
+Ya que estoy escribiendo abundantemente sobre la ^sintaxis^, es
+inexcusable hacerle una precisión que le puede ser útil si conoce los
+imprescindibles trabajos lingüísticos de \[Chomsky]. Aunque es más
+conocido por sus actividades anti-imperialistas ejercidas desde dentro
+del ^imperio^ que por sus teorías ligüísticas, aquí me limitaré a
+recordar sus brillantes contribuciones a la ciencia del lenguaje.
+
+\[Chomsky] distingue dos niveles de ^análisis sintáctico^: el análisis
+sintáctico superficial y el análisis sintáctico profundo. Por ejemplo,
+la oración `esta frase es falsa' puede ser analizada superficialmente
+sin dificultad y por completo.
+$$\hbox{Oración}
+ \llave{Sujeto
+            \llave{Determinante $\rightarrow$ {\it esta}\cr
+                   Nombre       $\rightarrow$ {\it frase}}\cr
+         Predicado
+            \llave{Cópula       $\rightarrow$ {\it es}\cr
+                   Atributo     $\rightarrow$ {\it falsa}}}$$
+
+Otra cosa es analizarla profundamente, o sea, hasta alcanzar su
+^significado^, que es imposible porque es una ^paradoja^. Tampoco los
+^pronombres^ interrogativos representan agujeros en los análisis
+superficiales. Así, por ejemplo, en la frase `¿qué hacer?', `qué' es
+simplemente el objeto directo de la oración. En cambio, en el análisis
+profundo, `qué' es una variable libre porque está libre de significado;
+o sea, que `qué' no tiene significado y es un agujero semántico.
+
+Yo no distingo el análisis sintáctico superficial del profundo, y trato
+a toda la sintaxis como una única entidad. Es decir, que yo uso una
+brocha gorda en donde \[Chomsky] usa un pincel. En consecuencia mis
+conclusiones son menos concretas, o más generales, que las suyas.
+
+Toda oración es superficialmente analizable, pero no toda oración es
+sintácticamente analizable. Como vimos, para realizar los análisis
+sintácticos completos se necesita el procesador~${\cal P}_{\frak U}$ de
+una máquina universal de \[Turing], al que llamamos ^motor sintáctico^
+porque es capaz de cualquier manipulación sintáctica. El motor
+sintáctico proporciona la máxima potencia de análisis sintáctico pero, a
+cambio, resulta imposible evitar que haya ^paradojas^, o sea, oraciones
+de las que no es posible calcular su significado. Para garantizar que el
+análisis superficial siempre llega a {\sc parar}, han de utilizarse
+procesadores menos potentes.
+
+Con estas premisas hemos de suponer que un preprocesador hace el
+análisis superficial menos exigente, y que después un motor sintáctico
+completa el análisis. \[Chomsky] denomina ^gramática universal^ al
+preprocesador sintonizable con el que viene dotada la especie {\it homo
+sapiens} para automatizar el análisis superficial. Pero es mucho más
+importante el motor sintáctico que también disfrutamos, y también
+heredamos.
+
+
+\Section ¡Alto!
+
+Ésta es la sección en la que debe usted lentificar de nuevo su lectura,
+procurando relacionar todo cuanto le cuento, y sin permitirse lagunas en
+el entendimiento, que hasta aquí eran disculpables por tratarse de temas
+demasiado matemáticos. Disculpables solamente en la primera lectura,
+¿eh? Porque, desde luego, mi propósito al incluir las secciones
+anteriores, no es que practique usted métodos de ^lectura rápida^, sino
+que mi intención es despertar su curiosidad por comprender qué relación
+puede existir entre el ^lenguaje simbólico^ y los ^problemas^, y
+proporcionarle pistas para que pueda investigarla por su cuenta, si le
+interesa.
+
+En las secciones rápidas me he aprovechado de los resultados científicos
+más importantes del siglo {\sc xx}, debidos principalmente a \[Hilbert],
+\[Gödel], \[Church], \[Kleene] y \[Turing], y que, aunque suelen
+adscribirse a la ^lógica matemática^, tienen consecuencias que
+esclarecen los aspectos más peculiares de nuestra especie
+\latin{^homo sapiens^}.
+
+En el siglo {\sc xx} se produjeron dos grandes ^revoluciones^
+epistemológicas, que no aparecieron en ningún ^periódico^. La ^física
+cuántica^ rompió el ^objetivismo^, como ya le conté, y en las
+^matemáticas^, el ^teorema de incompletitud^ de \[Gödel] de 1931, y la
+resolución del ^problema de la decisión^, por \[Church] y \[Turing] en
+1936, rompieron el ^materialismo^. Bueno, esto último es lo que voy a
+mostrarle, porque hasta ahora estos ^teoremas de indecidibilidad^
+solamente han causado confusión. Es decir, le enseñaré que, así como la
+física cuántica desconcierta a los objetivistas que no se apean de su
+credo, los teoremas de indecidibilidad dejan perplejos a los
+materialistas que persisten en su creencia.
+
+Le había prometido que en esta sección le haría un resumen de lo tratado
+en la parte rápida. ¿Le vale que lo comience en la próxima sección?
+Reconozco que soy algo tramposo, o más bien vago, porque solamente
+tendría que cambiar la promesa. Al fin y al cabo, esto es un ^libro^, y
+el autor no está obligado a escribirlo todo seguido, de principio a fin,
+y sin rectificar nada de lo ya escrito. Dejémoslo estar.
+
+
+\Section La torre de Babel
+
+Recuerde que teníamos un ^lenguaje semántico^ que era capaz de
+representar lo perceptible, pero no los problemas, y que nos propusimos
+ampliarlo tomando como criterio de diseño que el lenguaje resultante
+fuera capaz de expresar las resoluciones de los problemas. Entonces
+denominamos ^sintaxis^ a la parte ampliada, y ^lenguaje simbólico^ al
+lenguaje obtenido tras la ampliación.
+
+Pues bien, descubrimos que, para poder representar resoluciones
+completas, es necesario que la sintaxis cumpla ^cuatro condiciones^. Que
+permita construir estructuras arbóreas, llamadas oraciones, con
+palabras. Que permita componer oraciones abiertas, denominadas
+funciones, utilizando variables libres, que son palabras sin
+significado, como los ^pronombres^. Que permita ligar, arbitrariamente y
+sin limitaciones, oraciones a palabras; y, de este modo, se puede dar
+significado, temporal o permanentemente, a las variables libres. Y, por
+último, que permita expresar condiciones.
+
+Está demostrado matemáticamente que, si se cumplen las cuatro
+condiciones anteriores, también se satisface necesariamente la
+^condición de recursividad^, y de aquí que se dé el nombre de ^sintaxis
+recursiva^ a cualquier sintaxis que las cumpla. La ^recursividad^ se
+satisface cuando las propias transformaciones sintácticas pueden ser
+expresadas sintácticamente. Algunas sintaxis recursivas son: la ^lógica
+de predicados sin restricciones^, el _cálculo<lambda> $\lambda$ de
+expresiones abiertas, los lenguajes tratados por las máquinas
+universales de \[Turing], y todos los lenguajes naturales. Por cierto,
+las computadoras son ^motores sintácticos^, que son los procesadores de
+las máquinas universales de \[Turing].
+
+También se puede probar matemáticamente que todas las sintaxis
+recursivas son igualmente expresivas, y que cualquiera de ellas se puede
+expresar en cualquiera de ellas. Por esta razón, y teniendo en cuenta
+que la ^semántica^ se soporta sobre los mecanismos perceptivos propios
+de la especie, que son heredados por cada individuo, es sensato afirmar
+que entre los humanos sólo hay un lenguaje simbólico. Sólo hay un
+^idioma^, como nos enseñó \[Chomsky], y por eso podemos construir la
+^torre de Babel^.
+
+
+\Section La selección natural
+
+Es sorprendente y significativo que, para satisfacer un requisito tan
+sencillo como el de expresar las resoluciones, sean necesarias unas
+sintaxis tan enormemente poderosas como las recursivas. Tanto que
+nosotros mismos no somos capaces de imaginar sintaxis más potentes. Ojo,
+no digo que las sintaxis recursivas puedan representar cualquier cosa,
+sino que nosotros no podemos representarnos más. Esta falta de
+^imaginación^ ---lo inimaginable no se puede imaginar--- prueba que
+nuestra sintaxis es recursiva, conclusión que se conoce con el nombre de
+^tesis de \[Church]-\[Turing]^. Resumiendo, en capacidad sintáctica
+estamos empatados con las ^computadoras^.
+
+Se podría romper el empate considerando la rapidez de ejecución, pero
+ése es un asunto insustancial que ya no nos compete a los
+^epistemólogos^, que solamente nos interesamos por las cuestiones más
+esenciales. Por supuesto, hay una diferencia esencial entre nosotros y
+las computadoras, y, para no tenerlo innecesariamente en vilo, se la
+digo ya. Nosotros nos enfrentamos al ^problema de la supervivencia^, y
+las computadoras no. Afortunadamente, ésta es otra obviedad, así que no
+tengo que explicársela, y puedo pasar directamente a evaluar sus
+consecuencias.
+
+La ^vida^ queda definida por el ^problema de la supervivencia^, que es
+{\em el} ^problema^, como nos recordó \[Shakespeare], porque no hay
+otros problemas, aunque sí haya subproblemas de él. De la resolución
+repetida del problema de la supervivencia, la vida ha ido extrayendo
+^información^ y, en nuestro caso, aparece dividido en varios
+subproblemas, como lo son la búsqueda de ^alimento^, de refugio, o de
+pareja. A su vez, estos subproblemas están subdivididos en otros
+subproblemas, así que, por sucesivas traslaciones, se ha venido formando
+un frondoso ^árbol de resolución^. Además, y como parte del mismo
+proceso de resolución, la vida ha tenido que ir diseñando diferentes
+seres y órganos para resolver cada uno de los subproblemas planteados.
+
+La vida diseña empleando el mecanismo de ^selección natural^ descubierto
+por \[Darwin] y \[Wallace]; por cierto, en cuanto a prioridad e
+importancia, \[Darwin] es a \[Turing], como \[Wallace] es a \[Church].
+Lo interesante es que, según nuestra clasificación, la ^evolución^
+darviniana es un método de prueba y error de resoluciones, o sea, un
+^tanteo^ de resoluciones. Aquí hay un matiz sutil pero valioso. Hay
+tanteos de soluciones y tanteos de resoluciones. El tanteo primitivo es
+el tanteo de soluciones, que prueba si una posible ^solución^ lo es, o
+no. El tanteo de resoluciones es un árbol de resolución más largo que
+prueba resoluciones, esto es, prueba si cada posible ^resolución^
+resuelve y encuentra una solución, o no.
+
+La cuestión es que, siendo el ^problema de la supervivencia^ un
+^problema aparente^, se desconoce su ^condición^, y así no hay manera de
+saber si una posible solución satisface la condición, o no. De un
+problema aparente solamente sabemos que es un problema, pero esto nos
+basta para saber que hay ^libertad^, lo que nos proporciona una vía de
+ataque, la única posible. Lo único que se puede hacer frente a un
+problema aparente es ejercer la libertad y esperar a ver si queda
+solucionado, o no. O sea, podemos acometer su ^resolución^. Por esta
+razón, la evolución es un tanteo de resoluciones, y cada ser vivo es un
+resolutor.
+
+
+\Section El mecanismo
+
+La vida nace de un problema aparente, y por eso la evolución darviniana
+diseña resolutores. Seguramente los primeros resolutores diseñados por
+la evolución fueron los más sencillos. Y los resolutores más sencillos
+son los que emplean la resolución más sencilla, que es la ^resolución^
+por rutina. 
+
+La resolución por ^rutina^ consiste ---¿se acuerda?--- en aplicar
+rutinariamente una solución conocida, de manera que un resolutor
+rutinario ejercitará mecánicamente un ^comportamiento^ predeterminado.
+Por esta razón denominaremos ^mecanismos^ a los resolutores rutinarios.
+
+El comportamiento de un mecanismo queda completamente determinado al
+^diseñarlo^, así que, cuando los ^genes^ determinan totalmente el
+comportamiento, tenemos un mecanismo, como es el caso de las plantas. Y,
+como el mecanismo no puede cambiar de comportamiento una vez diseñado,
+resulta que cada mecanismo tiene un único comportamiento.
+
+
+\Section El adaptador
+
+Las plantas, los organismos unicelulares y los animales sin sistema
+nervioso son resolutores rutinarios, o sea mecanismos, porque tienen un
+único ^comportamiento^. Es probable que el ^sistema nervioso^ apareciese
+para sacar provecho de cuerpos mayores y, aun así, con un único
+comportamiento coordinado. Pero, disponiendo de un órgano encargado de
+coordinar el comportamiento del ^cuerpo^, basta modificar ligeramente
+dicho órgano para convertirlo en un órgano de control capaz de coordinar
+la ejecución de varios comportamientos distintos. De este modo el
+sistema nervioso se convirtió en el ^gobernador^ de un resolutor por
+^tanteo^.
+
+Para que esto sea evolutivamente plausible, hay que mostrar que resolver
+por ^tanteo^ puede ser ventajoso. Y esto es fácil si la ^vida^ es un
+^problema aparente^, del que nada se sabe ---ignorándose por ello qué
+comportamiento será más adecuado---, porque entonces ser capaz de varios
+comportamientos, en vez de comportarse siempre de una misma y única
+manera, significa disponer de más recursos.
+
+La resolución por ^tanteo^ es más compleja que por ^rutina^. Llamaremos
+^adaptadores^ a los resolutores que tantean. Los animales con un sistema
+nervioso diferenciado del cuerpo son adaptadores. En un adaptador se
+distinguen dos partes: un ^cuerpo^ capaz de varios comportamientos, y un
+^gobernador^ que elige en cada momento uno de los comportamientos.
+$$\hbox{Adaptador}\llave{Gobernador\cr \nodepth{Cuerpo}}$$
+
+Durante el ^diseño^ de un adaptador se determinan los comportamientos
+posibles, y el método de elección que determinará el comportamiento en
+cada momento, pero el propio comportamiento queda indeterminado, y de
+este modo el adaptador puede adaptarse a sus circunstancias. Cada
+comportamiento del cuerpo es una de las posibles soluciones a probar que
+son propias de la resolución por tanteo.
+
+
+\endinput

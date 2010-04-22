@@ -1,0 +1,1219 @@
+% edc5.tex (RNMCG20040924)
+
+
+\Section El aprendiz
+
+Los tanteos tienen un defecto, a saber, que el error es una parte
+esencial del ^tanteo^, y por esto los tanteos son también conocidos como
+métodos de ^prueba^ y ^error^. Si hacemos un tanteo con papel y lápiz
+para resolver un problema aritmético, la situación puede no ser grave,
+pero tratándose del ^problema de la supervivencia^ la cuestión es,
+literalmente, de ^vida^ o muerte. Un modo de evitar el error consiste en
+prever el resultado de la acción antes de ejecutarla. Para prever lo que
+ocurrirá, se necesita un ^modelo^ sobre el que se pueda simular la
+acción antes de ejecutarla actualmente. Si la modelación es adecuada, la
+simulación servirá de ^pronóstico^. La simulación con modelo es,
+obviamente, una resolución por ^analogía^, o ^traslación^.
+
+Si los diseños evolutivos han ido creciendo en complejidad, como nos
+dice la ^ley de la información creciente^, el siguiente paso resolutivo
+fue el ^aprendiz^, que implementa la traslación. El aprendiz tiene tres
+partes: un ^cuerpo^, como el del adaptador, capaz de varios
+comportamientos; un ^modelador^ que construye dentro del aprendiz un
+modelo que imita el comportamiento del exterior; y un ^simulador^ que
+emplea el modelo para hacer pronósticos antes de elegir uno de los
+comportamientos propios.
+$$\hbox{Aprendiz}
+    \llave{Gobernador \llave{Modelador\cr Simulador}\cr
+           Cuerpo\strut}$$
+
+Entonces, para diseñar un aprendiz, han de determinarse con precisión
+sus tres partes: el ^cuerpo^ con sus posibles comportamientos, la manera
+concreta de modelar el comportamiento del exterior, y el método para
+resolver el problema interiorizado, que podría ser por tanteo. Queda
+indeterminado el ^modelo^ y, en doble grado, el comportamiento actual
+del ^aprendiz^, que depende tanto de de las circunstancias exteriores,
+como del modelo interior.
+
+Los ingenieros suelen diseñar ^mecanismos^. De hecho, `ingenio' ha
+venido a significar `máquina o artificio mecánico'. Sólo en algunos
+casos diseñan ^adaptadores^, es decir, aparatos que resuelven por
+^tanteo^, como los termostatos. Un ^termostato^ típico es capaz de dos
+comportamientos, calefactar o no calefactar, y tiene unos circuitos de
+control que eligen el comportamiento actual, ya no en la fase de
+^diseño^, sino sobre la marcha, en la fase de funcionamiento. Y casi
+nunca diseñan aprendices. ¿Por qué los ingenieros no diseñan aprendices?
+Porque solamente es interesante diseñar un aprendiz cuando la modelación
+del ^entorno^ en el que se desarrollará el artefacto puede hacerla mejor
+el propio ingenio en tiempo real e \latin{in situ} que el ^ingeniero^
+tranquilamente por adelantado y en su estudio. El casi hace referencia,
+a día de hoy, a que estas condiciones se verifican únicamente en los
+viajes no tripulados a otros planetas.
+
+
+\Section La realidad
+
+El nombre de ^aprendiz^ es cabal, porque aprende. El ^adaptador^, que
+tantea, puede modificar su comportamiento para adaptarse a las
+circunstancias en las que se encuentra, pero no aprende de sus errores.
+El adaptador tiene que sufrir el inalterable proceso de ^prueba^ y
+^error^ cada vez que su ^entorno^ varía, ya que no dispone de medios
+para adelantarse a él. El aprendiz, en cambio, puede utilizar los
+errores para modificar su ^modelo^ y así no repetir los errores. Es
+decir, si el aprendiz ha ejecutado un comportamiento, es porque su
+previsión era favorable, de modo que si el comportamiento ha fallado, es
+porque el ^pronóstico^ ha fallado, y entonces el modelo ha de ser
+mejorado. Si el ^modelo^ interior es modificado adecuadamente, el
+aprendiz evita repetir los errores, y esto es aprender.
+
+Para nosotros los subjetivistas, el modelo interior del aprendiz, que
+imita el comportamiento del ^exterior^, es la ^realidad^. Y que la
+^percepción^ construya una realidad de objetos, y no otra cosa, es,
+desde este punto de vista más abstracto de la ^teoría del problema^, un
+detalle de importancia menor.
+
+No obstante, una cosa es cierta. Para poder internalizar el ^problema de
+la supervivencia^, han de poderse representar internamente tanto la
+realidad, que es el comportamiento del exterior, como los posibles
+comportamientos del propio aprendiz. Es decir, lo que sí es requerido es
+que el aprendiz sea capaz de representarse soluciones, en forma de
+comportamientos. A los lenguajes que representan soluciones, pero no
+resoluciones, los llamamos ^semánticos^.
+
+Sea la realidad objetiva o de otra manera, el problema de la
+supervivencia aparece trasladado dentro del simulador del aprendiz. El
+subjetivismo permite distinguir nítidamente el problema de la
+supervivencia de su interiorización por traslado, que denominaremos el
+^problema del aprendiz^. El problema del aprendiz no es un ^problema
+aparente^ porque el modelo es información o, en la parla subjetivista,
+porque la ^realidad^ es ^información^.
+
+
+\Section El conocedor
+
+El adaptador y el aprendiz son capaces de varios comportamientos, esto
+es, de varias soluciones, pero cada uno busca la solución de una manera
+única que viene fijada genéticamente. De modo que el ^mecanismo^, el
+^adaptador^ y el ^aprendiz^ son resolutores que resuelven cada uno de
+una única manera. El siguiente paso de esta carrera en busca de la
+máxima flexibilidad, a costa de una mayor complejidad, es el diseño de
+resolutores capaces de varias resoluciones. Llamaremos conocedores a
+estos resolutores múltiples. Un ^conocedor^ capaz de resolver según las
+circunstancias como un mecanismo, o como un adaptador, o como un
+aprendiz, puede superarlos a todos ellos; y ésta es la justificación
+evolutiva del conocedor.
+
+Lo dicho del adaptador vale para el conocedor, siempre que se traduzcan
+adecuadamente las referencias a soluciones por referencias a
+resoluciones. Así que, si el adaptador es capaz de varios
+comportamientos, el conocedor es capaz de varias resoluciones. Además,
+el cuerpo del adaptador se traduce en la ^mente^ del conocedor, que es
+capaz de varias resoluciones. Y el gobernador del adaptador se traduce
+en la ^inteligencia^ del conocedor, que es quien determina qué
+resolución aplicar en cada momento.
+$$\hbox{Conocedor}\llave{Inteligencia\cr Mente}$$
+
+La propia ^evolución^ darviniana funciona como un conocedor cuya
+inteligencia es combinatoria. Los ^conocedores^ de los que nosotros
+descendemos, y que fueron diseñados por la evolución darviniana, tenían
+una ^inteligencia emocional^. Con esto quiero decir que, para determinar
+que resoluciones probar, no mutaban las resoluciones, ni las combinaban
+por parejas, como hace la evolución darviniana, sino que usaban
+emociones para seleccionar subproblemas y resoluciones. El hambre y la
+perplejidad son dos de los ^sentimientos^ que influencian la resolución
+a aplicar: el ^hambre^ porque selecciona un subproblema y desatiende los
+otros, y la ^perplejidad^ porque se concentra en la mejora del ^modelo^.
+
+Ya nos habíamos topado con los sentimientos. Entonces no profundizamos
+en el asunto, y me limité a apuntar que los sentimientos más
+fundamentales son, también, los significados más básicos. Ahora voy a
+remediar la situación.
+
+
+\Section La emoción
+
+Para que tenga una visión más panorámica de nuestro linaje, intentaré
+engarzar esta evolución abstracta deducida directamente de la ^teoría
+del problema^ con nuestra propia línea evolutiva.
+
+Los adaptadores de los que nosotros descendemos ya usaban ^objetos^. Por
+esto es tan difícil erradicar el ^objetivismo^, arraigado como está
+desde hace quinientos millones de años. El ^gobernador^ de estos
+adaptadores seleccionaba el comportamiento actual en función de los
+objetos que la percepción determinaba que estaban presentes. Para cada
+combinación de objetos presentes, tenían predeterminado genéticamente un
+^comportamiento^.
+
+En cierto punto de nuestro linaje apareció un ^aprendiz^, esto es, un
+organismo que era capaz de crear, destruir y modificar los objetos y las
+relaciones entre los objetos. El propósito de estas variaciones era que
+la red de objetos interna fuera capaz de pronosticar con acierto el
+^comportamiento^ del ^entorno^ ^exterior^. Si todo iba bien, el
+resultado era una ^realidad^ de objetos que se comportaba como el
+exterior. ¿Tengo que repetir que esto es perfectamente posible sin que
+fuera haya objetos?
+
+El siguiente jalón tuvo lugar cuando apareció un ancestro capaz de
+ejecutar varias resoluciones que seleccionaba en función de sus
+^sentimientos^, o sea, un ^conocedor emocional^. Normalmente el
+conocedor emotivo funciona como un aprendiz, pero cuando reconoce que el
+^modelo^ interior no pronostica con acierto, esto es, cuando se siente
+^perplejo^, puede tantear entre varios comportamientos predeterminados,
+que es como funciona un adaptador. Otro sentimiento es el ^miedo^, que
+ocurre cuando el conocedor emocional no encuentra en sus simulaciones un
+comportamiento que solucione el problema. Pues bien, la ^teoría del
+problema^ dice que, tampoco en estas circunstancias, debe el ^conocedor^
+comportarse como un ^aprendiz^. Es decir, el conocedor debe evitar
+aprender cuando siente miedo, porque generalizar en coyuntura tan
+adversa podría hacerle caer en el ^atractor depresivo^ de \[Camus].
+
+
+\Section El sujeto
+
+El ^conocedor^ es un tanteador de resoluciones, y los tanteadores tienen
+un defecto, a saber, que necesariamente yerran y no escarmientan, ya que
+no aprenden de sus equivocaciones. Así que el ^adaptador^ no aprende a
+comportarse, ni el conocedor aprende a resolver. Entonces, si el
+conocedor era con las resoluciones lo que el adaptador con las
+soluciones, ahora el ^sujeto^ será a las resoluciones lo que el
+^aprendiz^ era a las soluciones. El aprendiz interioriza las soluciones
+y el sujeto interioriza las resoluciones. El aprendiz aprende a
+comportarse y el sujeto aprende a resolver.
+$$\vbox{\halign{\strut
+  \hfil#\quad&\vrule\quad\hfil#\hfil&\quad\hfil#\hfil\quad\vrule\crcr
+  &           Tanteo&    Traslación\cr
+  \noalign{\hrule}
+  Solución&   Adaptador& Aprendiz\cr
+  Resolución& Conocedor& Sujeto\cr
+  \noalign{\hrule}}}$$
+
+La ^teoría del problema^ no nos proporciona más ^categorías^, de manera
+que, añadiendo el primer eslabón de la cadena, que es el mecanismo que
+implementa la resolución rutinaria, completamos los cinco jalones de la
+^evolución^ de resolutores que culmina en el sujeto.
+$$\hbox{Mecanismo} \supset \hbox{Adaptador} \supset
+  \hbox{Aprendiz} \supset \hbox{Conocedor} \supset \hbox{Sujeto}
+$$
+
+Continuando la comparación del sujeto con el aprendiz, el ^sujeto^ tiene
+tres partes: una ^mente^, como la del conocedor, capaz de varias
+resoluciones; un ^inquisidor^, que construye dentro del sujeto un
+^modelo^ del problema externo; y una ^razón^ que prevé el resultado de
+resolver de distintas maneras el problema encontrado por el inquisidor.
+Como la razón del sujeto tiene que representar y ejecutar resoluciones,
+ha de emplear un ^lenguaje simbólico^, con ^sintaxis recursiva^. Esto
+exige que la razón del sujeto sea un ^motor sintáctico^~${\cal P}_{\frak
+U}$. Ya era hora de empezar a cuadrar filosóficamente los resultados
+obtenidos siguiendo a \[Gödel] y \[Turing].
+$$\hbox{Sujeto}
+    \llave{Inteligencia
+            \llave{Inquisidor\cr
+                   Razón = ${\cal P}_{\frak U}$}\cr
+           Mente\strut}$$
+
+
+\Section La consciencia
+
+Lo más propio del ^sujeto^ es el simbolismo con sintaxis recursiva que
+le permite representarse internamente problemas y resoluciones. Y basta
+entonces percatarse de que el propio sujeto es un resolutor, para
+concluir que el único resolutor que puede representarse a sí mismo es el
+sujeto. El sujeto puede representarse la situación completa, esto es, el
+problema al que se enfrenta y a sí mismo como resolutor. Queda así
+demostrada matemáticamente la ^consciencia^ y la ^autoconsciencia^ de
+los sujetos.
+
+Piense en ello, porque siendo, como es, requisito indispensable que los
+sujetos dispongan de una ^razón^ con ^lenguaje simbólico^, y siendo
+nuestra especie \latin{^homo sapiens^} la única que emplea un lenguaje
+simbólico, la conclusión es que los únicos sujetos vivos somos nosotros.
+Somos la consciencia de la ^vida^.
+
+El mismo argumento, a saber, que un simbolismo permite la representación
+de resoluciones, sirve para fundamentar la ^empatía^ de los sujetos. El
+único resolutor que puede representarse a otro resolutor es un sujeto,
+porque sólo un sujeto puede representarse resoluciones. Resulta,
+entonces, que nosotros los sujetos podemos ponernos empáticamente en el
+lugar del ^patito^ que se ha perdido de su madre, pero un pato no puede
+ponerse en el lugar de otro pato. ¿Le parece extraño? Puede parecerlo,
+pero, si mi ^teoría del problema^ es correcta, así es como es, y no de
+otra manera.
+
+
+\Section Hipótesis
+
+Hemos tenido que conectar tantos conceptos para alcanzar nuestra meta de
+explicar la ^consciencia^ ---^vida^ con ^problema^, ^resolución^ con
+^simbolismo^, ^motor sintáctico^ con ^razón^, y ^sujeto^ con
+^evolución^--- que ahora mismo, de súbito, mi demostración de la
+consciencia podría parecerle confusa, o aun inconcebible. Para intentar
+aclarar sus dudas, o, por lo menos, para centrárselas, le resumiré los
+hechos y las hipótesis que nos han traido hasta aquí. Aviso: calificaré
+como ^hecho^ cualquier aserción que tenga un grado de veracidad, no
+absoluto, ya que no creo en tanto por culpa de \[Lakatos], pero tampoco
+menor al de una demostración matemática.
+
+Es un hecho que, para poder representar las resoluciones de los
+problemas, han de cumplirse ^cuatro condiciones^ concretas: oraciones en
+forma de árbol, variables libres, asignación ilimitada y condiciones. Es
+un hecho que el _cálculo<lambda>~$\lambda$ de \[Church] queda definido
+necesaria y suficientemente por esas cuatro condiciones. Es un hecho que
+todas las sintaxis recursivas son equivalentes; en particular el
+cálculo~$\lambda$ es equivalente a los lenguajes tratados por las
+^máquinas universales^ de \[Turing], que disponen de un ^motor
+sintáctico^. Es un hecho que un resolutor que disponga de un motor
+sintáctico será capaz de representarse resoluciones y, por lo tanto, a
+sí mismo ---y he denominado ^sujeto^ a un resolutor con motor
+sintáctico.
+
+Es una ^hipótesis^, aunque incontestada desde su formulación en 1936, que
+cualquier transformación sintáctica que podamos ^imaginar^ puede
+realizarla una máquina universal de \[Turing], o, más específicamente,
+su motor sintáctico, siempre que disponga de bastante tiempo y de una
+cinta lo suficientemente larga ---esta es la ^tesis de
+\[Church]-\[Turing]^. Y, que la tesis de \[Church]-\[Turing] sea
+verdadera, significa que nosotros diponemos de un motor sintáctico. Es
+una hipótesis que la ^vida^ es un ^problema^, {\em el} problema, y, si
+lo es efectivamente, entonces nosotros somos sujetos vivos, es decir,
+resolutores con motor sintáctico del ^problema aparente de la
+supervivencia^.
+
+Los párrafos anteriores son densos, lo sé. Lo que no sé es cómo explicar
+por qué aprendemos antes a hablar que a dibujar sin tanto ni tan
+sofisticado aparato teórico. Y es que, claro, la inocente preguntita me
+ha obligado a explicar la consciencia, que no es fácil, ¿o sí? En
+cualquier caso, ya iba siendo hora de reanudar la búsqueda de ^grietas^,
+que, con tanta elucubración, teníamos algo abandonada. Además, me parece
+que lo que viene es más fácil. ¡Sígame, por favor!
+
+
+\Section El nacimiento
+
+Para empezar, le plantearé una ^aporía^ relacionada con la
+^consciencia^. No se recuerda el ^nacimiento^ propio ni a los cuatro
+años de edad, cuando la retentiva es grande, sólo han pasado cuatro
+años, y el nacimiento es un suceso altamente extraordinario. ¿Por qué no
+recordamos nuestro nacimiento?
+
+Según la teoría presentada, que liga la consciencia al ^lenguaje
+simbólico^, la causa podría ser que al nacer todavía no hemos
+desarrollado el ^habla^. O sea, que los recién nacidos no disponen de un
+lenguaje simbólico, por esto no son conscientes, y sólo se recuerda
+conscientemente lo experimentado conscientemente. Yo, desde luego, así
+lo creo. Veamos.
+
+Sólo tenemos acceso consciente a lo que es tratado por la ^razón^, y la
+razón es un ^motor sintáctico^ que sólo trata con palabras. Las
+^palabras^ simbólicas son objetos ---ya lo veremos---, pero no todos los
+objetos son palabras. Entonces, el único enlace que tiene la consciencia
+con los objetos no verbales, que son los objetos que no son palabras, es
+a través del puente de las palabras semánticas, porque éstas se
+refieren, precisamente, a objetos que no son palabras. Y, para poder
+recuperar a la consciencia objetos no verbales, antes ha de establecerse
+una conexión entre dichos objetos y las palabras.
+$$\hbox{\sl Habla\/} =
+  \hbox{\sl Razón\/} =
+  \hbox{\it Ratio\/} =
+  \hbox{\it Logos\/} =
+  \Lambda\acute o\gamma o\varsigma$$
+
+La consciencia sólo alcanza directamente las palabras. Lo que no se
+verbaliza, ni como ^pensamiento^ ni como ^habla^, queda inaccesible a la
+^consciencia^. Al menos, directamente.
+
+
+\Section El despertar
+
+La ^muerte^ no puede experimentarse directamente ---yo, al menos, no se
+lo aconsejo. Pero, hay un asunto relacionado que sí podemos investigar:
+la pérdida de ^consciencia^. Cada día, cuando nos quedamos dormidos,
+pasamos necesariamente de la consciencia a la falta de consciencia, así
+que yo he intentado muchas veces recordar el instante preciso en el que
+se produce el tránsito. Nunca lo he conseguido, y sospecho que es
+imposible. ¿Por qué es imposible ser consciente del último instante de
+consciencia antes de dormir?
+
+Yo me he buscado una explicación, que examina primero el ^despertar^. Si
+estoy dormido en un instante $t$, y soy despertado bruscamente en el
+instante siguiente $t+1$, como todavía está en la ^memoria a corto
+plazo^ lo sucedido en $t$, resulta que el instante $t$ pasa a ser
+consciente. Por eso, en estos casos, se recuerda el ^sueño^ que se está
+teniendo. Pero, si no me hubieran despertado en $t+1$, entonces el
+instante $t$ seguiría siendo inconsciente. Esto demuestra que en el
+instante $t$ puede no saberse si en el propio instante $t$ estoy
+consciente, o no lo estoy. ¿No es inquietante?
+
+Algo similar ocurre cuando nos quedamos dormidos. No es posible recordar
+el último instante de consciencia, porque para recordarlo
+conscientemente sería preciso ligarlo a algunas palabras, y para
+realizar tal operación sería necesaria una acción consciente, ya que es
+con palabras, en el instante siguiente, prolongándose entonces la
+^vigilia^. De modo que es imposible recuperar el último instante de
+consciencia que se tuvo justo antes de dormir. Esto es curioso, porque
+significa que podemos ser conscientes en un instante que vamos a ser
+incapaces de recuperar. Y esto es extraño, porque esto es como lo que
+ocurre al soñar, y lo que, en cambio, no sucede cuando estamos
+despiertos. Expresado paradójicamente, resulta que el último instante en
+el que estamos despiertos, ya estamos durmiendo.
+
+Somos conscientes mientras estamos despiertos, aunque la consciencia
+puede recuperar de la memoria a corto plazo un retazo de sueño y, a
+cambio, cuando nos quedamos dormidos, perdemos los últimos instantes
+de consciencia.
+
+
+\Section El sueño eterno
+
+No somos sujetos al nacer, así que todos sabemos lo que significa no ser
+sujetos. Es actuar sin que nuestros actos nos dejen recuerdos
+conscientes de lo que hemos hecho. Es como vivir un ^sueño^ eterno. ¿No
+sería una ^pesadilla^?
+
+Pero tampoco tiene que retroceder a su niñez para hacerse una idea de la
+diferencia que supone la ^consciencia^. Supongamos que usted es un
+cocinero experimentado, que su plato favorito es la ^tortilla^, y que ha
+hecho miles de ellas. Supongamos que hoy está muy preocupado y que
+mientras preparaba la tortilla no ha dejado de pensar en el asunto que
+le inquieta. Entonces le preguntan si hay ^mantequilla^ en la ^nevera^.
+Usted no lo sabe. Aunque se da cuenta de que ha tenido que abrirla para
+tomar los huevos, y que la mantequilla suele colocarse en la misma
+repisa que los huevos, no es consciente de haber abierto la nevera
+porque no lo recuerda. Mucho menos puede decir si hay mantequilla
+dentro. Ha cocinado la tortilla sin ser consciente de ninguno de los
+pormenores de su actividad.
+
+Aunque usted no haya experimentado este suceso concreto, estoy seguro de
+que puede contar muchos otros casos similares en los que ha realizado
+una actividad sin ser consciente de ella. Si, por ejemplo, hace cada día
+el mismo trayecto para ir desde su casa hasta la oficina en donde
+trabaja, es fácil que sus pensamientos le distraigan la atención, y sea
+inconsciente del camino recorrido. Si va caminando, entonces es seguro
+que ha evitado a los otros transeuntes, aunque no recuerde siquiera si
+se ha cruzado alguno o no. Esto muestra que el comportamiento no
+consciente puede ser muy complejo, y que la complejidad no marca la
+diferencia que media entre un acto consciente y otro que no lo es.
+
+Pero, si se encuentra de pronto algo inesperado en su ^rutina^ diaria,
+entonces abandona sin dilación sus pensamientos y atiende inmediatamente
+a lo que sucede a su alrededor. Usando los conceptos de la ^teoría del
+problema^, la explicación es que cuando falla la resolución por rutina
+es necesaria otra resolución, y por esta causa la ^atención^ se centra
+en el problema a resolver. Si fuéramos conocedores emocionales, entonces
+tantearíamos otra resolución guiándonos por nuestros sentimientos. Como
+somos sujetos, razonamos sobre varias posibles resoluciones que
+evaluamos mentalmente antes de decidirnos por una.
+
+Merced al ^lenguaje simbólico^, los sujetos podemos representarnos
+internamente las resoluciones posibles para ver, en su acepción
+introspectiva, cuál soluciona mejor el ^problema^ antes de acometer
+actualmente la resolución más prometedora. Esto es ^razonar^.
+
+
+\Section La reflexión
+
+A mi me parece que la ^consciencia^ va monitorizando lo que pasa por la
+^memoria a corto plazo^. Lleva necesariamente un pequeño retraso con
+respecto a lo que ocurre, pero proporciona ^reflexión^. Literalmente, la
+consciencia refleja lo que vemos sobre lo que vemos. Por eso, se ha
+confundido muchas veces la consciencia con un ^homúnculo^, esto es, con
+un pequeño hombrecillo que ve lo que nosotros vemos y entonces toma las
+decisiones conscientes. El truco, como digo, no lo hace un homúnculo,
+sino un ^espejo^.
+
+Al nivel más abstracto de la teoría del problema, la reflexión es
+posible merced a la ^sintaxis recursiva^ del ^lenguaje simbólico^, que
+permite ver resoluciones a un resolutor, el sujeto. Pero quizás sea más
+interesante investigar la situación en nuestro caso concreto, ligado al
+uso de objetos.
+
+Decíamos que la ^percepción^ tomaba los datos de los sentidos, como por
+ejemplo los puntos de color de la retina, y entregaba un dibujo a modo
+de resumen de la situación, en el que aparecían trazados los límites
+entre los ^objetos^ reconocidos. Si la imagen retinal es como la
+^fotografía^ aérea de una región, los objetos son las parcelas
+etiquetadas que superponemos a la foto para interpretarla. El propósito
+de la percepción es _resumir<comprimir> ^información^, básicamente
+señalando qué objetos están presentes. Lo repito una vez más, aun a
+riesgo de ser pesado: no es que fuera haya objetos, es que nosotros
+trabajamos sobre resúmenes sumarísimos en forma de objetos y, lo más que
+podemos decir, es que esta simplificación funciona en la práctica lo
+suficientemente bien.
+
+En los lenguajes semánticos, la palabra es una propiedad adicional del
+objeto, como su forma o su color. La primera diferencia entre los
+lenguajes semánticos y los simbólicos es que la ^palabra^ en un
+^lenguaje simbólico^ es, ella misma, un ^objeto^. Como los objetos ya
+eran las entidades cognitivas autónomas para nuestros antepasados, la
+manera que la ^evolución^ encontró de implementar las palabras meramente
+sintácticas, que no se refieren a ningún objeto semántico, o sea, que
+están libres de significado y, por lo tanto, son autónomas, fue hacer
+que las palabras fueran ellas mismas objetos, y no propiedades de
+objetos. No me entienda mal, seguramente ocurrió al revés, y fue el
+hecho más o menos fortuito de hacer objetos con las palabras el que hizo
+posible, como efecto colateral no buscado, la aparición del simbolismo
+y, consiguientemente, de la reflexión.
+
+
+\Section La escritura
+
+Independientemente de como haya sido la secuencia histórica y las causas
+del origen del simbolismo en los humanos, es importante que nosotros
+distingamos las propiedades de la ^palabra^ de las propiedades de la
+^cosa^ a la que se refiere la palabra simbólica. Por ejemplo, la palabra
+`^piedra^' es bisílaba, pero la cosa piedra no tiene dos sílabas.
+
+Las ^palabras semánticas^ son aquéllas que, como la palabra `piedra', se
+refieren directamente a un ^objeto semántico^. Pero, en general, las
+palabras de los lenguajes simbólicos, al ser objetos enteros y no meras
+propiedades, no tienen que referirse necesariamente a objetos
+semánticos. De esta manera, las palabras simbólicas pueden ser meros
+artefactos sintácticos. Por ejemplo, la palabra `^qué^' es puramente
+sintáctica y no hace referencia a ningún objeto semántico.
+
+Que las palabras sean objetos tiene otra consecuencia, seguramente
+tampoco buscada, pero también importante. Cada objeto tiene varias
+propiedades distintivas, de manera que puede ser reconocido por
+cualquiera de ellas ---el olor de la carne en la parrilla nos sirve tan
+bien para reconocerla como si la viéramos. Pues cuando la ^palabra^ es
+un ^objeto^, también puede ser reconocida de diferentes modos, y por eso
+las palabras simbólicas pueden ser vistas, además de oídas. La
+^escritura^ es posible porque las palabras simbólicas son objetos.
+
+
+\Section Una vida de perros
+
+Suponga que describe usted en un ^lenguaje simbólico^, por ejemplo en su
+idioma materno, lo que está viendo. Las palabras de su descripción
+tomarán el dibujo producido por su ^percepción^, y señalarán los objetos
+semánticos que estén presentes en él. Compare ahora lo que hace al
+describir, con lo que hace al ver. ^Ver^ es tomar la imagen fotográfica
+de la ^retina^ y señalar qué objetos están presentes, así que el
+lenguaje simbólico permite, no ver lo que hay fuera, sino ver lo que se
+ve. Así es como la ^reflexión^ produce ^introspección^.
+
+No se quede ahí. Intente imaginarse lo que es ver sin poder ver lo que
+ve. ¿Puede? Es, otra vez, como un ^sueño^, o como lo que hace abstraido.
+En el sueño ve lo que ocurre, le inspira sentimientos, pero ni actúa
+voluntariamente ni reflexiona sobre ello, así que queda olvidado, como
+si no lo hubiera vivido. Aunque esto no es del todo así, porque le
+queda, aunque inaccesible para la ^consciencia^, del mismo modo que que
+le quedan los acontecimientos de la más tierna infancia. Así es la vida
+de los perros y de otros seres vivos que calificaríamos de conocedores.
+
+La vida de los conocedores está siempre atada al ^presente^. Los
+conocedores viven ligados, engranados y nunca distanciados de su propio
+presente. ^Ven^ lo que ocurre, pero no ven lo que ven, y, entonces, no
+pueden reinterpretarlo. Ven, pero no ven; porque ven, en su acepción
+perceptiva, pero no ven, en su acepción introspectiva. Sólo pueden
+evaluar lo que ocurre en el instante en el que está ocurriendo, es
+decir, en tiempo real, que diría un ^ingeniero^ en su jerga.
+
+Tanto a los conocedores como a los aprendices el ^pasado^ les influye
+porque su actividad va modificando la ^realidad^, que es su ^modelo^ de
+cómo se comporta lo ^externo^. Por ejemplo, un ^perro^ recuerda si su
+amo ya llegó a casa. Cuando su amo está en casa, el perro está más
+contento, emoción que inferimos de su comportamiento, que entonces es
+más dinámico y alegre. Pero no recuerda del mismo modo que nosotros y,
+por ejemplo, no puede rememorar el momento de la llegada. Es decir, si
+su amo está o no en casa es un dato de su modelo interno, de su
+realidad, que el perro actualiza adecuadamente y que efectivamente
+condiciona sus emociones y su comportamiento, pero que no puede manejar.
+El pasado para los conocedores es como la ^percepción^ para nosotros los
+sujetos, es decir, es algo que viene dado y es inalterable, es un dato
+impuesto e involuntario, y no como nuestros recuerdos, que podemos
+rememorar trayéndolos voluntariamente al presente.
+
+
+\Section El símbolo
+
+Así que el ^pasado^ influye en los conocedores, aunque no puedan
+rememorar. Es decir, los conocedores no pueden volver a ver. No pueden
+hacer que los mecanismos perceptivos, capaces de analizar las
+situaciones, retomen situaciones pasadas. Los conocedores no disponen de
+^introspección^, no ven su propio interior. Y como tampoco ven el
+interior de los demás, tampoco disponen de ^empatía^.
+
+Para ver lo que se ve, la ^palabra^, que en un principio era una
+propiedad más del ^objeto^, tuvo que ser ella misma un objeto. Así que,
+en la ^revolución simbólica^, la palabra pasó, de ser un signo sonoro
+que servía para reconocer un objeto, a ser todo un objeto. A la palabra
+que es objeto la denominamos ^símbolo^. Como las palabras simbólicas
+son, ellas mismas, objetos, pueden ser etiquetas de otras palabras
+simbólicas, implementando así la recurrencia sobre los objetos. Hay
+otros pasos que también son necesarios para alcanzar la ^recursividad^
+---¿se acuerda de las cuatro condiciones?---, pero éste fue seguramente
+el primero y decisivo.
+
+En fin, es importante que entienda la diferencia que existe entre
+nosotros los sujetos y los conocedores. Y aun más que la comprenda
+dentro de usted mismo, es decir, que sea usted capaz, al menos, de
+atisbar cómo se enfrenta al problema de la supervivencia un ^conocedor^,
+como lo es, por ejemplo, su perro. A mi me produce escalofríos, pero,
+además de aterrador, es esclarecedor.
+
+
+\Section Freud
+
+A pesar de lo que afirmaba \[Calderón], la vida de los sujetos no es
+^sueño^. Aunque casi es cierto que seguimos soñando cuando estamos
+despiertos y conscientes. Quiero decir que, como descubrió \[Freud], la
+vida del ^sujeto^ no coincide con la vida consciente del sujeto. Hay, en
+todo momento, una parte que es ^inconsciente^. En los sueños que
+recuperamos a la consciencia cuando el ^despertar^ es brusco, podemos
+observar el funcionamiento en solitario del inconsciente, pero esto no
+implica que cuando estamos despiertos y conscientes operen únicamente
+los procesos conscientes. Lo hacen, pero no somos conscientes de ellos.
+La acción de la consciencia no apaga el inconsciente, sino que se
+superpone a él. Otra ^tautología^: no somos conscientes de nuestros
+procesos inconscientes.
+
+La ^consciencia^ es sólo un espejo levísimo y sutilísimo que refleja la
+superficie de un vasto, profundo y poderoso mar. Sutilísimo porque el
+reflejo lo produce el ^habla^, así que son unos simples sonidos efímeros
+e insustanciales ---las palabras--- los que nos dejan ver lo que vemos.
+
+Es mucho más lo que desconocemos que lo que conocemos de nosotros
+mismos. Algunos poetas lo adivinaron ya hace algún tiempo: nuestro yo
+consciente es una suerte de novela que cada uno va escribiendo sobre uno
+mismo; usted y yo también. Y da miedo pensar que las ^autobiografías^
+son el género literario menos veraz, menos que la ^biografía^ y la
+^historia^, y mucho menos que la ^sátira burlesca^ y el ^libelo
+difamatorio^. Para que no pueda desdecirme en un futuro, prometo
+solemnemente, aquí y ahora, que denunciaré, sin reparar en gastos y por
+todos los medios que hubiere a mi alcance, al editor que se atreviere a
+publicar mi autobiografía. Por su provecho, le animo a que se adhiera
+usted a este juramento.
+
+La ^consciencia^ del ^sujeto^ coincide con su ^razón^, que es aquella
+parte en la que puede representarse las resoluciones, y así evaluarlas
+mentalmente. Si usted divide racionalmente un ^problema^ en otros dos,
+entonces conocerá las razones por las que lo hizo. Pero es mucho más lo
+que usted hace y determina fuera del alcance de su consciencia,
+muchísimo más, que lo que decide racionalmente. Por este motivo, usted
+desconoce la causa de sus sentimientos, el origen de la ^realidad^, y el
+sentido de la ^vida^. ¿Por qué vivimos? Yo tampoco lo sé.
+
+Nuestra ^introspección^ es muy limitada y superficial. Vemos cada vez un
+único ^problema^, y no vemos sus raíces, sino únicamente lo que aflora a
+la ^consciencia^. Así, nuestras explicaciones de nuestros propios
+propósitos son frecuentemente racionalizaciones urdidas por nuestra
+parte consciente, que hacen inferencias a partir de los resultados, pero
+sin llegar a los orígenes, y, por lo tanto, sin alcanzar los motivos
+profundos ni las causas primeras de nuestros propios actos.
+
+
+\Section Pensar es hablar sin decir
+
+Estas afirmaciones se siguen fácilmente del hecho de que nosotros no
+somos unos ^sujetos^ cualesquiera, sino que somos unos sujetos muy
+concretos diseñados por la ^evolución^ darviniana a partir de unos
+^conocedores^, desconocidos ahora, pero que en su día fueron también
+unos conocedores muy concretos. Nuestros antepasados fueron unos
+conocedores concretos que descendieron, posiblemente, de otros
+conocedores concretos. Antes, en nuestra línea evolutiva hubo
+^aprendices^, y aun antes ^adaptadores^, y al principio ^mecanismos^.
+
+Nuestra línea de ^evolución resolutiva^ ha pasado, creciendo en
+complejidad, por los siguientes jalones:
+$$\vbox{\halign{#\hfil&\quad#\hfil\cr
+ Mecanismo& Resolución por rutina\cr
+ Adaptador& Resolución por tanteo de soluciones\cr
+ Aprendiz&  Resolución por traslación de soluciones\cr
+ Conocedor& Resolución por tanteo de resoluciones\cr
+ Sujeto&    Resolución por traslación de resoluciones\cr
+ }}$$
+
+Somos parte de una línea evolutiva porque la ^evolución^ darviniana
+diseña por ^tanteo^ combinatorio y acumulativo con mutaciones. Es decir,
+que tenemos cuatro miembros y cada miembro cinco dedos, no porque ésta
+sea una decisión de diseño especialmente adecuada al proyectar un
+^sujeto^, sino porque, en algún momento de nuestra línea evolutiva, un
+diseño con esas características tuvo la oportunidad y la suerte de
+prosperar y dejar descendencia. Nosotros simplemente heredamos esas
+peculiaridades.
+
+Es así que somos un conocedor que habla. El ^pensamiento^ no es otra
+cosa que un ^habla^ internalizada. Esto ya lo vio en 1934 \[Vygotsky]
+estudiando el desarrollo psicológico de los ^niños^, y más recientemente
+\[Bickerton] en sus investigaciones sobre las lenguas francas, que no
+francesas. Tuvo que ser así, y además tengo una prueba empírica. Se
+trata de una disculpa: `perdona que no te haya entendido, pero es que
+estaba pensando en otra cosa'. La disculpa funciona porque es cierto que
+no podemos entender lo que nos dicen cuando estamos pensando en otros
+asuntos. Y la explicación más plausible del fenómeno es que también al
+pensar utilizamos el mecanismo que descodifica el habla, quedando así
+ocupado. Sí, lo está entendiendo bien, le estoy diciendo que al pensar
+tenemos que escucharnos a nosotros mismos.
+
+Pensar es hablar con uno mismo, y hablar es pensar entre varios.
+
+
+\Section El motor sintáctico
+
+Somos ^sujetos^ diseñados a partir de un conocedor. Al parecer, nuestro
+diseño ha consistido, simplificándolo casi hasta la caricatura, en tomar
+un ^conocedor^ de entre los primates para añadirle, de alguna manera, un
+^lenguaje simbólico^. Como sabemos, además de los mecanismos necesarios
+para producir y descodificar secuencias sonoras complejas, cuyo diseño
+no nos interesa aquí especialmente, lo esencial e indispensable para
+procesar un lenguaje simbólico es disponer de un ^motor sintáctico^.
+
+Entiéndalo bien porque, aunque no es fácil, es fundamental. Una vez que
+se dispone de un motor sintáctico, pero no antes, la decisión de cómo
+implementar cada procedimiento, física o algorítmicamente, es una mera
+cuestión de eficiencia, y ya no de eficacia. Se trata de un compromiso
+ingenieril en el que se intercambia ^velocidad^ por ^complejidad^. El
+procedimiento se ejecutaría más rápido físicamente, pero para ello
+habría que complicar el motor sintáctico con operaciones que no son
+estrictamente necesarias.
+
+Para que se haga una idea, es como decidir qué teclas poner en una
+^calculadora^. La de la multiplicación, aunque es redundante porque una
+^multiplicación^ es una ^suma^ reiterada, aparece en todas porque se usa
+con mucha frecuencia. En cambio, la tecla del ^logaritmo^ neperiano,
+aunque ahorra todavía más operaciones, sólo la tienen las calculadoras
+científicas, porque se emplea raramente. Pues bien, el descodificador de
+secuencias sonoras complejas y el preprocesador que hace el ^análisis
+sintáctico^ superficial de \[Chomsky] no son esenciales porque el ^motor
+sintáctico^ podría suplirlos, aunque tendríamos que hablar muchísimo más
+despacio.
+
+La cantidad de ^información^ necesaria para describir un ^motor
+sintáctico^ no es muy grande, del orden de los diez mil bitios. De
+hecho, es mucho menor que la precisa para describir los mecanismos que
+descodifican la secuencia sonora del habla. Y los componentes necesarios
+para construir un motor sintáctico pueden ser simplicísimos; son
+suficientes puertas lógicas elementales o, incluso, como nos enseñaron
+\[McCulloch] y \[Pitts], ^neuronas^ simplificadas. Además, se aprovechó
+toda la maquinaria de manipulación de objetos y propiedades que ya
+utilizaban nuestros antecesores primates.
+
+
+\Section El diseño por acreción
+
+Otro punto del diseño de nuestra especie como sujetos consiste en que el
+^motor sintáctico^ está acoplado al resto de la maquinaria cognitiva por
+la ^memoria a corto plazo^. Sólo podemos conjeturar sobre las ventajas e
+inconvenientes de este punto de ensamblaje frente a otras posibilidades.
+Podemos suponer que no requirió modificaciones muy profundas del
+cerebro, y que proporcionó unas ventajas suficientes para perdurar.
+
+Seguramente la memoria a corto plazo ya era, para nuestros antecesores,
+el punto en el que el mecanismo de la ^atención^ reunía los resúmenes
+más importantes elaborados por los sentidos y los órganos perceptivos y
+propioceptivos, y desde el que se generaban las secuencias de órdenes de
+actuación hacia los órganos efectores y los músculos. De ser así, la
+memoria a corto plazo ya era entonces el lugar del ^control^ máximo y
+más global.
+
+Así que una de las consecuencias del diseño incremental y acumulativo
+que es típico de la evolución darviniana, es que nosotros no somos unos
+sujetos diseñados integralmente, sino por ^acreción^. Pero no vamos a
+quejarnos ahora, digo yo. Además, ¿a quién demandar?
+
+
+\Section El homúnculo
+
+En esta descripción, la situación de la ^consciencia^ racional con
+respecto al conjunto del sujeto semeja a la del ^presidente^ de una
+enorme ^empresa^ que no puede salir de su ^despacho^. Al presidente le
+llegan informes globales sobre el estado de su propia corporación, sobre
+la competencia, y sobre todos los asuntos relativos a su negocio. Estos
+informes le pueden llegar periódicamente, o a petición propia, o incluso
+por decisión de sus subordinados. De los informes, el presidente puede
+deducir qué es lo que va mal, o qué puede llegar a convertirse en un
+^problema^, y ordenar en consecuencia las acciones correctivas que
+estime oportunas. También puede tomar la iniciativa para mejorar la
+situación de la empresa, si deduce de los informes que el momento es
+propicio. Por último, los problemas que no hayan podido ser solucionados
+a otro nivel corporativo, le serán planteados al presidente para su
+resolución.
+
+Si la empresa es grande y compleja, creer que lo único que sucede es
+aquello que el presidente observa y decide es, en palabras llanas, un
+grave error de perspectiva. El mismo error, traspuesto al caso del
+sujeto, es creer que solamente ocurre aquello de lo que el ^sujeto^ es
+consciente. Por ejemplo, nos parece que ^ver^ es más fácil que ^dividir^
+porque somos inconscientes de los procesos perceptivos preparatorios y
+sólo somos conscientes de su resultado ya acabado ---¿se acuerda del
+^restaurante^?---, igual que al presidente le parece que su trabajo es
+el más difícil, y cree que por eso es el mejor pagado.
+% Quién tiene el poder de fijar los sueldos.
+
+En los sistemas políticos de ^gobierno^, suele ser muy acertado limitar
+el tiempo de permanencia en el ^poder^. Esta disposición, además de
+evitar el nocivo enquistamiento de las estructuras clientelares, evita
+el enojoso distanciamiento entre las necesidades del ^pueblo^ y las de
+sus gobernantes. Observe usted que, trasladándonos de nuevo al ^sujeto^,
+esta ruptura entre las necesidades conscientes y racionales, por un
+lado, y las necesidades corporales y afectivas, por el otro, se
+corresponde con la ^demencia^.
+
+
+\Section El robot
+
+Antes de seguir quiero zanjar definitivamente una cuestión. La
+diferencia fundamental entre una ^computadora^ y una persona es que la
+persona humana es un ^sujeto^ del ^problema de la supervivencia^
+diseñado por ^acreción^ a partir de un ^conocedor emotivo^, y la
+computadora es un ^motor sintáctico^.
+
+La computadora no es un sujeto completo, sino una de sus partes,
+básicamente la que corresponde a la ^razón^. Puede razonar con total
+precisión y a enorme velocidad, pero, como le falta un ^inquisidor^, no
+ve el mundo como un ^enigma^, que es como lo vemos los sujetos. Que la
+computadora no sea un sujeto, no quiere decir que no se pueda construir
+una máquina que sea un sujeto de cierto problema. Es posible, y, además,
+la razón de tal sujeto tendría que ser una computadora. Denominaremos
+^robot^ a cualquier artefacto que sea un sujeto.
+
+Se abren, en este punto, varias vías de análisis para el investigador
+interesado en los robotes. La principal se refiere a la elección del
+^problema del robot^: ¿debería ser el ^problema de la supervivencia^? De
+serlo, el robot sería en cierto modo parte de la ^vida^, pero, para
+serlo de pleno derecho debería ubicarse en la ^cadena trófica^, que es
+la cadena alimentaria, así que sus adquisiciones de energía deberían
+producirse por ^combustión^ de materia orgánica, y también su
+constitución material debería componerse exclusivamente de materia
+orgánica. El otro problema ingenieril a resolver para crear un robot
+vivo concierne a su reproducción. Los peligros, para la propia vida, de
+diseñar un robot vivo, o sea, una máquina que sea un sujeto del problema
+de la supervivencia, son grandes y las dificultades técnicas mayores que
+si se elige otro problema.
+
+Si, animados por estas advertencias, los robotes se diseñaran para
+ayudar a las personas, entonces su problema no sería el de la
+^supervivencia^, y las intuiciones de \[Asimov] podrían ser realizadas.
+En este caso, el diseño del robot como ^sujeto^ sería mucho más limpio y
+nítido que el de nosotros los humanos. De todos modos, si uno de los
+requisitos del diseño de los robotes es que se puedan entender y
+comunicar con nosotros, entonces deberán imitar algunas de nuestras
+peculiaridades.
+
+
+\Section Humano, demasiado humano
+
+Para mi, lo más interesante del diseño de los ^robotes^ atañe a su
+^consciencia^. La nuestra, como consecuencia de haber sido diseñados por
+^acreción^, está estrechamente ligada a la ^memoria a corto plazo^ y por
+esto ejerce un ^control^ centralizado, pero la consciencia de los
+robotes puede ser mucho menos angosta y mucho más distribuida. De ser
+así, la consciencia y el yo del robot no podrán valerse de la metáfora
+del ^homúnculo^ ^presidente^. La cuestión es si, a pesar de estas
+diferencias, todavía podríamos entendernos.
+
+La otra divergencia grande entre nosotros los humanos y los robotes
+concierne a los sentimientos que, en nuestro caso y por el mismo motivo
+de diseño, tienen un peso muy grande, incluso demasiado grande. Nosotros
+somos, al fin, unos conocedores emotivos que hablamos, ya que la
+inteligencia de los conocedores de los que descendemos era emocional.
+Nada de esto ha de tenerse en consideración al proyectar un robot, a no
+ser que se pretenda que entiendan nuestra ^música^.
+
+De antiguo se sospecha que sería ventajoso un ^comportamiento^ más
+racional y menos emocional que el humano, así que, si se confirma la
+sospecha, los diseños robóticos prescindirán de los sentimientos y serán
+completamente racionales. Lo curioso es que nosotros los humanos no
+podremos evitar juzgar como muy fríos unos comportamientos más
+racionales que los nuestros. Dicho de modo ^tautológico^, que es como a
+mi más me gusta, los robotes serán inhumanos.
+
+Esto, lo sé, va a asustar a muchos ---no sé si también a usted--- porque
+la ^razón^ produce monstruos. Es fácil ver el razonamiento lógico e
+implacable que ha llevado a una fría ^asesina^ a envenenar a su
+adinerado ^marido^ para heredarlo tras enamorarse de otro hombre. En un
+caso así, ya es peligroso el mero hecho de considerar racionalmente las
+ventajas y los inconvenientes de resolver el problema por ^homicidio^.
+También es inmoral meditar sobre el interés de una ^guerra^.
+
+Solamente añadiré dos apuntes más sobre este asunto, porque aún es
+pronto para alcanzar un juicio más ecuánime y definitivo. Uno es que la
+vida salvaje es más cruel que la humana ---lo contrario, aunque nos lo
+hayan dicho, es un mito falso. Otro, que, en los ejemplos anteriores, la
+irracional carga emotiva es enorme. Quiero decir que, aunque en los dos
+casos citados se usa la ^razón^, el origen mismo del conflicto es
+claramente pre- e irracional. En el primer caso es el ^instinto sexual^,
+y en el segundo es el ^instinto territorial^ o de ^poder^.
+
+
+\Section El problema del sujeto
+
+La ^consciencia^ es el modo de ^conocimiento^ característico de los
+sujetos. En nuestro caso, la consciencia es una capa superficial
+adherida a la ^memoria a corto plazo^, que utiliza palabras para obtener
+el reflejo. Con mayor libertad de diseño, la consciencia será integral y
+la ^reflexión^ comprehensiva. Sea como fuere, el ^yo^ es el ^modelo^
+consciente que tiene el ^sujeto^ de sí mismo. El sujeto, lo repito
+porque es la clave de mi ^teoría de la subjetividad^, es el único
+^resolutor^ que puede representarse a sí mismo.
+
+El sujeto es un resolutor y, en consecuencia, se representará a sí mismo
+como una ^resolución^. Concretamente, el sujeto se representará a sí
+mismo como la resolución que considera que es la mejor contra el
+^problema de la supervivencia^, y que, por ese mismo motivo, es la que
+está aplicando actualmente. Vale, cuando tiene usted razón tengo que
+dársela, porque, efectivamente, no es exactamente contra el problema de
+la supervivencia, sino contra la representación del problema de la
+supervivencia que ha elaborado el inquisidor del sujeto. Y, para no
+confundirnos nunca más, llamaremos ^problema del sujeto^ a la versión
+del problema de la supervivencia interiorizada por su ^inquisidor^.
+
+Antes de ponderar las diferencias que pueden existir entre el problema
+de la supervivencia y el problema del sujeto, quiero que vea la
+diferencia que existe entre el ^problema del aprendiz^ y el problema del
+sujeto. Tal vez le convenga repasar ahora lo dicho antes sobre el
+aprendiz; no hace falta que yo se lo repita porque esto es un libro, así
+que sigue estando en donde estaba cuando lo leyó. No me sea usted vago
+y, si no lo recuerda, reléalo. Que dónde está, que por qué no le hago
+una referencia; no me haga enfadar, ¿para qué cree usted que me he
+esforzado en elaborar un ^índice alfabético^? Bueno, venga, se lo
+explico en la sección siguiente.
+
+
+\Section El mundo es un enigma
+
+La forma del ^problema del aprendiz^ viene fijada por diseño, es decir,
+que los aprendices vivos la heredan genéticamente. Los aprendices
+modelan el ^comportamiento^ externo pero no el ^problema^ externo,
+porque su lenguaje de representación es ^semántico^ y no simbólico. En
+cambio, los sujetos somos inquisitivos, porque modelamos el problema
+externo. Para nosotros los sujetos el mundo es un ^enigma^, y por esto
+nos preguntamos continuamente por todo, o por casi todo.
+
+Así que los ^aprendices^ son capaces de generar comportamientos
+^novedosos^, porque evalúan las soluciones posibles, pero no pueden
+^diseñar^ herramientas nuevas, porque no evalúan las posibles
+resoluciones, y una ^herramienta^ es un medio de ^resolución^. Sólo los
+^sujetos^ podemos diseñar de dentro a fuera, esto es, solamente
+nosotros, por ser simbólicos, podemos convertir nuestras ideas en
+herramientas. Los ^conocedores^ se encuentran en una posición
+intermedia, ya que pueden diseñar por tanteo, pero son incapaces de
+teorizar, porque no pueden ver introspectivamente ni el problema que
+afrontan ni sus posibles resoluciones.
+
+Las diferencias entre los ^aprendices^ y los ^sujetos^ son nítidas. Los
+aprendices no alcanzan el ^problema^ en ninguna de sus variedades: ni
+como ^pregunta^, ni como ^cuestión^, ni como ^duda^, ni como ^enigma^.
+Tampoco alcanzan los aprendices ningún tipo de ^resolución^: ni los
+^planes^, ni los ^diseños^, ni los ^algoritmos^, ni los ^razonamientos^.
+Y menos aun las ^teorías^, que son entramados de problemas y
+resoluciones, con hipótesis, conjeturas y supuestos.
+
+Hay menos diferencias entre los ^conocedores^ y los ^sujetos^,
+aunque son rotundas.
+Los conocedores disponen de maquinaria de resolución, como los sujetos,
+pero su imaginación es semántica, como la de los aprendices,
+así que pueden representarse comportamientos y objetos,
+pero no problemas ni resoluciones.
+Por esta razón, ante un problema nuevo, el conocedor es incapaz 
+de prever cuál será el resultado de cada manera de resolverlo,
+y ha de elegir por tanteo el modo de resolución.
+Cuando consigue solucionarlo así, incorpora heurísticamente la
+^resolución^ utilizada al conjunto de sus conocimientos,
+y de aquí su nombre de ^conocedor^.
+
+En el ^conocedor^, la resolución de problemas no es racional,
+sino emocional, ya que está gobernada por sus ^emociones^. 
+Cuando se enfrenta a un problema se siente ^perplejo^,
+y si lo soluciona ^feliz^,
+pero el tránsito de uno a otro estado no es razonado,
+porque no puede interiorizarlo.
+Sólo los ^sujetos^, por disponer de un simbolismo,
+podemos resolver los problemas ^teóricamente^,
+esto es, sin enfrentarnos a ellos.
+
+
+\Section La conjuntivitis
+
+Como le decía antes de la excursión comparativa, el ^problema de la
+supervivencia^ es externo, y nosotros los sujetos únicamente tenemos
+acceso a nuestro modelo de él, que es lo que hemos llamado el ^problema
+del sujeto^. De modo que, como el \latin{^Noumenon^} de \[Kant], el
+problema de la supervivencia queda fuera de nuestro alcance. Nunca
+podremos entender qué es la ^vida^, porque es justo al revés: entendemos
+para vivir.
+
+Aun así, hay una obviedad que puede darnos una pista sobre una
+diferencia que podría existir entre el problema de la supervivencia y el
+problema del sujeto: nuestro ^conocimiento^ es aditivo; y ahora no digo
+que sea adictivo. Por ejemplo, cuando conocemos una nueva ciudad no
+olvidamos otra, sino que simplemente añadimos la nueva ^información^ al
+conjunto de nuestros conocimientos previos. A veces olvidamos, claro,
+pero muchas veces no es que hayamos olvidado para siempre, sino que no
+somos capaces de recordar. Y, si nos preocupa tanto que alguien se
+olvide por completo de lo que hizo anteayer, es porque lo sano es no
+^olvidar^. La _cuestión<aporía> es, ¿por qué no olvidamos?
+
+Cada nuevo dato consciente que obtenemos lo añadimos a lo que ya
+sabíamos, y por esto solemos referirnos al conjunto de nuestros
+conocimientos. Esto es literal y técnicamente exacto porque, para
+incorporar cada nuevo dato, hacemos precisamente la ^conjunción^ lógica
+de los conocimientos que ya teníamos con la nueva información. No
+entraré en disquisiciones sobre las propiedades de la conjunción lógica,
+cuyo origen vulgar es la ^conjunción copulativa^ gramatical `y', pero
+que sea conmutativa y asociativa facilita el tratamiento independiente
+de cada elemento. El tratamiento separado de cada dato simplifica las
+tareas cognitivas del sujeto.
+
+Esto último es especialmente revelador. Otra vez encontramos una razón
+de ^economía^ cognitiva detrás de una obviedad; antes con los objetos y
+ahora con la adición de conocimiento. El efecto es, seguramente, el
+mismo en ambos casos, a saber, que para simplificar distorsionamos y
+troceamos. Así que hemos de ser suspicaces con las operaciones lógicas
+---^negación^, ^disyunción^ y ^conjunción^. Padecemos de ^conjuntivitis^
+cognitiva.
+
+Una curiosidad gramatical antes de seguir, para que la medite: el ^punto
+ortográfico^ debería ser considerado como una conjunción copulativa más.
+Los ^niños^, durante esa fase en la que comienzan cada oración con un
+`y', lo saben. Y después, por vagancia, nos ahorramos decir la `y';
+usted y yo, también.
+
+
+\MTbeginchar(1.25cm,4cm,0pt);
+ \MT: save u, v, ow; u = h/5; v = h - u;
+ \MT: color col; col = 0.5white;
+ \MT: z1a = (0,0); z2a = (w,0); z3a = (w,v/3);
+ \MT: z1b = (0, v/6); z2b = (w,v/2); z3b = (w,5v/6); z4b = (0,v/2);
+ \MT: z1c = (0,2v/3); z2c = (w,v); z3c = (0,v);
+ \MT: fill z1a -- z2a -- z3a -- cycle withcolor col;
+ \MT: fill z1b -- z2b -- z3b -- z4b -- cycle withcolor col;
+ \MT: fill z1c -- z2c -- z3c -- cycle withcolor col;
+ \MT: z0 = (w/2,h-(u/2)); % ow = 15;
+ \MT: z91 = (-10.5cm+w,0);
+ \MT: z92 = (-10.5cm+w,2y0);
+ \MT: pickup pencircle scaled 3pt;
+ \MT: draw z91 -- z0 -- z92 withcolor 0.75white;
+ \MT: unfill fullcircle scaled (w/2) shifted z0;
+ \MT: y3d = y4d = y0; x3d - x4d = 5w/8; x3d + x4d = w;
+ \MT: x1d = x4d; x2d = x3d; y1d = y2d; y1d = v;
+ \MT: fill z1d -- z2d -- z3d -- z4d -- cycle withcolor col;
+ \MT: pickup pencircle scaled 2pt;
+ \MT: draw fullcircle scaled (w/2-1pt) shifted z0 withcolor col;
+ %\MT: draw (0,0)--(w,0)--(w,h)--(0,h)--cycle;
+\MTendchar;
+
+\Section La torre de Hércules
+
+Cada información es tratada, pues, como una ^condición^ adicional del
+ \vadjust{\hbox to 0pt{%
+  \kern9.25cm % 10.5cm - wd
+  \vbox to 0pt{\kern9.5pc\box\MTbox\vss}%
+  \hss}}%
+^problema del sujeto^ que, según las circunstancias, habrá de
+considerarse, o no, al buscar una ^resolución^. Suponga, por ejemplo,
+que viene usted por primera vez a ^La Coruña^, y descubre que aquí
+construyeron un ^faro^ los romanos que aún sigue en pie. Este
+^conocimiento^ se añade conjuntivamente a su conocimiento del mundo, de
+manera que ahora, para usted, las cosas son tal como eran {\em y},
+además, los romanos edificaron en La Coruña un faro que aún se conserva.
+En principio, debería ser invalidada cualquier ^solución^ que usted
+encontrara y que contradijera este dato.
+
+La agregación de condiciones por conjunción tiene el efecto de ir
+disminuyendo el número de posibilidades de satisfacer el conjunto. Me
+explico. Suponga que este año quiere veranear en una ciudad con ^playa^
+y gallega. Hay varias soluciones a su problema. Suponga que, por algún
+motivo, decide más tarde añadir una condición adicional, de manera que
+lo que desea es veranear en una ciudad con playa y gallega {\em y} con
+un faro histórico. La nueva condición elimina todas las ciudades sin
+faro histórico, por lo que sus opciones quedan muy reducidas. No le va a
+quedar otro remedio que venirse a La Coruña a contemplar la ^torre de
+Hércules^. Por cierto, etimológicamente `La Coruña' viene de `la
+columna', de Hércules, claro.{\advance\hsize by -1.8cm \par}
+
+Disminuir los grados de libertad de un ^problema^ puede facilitar su
+^resolución^. Por ejemplo, si sólo queda una posibilidad, entonces hemos
+dado con la ^solución^. Pero también puede suceder que no quede
+posibilidad alguna de satisfacer la condición conjunta, y entonces nos
+encontramos en una situación paradójica. Si, volviendo a su veraneo,
+usted insistiese en elegir una ciudad con playa y gallega y con un
+templo griego, entonces sería incapaz de satisfacer su deseo.
+
+El ejemplo es inocuo, pero la mengua de ^libertad^ por la adición
+conjuntiva de condiciones al ^problema del sujeto^ es peligrosa. Piense
+que, cada nueva información que recibe, cada ^dato^ que obtiene, se
+convierte en una ^condición^ adicional que ha de ser satisfecha en todas
+y cada una de sus soluciones. Si quiere usted mantener su coherencia y
+su consistencia lógica, ha de componerse un modelo del mundo que
+satisfaga todos y cada uno de los datos que ha ido obteniendo a lo largo
+de su vida. Esto es imposible, y por ello todos soportamos nuestras
+contradicciones; hasta cierto punto.
+
+
+\Section El análisis
+
+Llamaremos analitismo, de ^análisis^, a esta manera de construir el
+^problema del sujeto^ que consiste en ir añadiendo condiciones por
+^conjunción^. El analitismo se corresponde en la ^sintaxis^ con el
+^objetivismo^ en la ^semántica^, ya que ambos implementan la estrategia
+del `divide y vencerás' para economizar recursos computacionales. Ambos
+son suficientemente efectivos para mantenernos vivos, y aun más, pero
+trocean y distorsionan para alcanzar sus objetivos. No son esenciales en
+el diseño de los sujetos, pero son parte del diseño concreto de nosotros
+los sujetos humanos, que los heredamos genéticamente. A nosotros nos es
+imposible ^ver^ de otro modo, es decir, nuestra visión perceptiva es
+objetiva y nuestra visión introspectiva es analítica.
+$$\vbox{\halign{\strut\hss#\enspace$\cdot$\enspace&
+                \hss#\hss& \enspace$\cdot$\enspace #\hss\crcr
+ Habla& Análisis& Sintaxis\cr
+ Percepción& Objeto& Semántica\cr
+}}$$
+
+Yo le veo otra virtud a esta estrategia analítica, que consiste en
+ampliar conjuntivamente el conocimiento. Porque, la ^resolución^ que
+soluciona el último ^problema^, con todas las condiciones conjuntadas,
+también soluciona los anteriores problemas. ¿No lo ve? Volvamos al
+supuesto de que este año quiere usted veranear en una ciudad con ^playa^
+y en ^Galicia^ {\em y} con un ^faro^ histórico. Como la nueva condición
+histórica se añadió por conjunción, resulta que las soluciones del nuevo
+problema, y en concreto ^La Coruña^, también solucionan necesariamente
+el problema anterior. Vaya tontería, ¿no? Sí, pero no, es decir, la
+jerga obscurece lo obvio.
+
+Ahora suponga, por un momento, que alguna de las condiciones resultara
+irrelevante y veamos qué sucede. Con la estrategia acumulativa, aunque
+despreciemos una ^condición^, la ^solución^ sigue siendo válida. Por
+ejemplo, aunque finalmente le resulte indiferente que haya o no faros
+históricos, su viaje a La Coruña sigue cumpliendo sus otras condiciones,
+por lo que no ha perdido su tiempo ni ha de reconsiderar su decisión. El
+ejemplo es, otra vez, inocuo, pero si el problema es el ^problema de la
+supervivencia^ y nuestros conocimientos son necesariamente
+inconsistentes, como lo son, entonces encontrar soluciones robustas, que
+sean válidas incluso aunque no se sostengan todas las condiciones, es
+una ventaja decisiva.
+
+Otra posibilidad es que el ^inquisidor^, en lugar de añadir
+conjuntivamente las nuevas informaciones como condiciones adicionales
+del ^problema del sujeto^, lo rehiciera completamente cada vez. Esta
+posibilidad es peor por, al menos, dos razones. Una es que la cantidad
+de proceso computacional que es necesario para replantear completamente
+un problema es muchísimo mayor que la que se requiere para añadir
+simplemente una nueva condición. La otra razón es que, redefiniendo cada
+vez el problema, podría ocurrir que la última resolución, que soluciona
+el último problema, no solucionara los anteriores. Es normal que no lo
+vea, y no me pida un ejemplo, porque no se lo puedo proporcionar: es tan
+difícil evitar analizar lo que se dice o piensa, como evitar ver los
+objetos. Son dos imposibilidades para los sujetos humanos; para usted y
+para mi, también.
+
+
+\Section La historia
+
+Vamos añadiendo conjuntivamente condiciones que han de ser recordadas,
+claro, pero esto no termina de responder completamente a la pregunta que
+nos hacíamos: ¿por qué no olvidamos? La respuesta definitiva hay que
+buscarla en la ley de la información incesante. Para ello vamos a
+proceder por reducción al absurdo.
+
+Si existiera una ^teoría deductiva^ perfecta capaz de predecir sin errar
+todo cuanto ocurre, entonces sería ocioso retener todos los sucesos que
+van acaeciendo. Es fácil percatarse de que, en esas felices
+circunstancias, no valdría la pena retener la infinidad de pormenores
+concretos que van sucediéndose, porque éstos podrían ser deducidos de la
+teoría en cualquier momento. Pero nosotros sí que memorizamos lo que nos
+va ocurriendo, llegando a almacenar enormes cantidades de datos, y esto
+puede ocurrir por dos razones. Una es que la premisa no se sostenga, lo
+que significaría que no existe tal teoría perfecta. La otra posibilidad
+es que, simplemente, nuestro diseño no sea el óptimo, de manera que,
+aunque exista tal teoría, no somos capaces de emplearla. Aun aceptando
+que nuestro diseño no es el óptimo, a mi me parece que la evolución
+nunca desaprovecharía una ocasión tan clara de economizar tantos
+recursos cognitivos.
+
+Por otro lado, si es cierto que somos libres, entonces es imposible que
+exista una teoría capaz de predecir perfectamente todo cuanto sucederá
+en el futuro. En ese mismo supuesto, tampoco lo ocurrido en el pasado es
+reducible a una ley no estadística, ya que en el origen de algunos de
+los sucesos estuvo el libre albedrío de los sujetos. De manera que, en
+estas circunstancias, la historia es una narración de sucesos que no
+puede encorsetarse en una teoría deductiva; la ^historia^ no es una
+teoría deductiva, es una ^teoría narrativa^. Luego, si esto es así como
+lo digo, y somos efectivamente libres, no queda otro remedio que
+memorizar los acontecimientos que se van sucediendo.
+
+
+\Section Las matemáticas
+
+Yo aun diría más; y lo digo. Las teorías deductivas son enormemente
+económicas porque son capaces de producir mucha ^información^ a partir
+de muy poca. Buscamos teorías deductivas porque ^comprimen^ la
+información, y así nos ayudan a luchar contra la ^ley de la información
+incesante^ que amenaza con anegarnos. De modo que la ^economía^
+cognitiva también explica por qué buscamos con ahínco teorías
+deductivas.
+
+El caso arquetípico de teoría deductiva es el ^sistema axiomático^
+ligado al ideal formalista de \[Hilbert]. \[Hilbert] propuso en 1920 un
+programa cuyo objetivo era reducir todas las ^matemáticas^ a un sistema
+axiomático capaz de producir por deducción todas las verdades
+matemáticas. De haberse culminado con éxito el programa, el sistema
+axiomático resultante habría representado una desmedida condensación de
+información, y habría sido el compendio sumarísimo de todas las
+matemáticas. Como ya le he contado, \[Gödel] en 1931 y en 1936 \[Church]
+y \[Turing] demostraron matemáticamente que es imposible alcanzar el
+ideal formalista, porque no existe ningún sistema axiomático consistente
+y capaz de sintetizar todas las matemáticas.
+
+Que la ^historia^ no quepa en una teoría deductiva puede no extrañar a
+muchos, pero que ni siquiera quepan las ^matemáticas^, tendría que haber
+escandalizado a todos. Mi interpretación de estos hechos es que tampoco
+las matemáticas se libran de la inexorable ^ley de la información
+incesante^. Los conocimientos matemáticos son, como todos los
+conocimientos, subjetivos. Lo que distingue al ^conocimiento matemático^
+es su naturaleza algorítmica, siendo un ^algoritmo^ un método de
+^resolución^. Es decir, que el propósito de las matemáticas es producir
+resoluciones, y éstas no pueden ser refutadas directamente por una
+^medida^, como sí que lo pueden ser las soluciones físicas. Las
+matemáticas son puramente sintácticas, o sea, teóricas.
+
+Por ejemplo, el ^algoritmo^ de la ^suma^ nos permite enunciar la
+siguiente ^verdad matemática^: uno más uno son dos; resumida en la
+expresión $1+1=2$. Pero, cuidado, porque $1+1=2$ es una verdad
+algorítmica que no siempre es aplicable a la ^realidad^. Mi ejemplo
+predilecto es éste: si usted suma una gota de agua a otra gota de agua,
+no obtiene dos gotas de agua, sino una; resumido $1+1=1$. Por lo tanto,
+$1+1=2$ es una verdad teórica que nos resuelve algunos problemas, pero
+no todos, y es tarea nuestra determinar cuando se puede aplicar y cuando
+no. La conclusión es que el propio algoritmo de la suma es útil con
+mucha frecuencia, pero no siempre.
+
+No es posible rechazar una teoría matemática confrontándola contra
+la realidad; la confrontación nos puede mostrar, eso sí, su grado de
+utilidad. Pero esto no suele interesar demasiado a los matemáticos, que,
+por otro lado, están de suerte, porque la demostración de \[Gödel] les
+asegura que nunca van a quedarse sin trabajo.
+
+
+\Section La física
+
+Para que no le queden dudas sobre el alcance de los teoremas de nuestros
+héroes \[Gödel], \[Church] y \[Turing], debe saber que incluyen a
+cualquier teoría que utilice las operaciones aritméticas ---^suma^,
+^resta^, ^multiplicación^ y ^división^. Es decir, que no afecta
+solamente a las ^matemáticas^, sino que la más leve de las
+cuantificaciones hace que una teoría sea presa de la godelización.
+
+Ninguna teoría que incluya la ^aritmética^ puede ser completa y
+consistente, y en cualquier teoría que incluya la aritmética existen
+paradojas indetectables con los medios de la propia teoría. Repito que
+estoy simplemente enunciando los resultados de teoremas matemáticos
+probados antes del año 1937.
+
+La ^física^ queda plenamente afectada por estos ^teoremas de
+indecidibilidad^. Sin embargo, todavía hoy en el año 2005 hay muchos
+físicos, como \[Hawking], que no aceptan estas conclusiones y 
+buscan una teoría unificada completa y consistente que abarque todos
+los fenómenos físicos. 
+Tal vez se pregunte usted por qué, aunque ya debería saberlo.
+Son materialistas que piensan que las ^leyes^ físicas son propiedades
+de la materia y no construcciones teóricas. 
+Para ellos la física no es una ^teoría^, sino la mera ^realidad^.
+Según esta concepción, las leyes físicas serían una
+realidad elusiva que ni se percibe ni podría percibirse, y aun así
+objetiva, absoluta y alcanzable. Pero a mi me parece una extensión
+excesiva del concepto de realidad que el ^materialismo^ se ve forzado
+a admitir para salvar la física, que es su más preciado tesoro.
+
+
+\endinput
