@@ -1003,6 +1003,15 @@ problemas aparentes, incluido el de la supervivencia.
 
 \Section Somos resoluciones
 
+Un problema aparente podría ser cualquier problema. Por esto,
+aunque un problema aparente no tiene una resolución definitiva,
+sí que tiene resoluciones mejores y resoluciones peores:
+son mejores las capaces de solucionar más posibles problemas. 
+Cabe entonces plantear una meta-resolución que busque 
+resolutores cada vez mejores de un problema aparente.
+Y, con estas ideas, ya podemos encajar más precisamente la vida
+en la ^teoría del problema^.
+
 La ^evolución^ darviniana es un proceso de ^resolución^ repetida del
 ^problema aparente^ de la supervivencia que acumula ^información^. En
 ese proceso cada individuo es una de las repeticiones, lo que significa
@@ -1151,15 +1160,19 @@ Por contra, ningún lenguaje semántico admite expresiones abiertas.
 
 La ^resolución^ del ^problema^ anterior
 $$x?\quad 2x = x^2$$
-podría seguir los siguientes pasos:
+podría seguir los siguientes pasos: 
+\vadjust{\break\hrule width0pt\kern-10pt\relax}
 $$\eqalign{
   2x      &= x^2 \cr
   2x - 2x &= x^2 - 2x \cr
   0       &= xx - 2x \cr
   0       &= (x - 2)x \cr
-  (x - 2 = 0)         &\lor (x = 0) \cr
-  (x - 2 + 2 = 0 + 2) &\lor (x = 0) \cr
-  (x = 2)             &\lor (x = 0) .}$$
+  [x - 2 = 0]           &\lor [x = 0] \cr
+  [x + (-2) = 0]        &\lor [x = 0] \cr
+  [(x + (- 2)) + 2 = 0 &+ 2] \lor [x = 0] \cr
+  [x + (-2 + 2) = 2]    &\lor [x = 0] \cr
+  [x + 0 = 2]           &\lor [x = 0] \cr
+  [x = 2]               &\lor [x = 0] .}$$
 De modo que tiene dos soluciones, dos y cero, porque un problema como
 $x?\; x=2$ es lo que los matemáticos llaman trivial, aquí con razón.
 
