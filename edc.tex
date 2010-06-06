@@ -351,18 +351,17 @@
 
  \vfill % Colofón
 
- \centerline{\hbox{%
-  \pdfximage width 8cm {1938-Bugatti-Type-57SC-Atlantic-Rear.jpg}%
-  \pdfrefximage\pdflastximage}}
- \vskip 3pc
-
- {\parindent=0pt \obeylines \normalbottom %\baselineskip=12pt
- Este libro ha sido compuesto por el autor
- utilizando el programa {\TeX}
- del Profesor D.~E.~Knuth (Stanford University).
- Los tipos son de la familia Computer Modern.
- Las figuras están descritas en {\logo METAFONT}.
- \par}
+\begincenter \obeylines % \normalbottom \baselineskip=12pt
+ Este libro ha sido tipografiado por el autor
+ usando el sistema del Profesor D.~E.~Knuth (Stanford University).
+ He utilizado su programa {\TeX} para componer mi texto
+ con sus tipos de la familia Computer Modern,
+ y para colocar mis figuras,
+ que hice con su programa {\logo METAFONT}.
+\endcenter
+\bigskip
+\centerline{\hbox{\pdfximage width 4cm {amazon/cc-by-sa-2.pdf}%
+                  \pdfrefximage\pdflastximage}}
 
 \let\vfill=\relax
 \bye
