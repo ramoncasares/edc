@@ -1,11 +1,14 @@
 % edc.tex (RMCG20040427)
 
-\mag1200 % OPTIONAL MAGNIFICATION
+%\mag1200 % OPTIONAL MAGNIFICATION
 
 \input explain
 \input fonts
 \input index
 \input metatex
+
+%\input crops % OPTIONAL CROPS (Beware the next line!)
+\newdimen\hpage \newdimen\vpage % already defined in crops.tex
 
 \def\[{\string\[} % to allow ^álgebra de \[Boole]^
 \files
@@ -31,27 +34,27 @@
 
 % Layout
 
-\def\pdfsetpagesize{\pdfcode \pdfpageheight=\vsize
-  \advance\pdfpageheight2in \advance\pdfpageheight2\voffset
- \pdfpagewidth=\hsize \advance\pdfpagewidth2in
-  \advance\pdfpagewidth2\hoffset \pdfendcode}
-
 \let\docinfo\relax \let\infodoc\relax
 
 \headline={\hfil}
 \footline={\tenrm\ifodd\pageno \docinfo\hfil\folio
             \else \folio\hfil\infodoc \fi\strut}
-\hsize=10.5cm \hoffset=-1in \advance\hoffset by 21.75mm
-\vsize=41\baselineskip \advance\vsize\topskip % 41 + 1 lines
-\voffset=-1in \advance\voffset by 16.76mm
-\pdfsetpagesize \advance\vsize -2\baselineskip % - 2 = 40 lines
+
+\hpage=6in \hsize=10.5cm
+ \hoffset\hpage \advance\hoffset-\hsize \divide\hoffset2
+ \advance\hoffset-1in
+\vpage=9in \vsize=39\baselineskip \advance\vsize\topskip % 39 + 1 lines
+ \voffset\vpage \advance\voffset-\vsize \advance\voffset-2\baselineskip
+ \divide\voffset2 \advance\voffset-1in
+
+\pdfcode \pdfpageheight=\vpage \pdfpagewidth=\hpage \pdfendcode
+%\setcrops % OPTIONAL (Beware the top of this file!)
+
 \parskip=0pt plus 0.0001pt minus 0.0001pt
 \parindent=20pt 
 \raggedbottom
 
 \def\breakif#1{\vskip#1\baselineskip \penalty-250 \vskip-#1\baselineskip}
-
-\input crops % OPTIONAL CROPS
 
 %\colors      % OPTIONAL COLORS
 \def\RED{\ifx\Yellow\relax\else
