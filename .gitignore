@@ -13,8 +13,11 @@
 auxiliar.*
 *~
 *.log
-# ignore binaries
+# ignore figures
 *.jpg
+*.png
+*.svg
+# ignore binaries
 *.pfb
 *.tfm
 # end of file
