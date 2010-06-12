@@ -10,7 +10,7 @@
 %\input crops % OPTIONAL CROPS (Beware the next line!)
 \newdimen\hpage \newdimen\vpage % already defined in crops.tex
 
-\def\[{\string\[} % to allow ^·lgebra de \[Boole]^
+\def\[{\string\[} % to allow ^√°lgebra de \[Boole]^
 \files
 
 % Fonts
@@ -173,7 +173,7 @@
 \def\(#1){{\sl#1}\itcor} % \(On Freedom)
 
 %\def\<#1>{} % \<label>
-%\def\>#1>{} % en la \S6, p·gina 34
+%\def\>#1>{} % en la \S6, p√°gina 34
 
 \def\specialhat{\ifmmode\def\next{^}\else\let\next=\beginvref\fi\next}
 \def\specialund{\ifmmode\def\next{_}\else\let\next=\beginhref\fi\next}
@@ -182,11 +182,11 @@
 \def\index#1#2{\leavevmode\ndx{#1}{#2}\RED\penalty\@M\hskip\z@skip
  \ignorespaces}
 
-\def\beginvref#1^{{\def\[{\string\[}\index{#1}{1}}#1} % ^word^, ^·lgebra de \[Boole]^
+\def\beginvref#1^{{\def\[{\string\[}\index{#1}{1}}#1} % ^word^, ^√°lgebra de \[Boole]^
 \def\beginhref#1<#2>{{\def\[{\string\[}\index{#1=#2}{1}}#1} % _word<sub>
 
 \def\hname{[}\def\hbook{(}\def\hlabel{<}\def\href{>}
-\def\|#1#2|{\def\1{#1}% \|+informaciÛn| #1 is a code
+\def\|#1#2|{\def\1{#1}% \|+informaci√≥n| #1 is a code
  \ifx\1\hname [#2]\else
  \ifx\1\hbook (#2)\else
  \ifx\1\hlabel $\langle$#2$\rangle$\else 
@@ -197,7 +197,7 @@
 \newtoks\oldheadline \oldheadline=\headline
 \pdfcode
  \def\watermark{% 
-  \pdfliteral{q 1 G 1 g 169 -32 m}%% Æ
+  \pdfliteral{q 1 G 1 g 169 -32 m}%% ¬Æ
   \pdfliteral{82 -97 109 -111 110 -32 c}% Ramon
   \pdfliteral{67 -97 115 -97 114 -101 c}% Casare
   \pdfliteral{115 -32 50 -48 49 -48 c}% % s 2010
@@ -213,8 +213,8 @@
 \input edc0.tex
 
 \Title<El doble compresor>
-\Subtitle<La teorÌa de la informaciÛn>
-\Author<RamÛn Casares>
+\Subtitle<La teor√≠a de la informaci√≥n>
+\Author<Ram√≥n Casares>
 
 \input edc1.tex
 \input edc2.tex
@@ -231,8 +231,8 @@
 
 \dimen0=\topskip \advance\dimen0 by2\baselineskip
 \vbox to\dimen0{\kern\baselineskip
- \centerline{\fontone Õndice alfabÈtico\pdflabel
-                \toc3{Õndice alfabÈtico}}\vss}
+ \centerline{\fontone √çndice alfab√©tico\pdflabel
+                \toc3{√çndice alfab√©tico}}\vss}
 \vskip 2\baselineskip
 
 %Texto explicatorio, si es preciso.
@@ -241,7 +241,7 @@
 \everypar={}\normalbottom
 \def\[#1]{{\sc #1}} % \[Descartes]
 \def\vea{{\it vea\/}}
-\def\yvea{{\it vea tambiÈn\/}}
+\def\yvea{{\it vea tambi√©n\/}}
 
 % Output for INDEX adapted from [417]
 
@@ -324,7 +324,7 @@
 
 \dimen0=\topskip \advance\dimen0 by2\baselineskip
 \vbox to\dimen0{\kern\baselineskip
- \centerline{\fontone Õndice\pdflabel\toc3{Õndice}}\vss}
+ \centerline{\fontone √çndice\pdflabel\toc3{√çndice}}\vss}
 \vskip 2\baselineskip
 
 \def\tocline#1{\ifcase #1\let\next=\toclinezero \or
@@ -332,7 +332,7 @@
 
 \def\toclinezero#1#2#3#4{\bigbreak \pdftocline{#1}{#2}%
  \line{\bf \pdfgoto{#1}{#2}\hfil}\ignorespaces}
-\def\toclineone#1#2#3#4{\par \pdftocline{\noexpandß#3 #1}{#2}%
+\def\toclineone#1#2#3#4{\par \pdftocline{\noexpand¬ß#3 #1}{#2}%
  \contentsline{#1}{#2}{$\S#3$\quad}{#4}\ignorespaces}
 \def\toclineindex#1#2#3#4{\par \pdftocline{#1}{#2}%
  \contentsline{{\bf #1}}{#2}{}{#4}\ignorespaces}
@@ -350,7 +350,7 @@
 
 \input auxiliar.toc
 
- \vfill % ColofÛn
+ \vfill % Colof√≥n
 
 \begincenter \obeylines % \normalbottom \baselineskip=12pt
  Este libro ha sido tipografiado por el autor
