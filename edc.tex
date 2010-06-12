@@ -26,7 +26,10 @@
 
 \pdfcode
  \pdfmapline{+SkakNew-DiagramT SkakNew-DiagramT <SkakNew-DiagramT.pfb}
+ \pdfmapline{+ccicons CCIcons <ccicons.pfb}
 \pdfendcode
+\font\ccicons=ccicons
+\def\ccbysa{{\ccicons \char0\kern1pt\char1\kern1pt\char2}}
 
 \catcode`\ö=13 \defö{\"o} % Gödel, Schrödinger
 \toks0=\expandafter{\doaccents\do^^f6}\edef\doaccents{\the\toks0}
