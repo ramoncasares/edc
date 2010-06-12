@@ -20,4 +20,6 @@ auxiliar.*
 # ignore binaries
 *.pfb
 *.tfm
+# ignore dirs
+amazon/
 # end of file
