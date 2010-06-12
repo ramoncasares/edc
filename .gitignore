@@ -17,10 +17,12 @@ auxiliar.*
 *.jpg
 *.png
 *.svg
-# ignore binaries
+# ignore fonts
 *.pfb
 *.tfm
+*.map
 # ignore dirs
 amazon/
+bugatti/
 letters/
 # end of file
