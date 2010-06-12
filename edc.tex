@@ -31,9 +31,6 @@
 \font\ccicons=ccicons
 \def\ccbysa{{\ccicons \char0\kern1pt\char1\kern1pt\char2}}
 
-\catcode`\ö=13 \defö{\"o} % Gödel, Schrödinger
-\toks0=\expandafter{\doaccents\do^^f6}\edef\doaccents{\the\toks0}
-
 \catcode`\@=11
 
 % Layout
@@ -358,10 +355,11 @@
 \begincenter \obeylines % \normalbottom \baselineskip=12pt
  Este libro ha sido tipografiado por el autor
  usando el sistema del Profesor D.~E.~Knuth (Stanford University).
- He utilizado su programa {\TeX} para componer mi texto
- con sus tipos de la familia Computer Modern,
- y para colocar mis figuras,
- que hice con su programa {\logo METAFONT}.
+ He utilizado {\em su} programa {\TeX}
+ para componer {\em mi} texto
+ con {\em sus} tipos Computer Modern
+ y para colocar {\em mis} figuras,
+ que hice con {\em su} programa {\logo METAFONT}.
 \endcenter
 
 \let\vfill=\relax
