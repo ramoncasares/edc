@@ -34,15 +34,23 @@
 
 \null 
 
+\def\URI#1#2{\leavevmode\pdfcode \pdfstartlink
+  attr {/Border [0 0 0]}
+  user {/Subtype /Link /A << /Type /Action /S /URI /URI (#2) >>}%
+ \pdfendcode{\tt#1}\pdfcode\pdfendlink\pdfendcode}
 
 \vfill
- \hbox{\pdfximage width 3cm {amazon/cc-by-sa-1.pdf}\pdfrefximage\pdflastximage}
- %\bigskip
  {\sl El doble compresor}\par
  {\sl La teoría de la información}\par
  1ª edición (\todayiso)\par
- Publicado por {\tt www.ramoncasares.com}\par
- \ccbysa\ Ramón Casares, 2010\par
+ \null\par
+ Publicado por \URI{www.ramoncasares.com}{http://www.ramoncasares.com}\par
+ \copyright\ Ramón Casares, 2010\par
+ Este libro queda liberado conforme a los términos de la licencia\par
+ \ccbysa\ {\sf Creative Commons Attribution-ShareAlike 3.0},\par
+ \URI{http://creativecommons.org/licenses/by-sa/3.0/}%
+     {http://creativecommons.org/licenses/by-sa/3.0/}\par
+ \null\par
  ISBN-13: 978-1-4536-0915-6\par
  ISBN-10: 1-4536-0915-6\par
 
