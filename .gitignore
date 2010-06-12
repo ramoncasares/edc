@@ -22,4 +22,5 @@ auxiliar.*
 *.tfm
 # ignore dirs
 amazon/
+letters/
 # end of file
