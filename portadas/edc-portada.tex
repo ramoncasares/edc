@@ -1,0 +1,126 @@
+% edc-potada.tex (RMCG20100902)
+
+\font\titlefont=texnansi-lmssbx10 at 90pt
+\font\subtitlefont=texnansi-lmss10 at 40pt
+\font\authorfont=texnansi-lmss10 at 50pt
+\font\citafont=texnansi-lmss10 at 21pt
+\font\textfont=texnansi-lmss10 at 14pt
+
+\ansifont
+
+\def\pdfRed{\pdfliteral{0 1 1 0 k}}
+\def\pdfBlack{\pdfliteral{0 0 0 1 k}}
+\def\pdfWhite{\pdfliteral{0 0 0 0 k}}
+
+\topskip=10bp
+\newdimen\hpage
+\hpage=6in \hsize=5.5in
+ \hoffset\hpage \advance\hoffset-\hsize
+ \divide\hoffset2 \advance\hoffset-1in
+\newdimen\vpage
+\vpage=9in \vsize=8.5in
+ \voffset\vpage \advance\voffset-\vsize
+ \divide\voffset2 \advance\voffset-1in
+\pdfpageheight=\vpage \pdfpagewidth=\hpage
+
+\def\makeheadline{\vbox to0pt{\line{\the\headline}\vss}\nointerlineskip}
+
+\headline={\pdfliteral{q}% save current graphic state in the stack
+  \pdfliteral{0 1 1 0 k 0 1 1 0 K}% set red
+  \pdfliteral{-18 -630 m}% moves to the origin, 72 * 9 = 648 (-18)
+  \pdfliteral{414 -630 l}% 72 * 6 = 432 (-18)
+  \pdfliteral{414 18 l}%
+  \pdfliteral{-18 18 l}%
+  \pdfliteral{-18 -630 l}% 
+  \pdfliteral{b Q}% close, stroke, fill, and restore graphic state
+ \hfil}
+\footline={\hfil}
+
+%%%%%%%%%%%%% Portada
+
+\pageno=-1
+\pdfWhite
+\hbox{}
+\vskip2.5in
+\centerline{\titlefont El doble}
+\vskip1pc
+\centerline{\titlefont compresor}
+
+\vskip10pc
+\centerline{\subtitlefont La teoría de la}
+\vskip6pt
+\centerline{\subtitlefont información}
+
+\vskip2pc
+\centerline{\authorfont Ramón Casares}
+
+\vfil\break
+
+%%%%%%%%%%%%% Contraportada
+
+\pdfWhite
+
+\begingroup\citafont\parindent=0pt\baselineskip=24pt\obeylines
+
+``El mundo no es una máquina enorme,
+\leavevmode\kern12pt como creen los materialistas,
+\leavevmode\kern12pt sino un enigma inmenso'' {\textfont(§160 ¶6)}
+
+\endgroup
+
+\vskip 1pc
+
+\begingroup\textfont\parindent=0pt\baselineskip=16pt\obeylines
+
+En el libro le muestro las limitaciones del materialismo,
+y le presento una teoría para superarlo.
+Como vía de ataque utilizo el concepto de información,
+que investigo con usted inspeccionando juntos las grietas de la
+percepción. Mi evaluación subjetivista es concluyente:
+la realidad no es lo que está fuera,
+sino el producto de la percepción.
+\null
+Pero, resulta que el poder expresivo de los procesos perceptivos
+es limitado. La prueba es que podemos hablar de cosas que
+no podemos observar. Por esto, la realidad no lo es todo, sino la
+representación de lo exterior que construye la percepción
+con sus exiguos recursos expresivos. Y el materialismo, al ceñirse
+a lo observable, a lo medible, es innecesariamente pobre.
+Urge superar esta situación.
+\null
+Visto que el habla es más expresiva que la percepción,
+me fijo en que no podemos percibir los problemas.
+Entonces demuestro que, para poder representar todos los
+conceptos de la teoría del problema, es necesaria una
+sintaxis recursiva. Esto es muy técnico, pero,
+basta saber que la sintaxis del habla es una sintaxis recursiva,
+para entender por qué sólo los sujetos parlantes podemos
+examinar mentalmente las posibles resoluciones de un problema.
+También le explico la consciencia, pero, para alcanzar los detalles,
+ha de leer el interior de este libro.
+
+\endgroup
+
+\vfill
+
+\pdfBlack
+\input ean13
+\line{
+\pdfximage{cc-by-sa-www.pdf}\pdfrefximage\pdflastximage
+\hfil
+\pdfliteral{q}% save current graphic state in the stack
+  \pdfliteral{0 0 0 0 k 0 0 0 1 K}% set black stroke on white fill
+  \pdfliteral{-5 -5 m}% moves to the origin
+  \pdfliteral{110 -5 l}%
+  \pdfliteral{110 92 l}%
+  \pdfliteral{-5 92 l}%
+  \pdfliteral{-5 -5 l}% 
+  \pdfliteral{b Q}% close, stroke, fill, and restore graphic state
+\ISBN 978-1-4536-0915-6
+\barheight=2.5cm % this must be after \ISBN call
+\EAN 978-1-4536-0915-6
+\hskip9pt
+}
+
+\end
+
