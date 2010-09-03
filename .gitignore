@@ -17,6 +17,7 @@ auxiliar.*
 *.jpg
 *.png
 *.svg
+*.eps
 # ignore fonts
 *.pfb
 *.tfm
