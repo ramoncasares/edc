@@ -1,0 +1,32 @@
+Para obtener el logo con las condiciones:
+
+1) en pdf, para que lo pueda importar pdfTeX
+2) con fonts, para que se pueda copiar la dirección de
+   internet www.ramoncasares.com
+3) del menor tamaño, para que no sea un estorbo cargarlo.
+
+Los pasos son:
+
+1) Componer el logo con Inkscape.
+
+1.1) El icono cc-by-sa grande lo traigo en formato eps,
+     cc-by-sa-2.eps, de la página oficial de CreativeCommons.
+1.2) Desagrupo el icono, y le borro las crop marks que pone Inkscape.
+1.3) En otra capa pongo un rectángulo negro,
+     para escribir sobre él en blanco.
+1.4) En otra capa pongo el texto, con la font LMSans10 Bold,
+     escalada a 12pt.
+1.5) Limito el área al logo.
+1.6) Lo exporto como pdf, obteniendo cc-by-sa-www-ori.pdf,
+     que ocupa unos 50kB.
+
+2) Reducir su tamaño.
+
+2.1) ps2pdf cc-by-sa-www-ori.pdf cc-by-sa-www.pdf
+     El resultado es un fichero de 8652 octetos.
+
+Y, para componer las portadas, he usado pdfTeX.
+
+He usado ean13.tex, que he modificado para usar las fonts
+Latin Modern, en vez de las ocr, que no tengo.
+
