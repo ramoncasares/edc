@@ -1,0 +1,147 @@
+% edc-triptic.tex (RMCG20100912)
+
+\font\titlefont=texnansi-lmssbx10 at 90pt
+\font\subtitlefont=texnansi-lmss10 at 40pt
+\font\authorfont=texnansi-lmss10 at 50pt
+
+\font\spinetitlefont=texnansi-lmssbx10 at 24pt
+\font\spineauthorfont=texnansi-lmss10 at 24pt
+
+\font\citefont=texnansi-lmss10 at 21pt
+\font\textfont=texnansi-lmss10 at 14pt
+
+\ansifont
+
+\def\pdfRed{\pdfliteral{0 1 1 0 k}}
+\def\pdfBlack{\pdfliteral{0 0 0 1 k}}
+\def\pdfWhite{\pdfliteral{0 0 0 0 k}}
+
+\pdfpageheight=9in \voffset=-1in 
+\pdfpagewidth=12.5in \hoffset=-1in
+
+\newbox\background
+\setbox\background=\hbox{\pdfRed\vrule width 6in height 0pt depth 9in}
+\wd\background=0pt 
+\ht\background=0pt
+\dp\background=0pt
+
+%%%%%%%%%%%%% Portada
+
+\newbox\portada
+\setbox\portada=\vbox to 9in{\kern0.5in\copy\background
+ \hbox to 6in{
+ \hss\vbox{\hsize=6in
+  \pdfWhite
+  \hbox{}
+  \vskip3in
+  \centerline{\titlefont El doble}
+  \vskip1pc
+  \centerline{\titlefont compresor}
+  \vskip10pc
+  \centerline{\subtitlefont La teoría de la}
+  \vskip6pt
+  \centerline{\subtitlefont información} 
+  \vskip2pc
+  \centerline{\authorfont Ramón Casares}
+ }\hss}\vss}
+
+
+%%%%%%%%%%%%% Lomo
+
+\def\rotatebox#1{%
+ \pdfliteral{q}% save current graphic state in the stack
+ \pdfliteral{0 -1 1 0 36 0 cm}% rotate -90º
+ %\pdfliteral{1 0 0 1 0 0 cm}% identity transform
+ \wd#1=0pt
+ \box#1
+ \pdfliteral{b Q}% close, stroke, fill, and restore graphic state
+}
+
+\newbox\lomotext
+\setbox\lomotext=\hbox to 9in{\pdfRed
+ \vrule width 9in height 0.35in depth 0.15in
+ \kern -7in \pdfWhite
+  \spinetitlefont El doble compresor\hss
+  \spineauthorfont Ramón Casares\kern24pt}
+
+\newbox\lomo
+\setbox\lomo=\vbox{\rotatebox\lomotext}
+\wd\lomo=0.5in
+\dp\lomo=0pt
+\ht\lomo=9in
+
+%\shipout\box\lomo
+
+
+%%%%%%%%%%%%% Contraportada
+
+\newbox\contra
+\setbox\contra=\vbox to 9in{\copy\background
+ \vss\hbox to 6in{
+ \hss\vbox{\hsize=5.5in
+  \pdfWhite
+  \hbox{}
+  \begingroup\citefont\parindent=0pt\baselineskip=24pt\obeylines
+``El mundo no es una máquina enorme,
+\leavevmode\kern12pt como creen los materialistas,
+\leavevmode\kern12pt sino un enigma inmenso'' {\textfont(§160 ¶6)}
+\endgroup
+\vskip 1pc
+\begingroup\textfont\parindent=0pt\baselineskip=16pt\obeylines
+
+En el libro le muestro las limitaciones del materialismo,
+y le presento una teoría para superarlo.
+Como vía de ataque utilizo el concepto de información,
+que investigo con usted inspeccionando juntos las grietas de la
+percepción. Mi evaluación subjetivista es concluyente:
+la realidad no es lo que está fuera,
+sino el producto de la percepción.
+\null 
+Pero, resulta que el poder expresivo de los procesos perceptivos
+es limitado. La prueba es que podemos hablar de cosas que
+no podemos observar. Por esto, la realidad no lo es todo, sino la
+representación de lo exterior que construye la percepción
+con sus exiguos recursos expresivos. Y el materialismo, al ceñirse
+a lo observable, a lo medible, es innecesariamente pobre.
+Urge superar esta situación.
+\null
+Visto que el habla es más expresiva que la percepción,
+me fijo en que no podemos percibir los problemas.
+Entonces demuestro que, para poder representar todos los
+conceptos de la teoría del problema, es necesaria una
+sintaxis recursiva. Esto es muy técnico, pero,
+basta saber que la sintaxis del habla es una sintaxis recursiva,
+para entender por qué sólo los sujetos parlantes podemos
+examinar mentalmente las posibles resoluciones de un problema.
+También le explico la consciencia, pero, para alcanzar los detalles,
+ha de leer el interior de este libro.
+
+\endgroup
+\vskip2pc
+\pdfBlack
+\input ean13
+\line{
+\pdfximage{cc-by-sa-www.pdf}\pdfrefximage\pdflastximage
+\hfil
+\pdfliteral{q}% save current graphic state in the stack
+  \pdfliteral{0 0 0 0 k 0 0 0 1 K}% set black stroke on white fill
+  \pdfliteral{-5 -5 m}% moves to the origin
+  \pdfliteral{110 -5 l}%
+  \pdfliteral{110 92 l}%
+  \pdfliteral{-5 92 l}%
+  \pdfliteral{-5 -5 l}% 
+  \pdfliteral{b Q}% close, stroke, fill, and restore graphic state
+\ISBN 978-1-4536-0915-6
+\barheight=2.5cm % this must be after \ISBN call
+\EAN 978-1-4536-0915-6
+\hskip9pt
+}}\hss}\vss}
+
+
+%\shipout\hbox{\box\contra}
+%\shipout\hbox{\box\portada}
+
+\shipout\hbox to \pdfpagewidth{\box\contra\hss\box\lomo\hss\box\portada}
+
+\end
+
