@@ -1,17 +1,22 @@
 % README (RMCG20110303)
-\input doc
-\font\logo=logo10 at 12pt
-\rmcglayout
+\input doc \rmcglayout
 
 \title0 README
 
 \title1 English
 
+These are the sources of my book:
+``El doble compresor: La teoría de la información''.
+I have released the book under the license \[cc-by-sa].
+The first edition (20100616) was published using
+\[isbn]: 978-1-4536-0915-6.
+
 To build the pdf file, "edc.pdf", please follow these instructions:
 
 \beginnumbers
 \item Take a PC with Debian Squeeze.
-\item Install "spplain.git".
+\item Install "spplain.git"
+ (it is project \URL<https://github.com/ramoncasares/texmf>).
 \item Install "edc.git", that way:
 \begincode
 cd
@@ -28,12 +33,19 @@ each time it asks for the filename of an unfound file.
 
 \title0 Español
 
+Estas son las fuentes de mi libro:
+``El doble compresor: La teoría de la información''.
+He liberado el libro con la licencia \[cc-by-sa].
+La 1ª edición (20100616) está publicada con el
+\[isbn]: 978-1-4536-0915-6.
+
 Para producir el fichero pdf, "edc.pdf",
 han de seguirse las siguientes instrucciones:
 
 \beginnumbers
 \item Disponer de una computadora con Debian Squeeze.
-\item Instalar "spplain.git".
+\item Instalar "spplain.git"
+ (es el proyecto \URL<https://github.com/ramoncasares/texmf>).
 \item Instalar "edc.git", así:
 \begincode
 cd
