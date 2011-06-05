@@ -8,7 +8,7 @@
 These are the sources of my book:
 ``El doble compresor: La teoría de la información''.
 I have released the book under the license \[cc-by-sa].
-The first edition (20100616) was published using
+The first edition (20100616) was published under
 \[isbn]: 978-1-4536-0915-6.
 
 To build the pdf file, "edc.pdf", please follow these instructions:
@@ -17,7 +17,7 @@ To build the pdf file, "edc.pdf", please follow these instructions:
 \item Take a PC with Debian Squeeze.
 \item Install "spplain.git"
  (it is project \URL<https://github.com/ramoncasares/texmf>).
-\item Install "edc.git", that way:
+\item Install "edc.git", this way:
 \begincode
 cd
 git clone git://github.com/ramoncasares/edc.git
