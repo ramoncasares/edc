@@ -22,12 +22,11 @@ To build the pdf file, "edc.pdf", please follow these instructions:
 cd
 git clone git://github.com/ramoncasares/edc.git
 cd edc/tex
-iconv -f UTF-8 -t ISO-8859-1 -o auxiliar.ndx edc.ndx
-wpdf edc
 wpdf edc
 \endcode
-In the first "wpdf" run, please enter "null"
-each time it asks for the filename of an unfound file.
+When running "wpdf", please enter "null" and "return"
+each time it asks for the filename of an unfound file,
+or otherwise just press "return".
 \endnumbers
 
 
@@ -51,12 +50,11 @@ han de seguirse las siguientes instrucciones:
 cd
 git clone git://github.com/ramoncasares/edc.git
 cd edc/tex
-iconv -f UTF-8 -t ISO-8859-1 -o auxiliar.ndx edc.ndx
-wpdf edc
 wpdf edc
 \endcode
-La primera vez que corre "wpdf", hay que teclear "null"
-cada vez que pida el nombre de un fichero que no encuentra.
+Al ejecutar "wpdf", hay que teclear "null" y "return"
+cada vez que pida el nombre de un fichero que no encuentra,
+o simplemente "return" en los otros casos.
 \endnumbers
 
 \bye
