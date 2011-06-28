@@ -338,7 +338,7 @@
 
 \begindoublecolumns
 \parindent=20pt \rightskip=0pt plus 4pc \hyphenpenalty=250
-\input auxiliar.abc
+\ifauxf\input auxiliar.abc\fi
  \ifrange --\number\lastpgno \fi \rangefalse
 \enddoublecolumns
 
@@ -371,7 +371,7 @@
    \let\\=\ \noindent #1\strut}\tocleaders \pdfgoto{#4}{#2}}\fi}
 \def\tocleaders{\leaders\hbox to\baselineskip{\hss\bf.\hss}\hfil}
 
-\input auxiliar.toc
+\ifauxf\input auxiliar.toc\fi
 
  \vfill % Colofón
 
