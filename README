@@ -11,22 +11,28 @@ I have released the book under the license \[cc-by-sa].
 The first edition (20100616) was published under
 \[isbn]: 978-1-4536-0915-6.
 
-To build the pdf file, "edc.pdf", please follow these instructions:
+To build the current version of the pdf file, "edc.pdf",
+please follow these instructions:
 
 \beginnumbers
 \item Take a PC with Debian Squeeze.
+ This is not strictly necessary, but,
+ being the system I use,
+ it is the only one where I am sure
+ that everything works properly as being said
+ without any adaptation.
 \item Install "spplain.git"
  (it is project \URL<https://github.com/ramoncasares/texmf>).
 \item Install "edc.git", this way:
 \begincode
 cd
 git clone git://github.com/ramoncasares/edc.git
-cd edc/tex
+\endcode
+\item Build "edc.pdf", this way:
+\begincode
+cd ~/edc/tex
 wpdf edc
 \endcode
-When running "wpdf", please enter "null" and "return"
-each time it asks for the filename of an unfound file,
-or otherwise just press "return".
 \endnumbers
 
 
@@ -38,23 +44,28 @@ He liberado el libro con la licencia \[cc-by-sa].
 La 1ª edición (20100616) está publicada con el
 \[isbn]: 978-1-4536-0915-6.
 
-Para producir el fichero pdf, "edc.pdf",
+Para producir la versión actual del fichero pdf, "edc.pdf",
 han de seguirse las siguientes instrucciones:
 
 \beginnumbers
 \item Disponer de una computadora con Debian Squeeze.
+ Esto no es estrictamente necesario, pero,
+ como es el entorno que yo uso,
+ es el único en el que estoy seguro de que todo funciona
+ correctamente, y tal y como lo estoy explicando,
+ sin necesidad de adaptaciones.
 \item Instalar "spplain.git"
  (es el proyecto \URL<https://github.com/ramoncasares/texmf>).
 \item Instalar "edc.git", así:
 \begincode
 cd
 git clone git://github.com/ramoncasares/edc.git
-cd edc/tex
+\endcode
+\item Obtener "edc.pdf", así:
+\begincode
+cd ~/edc/tex
 wpdf edc
 \endcode
-Al ejecutar "wpdf", hay que teclear "null" y "return"
-cada vez que pida el nombre de un fichero que no encuentra,
-o simplemente "return" en los otros casos.
 \endnumbers
 
 \bye
