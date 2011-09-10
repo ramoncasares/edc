@@ -31,10 +31,8 @@ git clone git://github.com/ramoncasares/edc.git
 \item Build "edc.pdf", this way:
 \begincode
 cd ~/edc/tex
-wpdf edc
+~/bin/wpdf edc
 \endcode
-If dir "~/bin" is not in your "$PATH",
-then the last command should be "~/bin/wpdf edc".
 \endnumbers
 
 
@@ -66,10 +64,8 @@ git clone git://github.com/ramoncasares/edc.git
 \item Obtener "edc.pdf", así:
 \begincode
 cd ~/edc/tex
-wpdf edc
+~/bin/wpdf edc
 \endcode
-Si el directorio "~/bin" no está en tu "$PATH",
-entonces este último comando debe ser "~/bin/wpdf edc".
 \endnumbers
 
 \bye
