@@ -27,6 +27,7 @@ auxiliar.*
 # ignore dirs
 amazon/
 bugatti/
+gastos/
 google/
 letters/
 # end of file
