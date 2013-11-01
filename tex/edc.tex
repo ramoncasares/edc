@@ -208,14 +208,6 @@
 \def\beginvref#1^{{\def\[{\string\[}\index{#1}{1}}#1} % ^word^, ^álgebra de \[Boole]^
 \def\beginhref#1<#2>{{\def\[{\string\[}\index{#1=#2}{1}}#1} % _word<sub>
 
-\def\hname{[}\def\hbook{(}\def\hlabel{<}\def\href{>}
-\def\|#1#2|{\def\1{#1}% \|+información| #1 is a code
- \ifx\1\hname [#2]\else
- \ifx\1\hbook (#2)\else
- \ifx\1\hlabel $\langle$#2$\rangle$\else 
- \ifx\1\href #2$>$\else %$
- \errmesage{Unknown code #1}\fi\fi\fi\fi}
-
 % Pdf Watermark
 \newtoks\oldheadline \oldheadline=\headline
 \pdfcode
