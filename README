@@ -15,7 +15,7 @@ To build the current version of the pdf file, "edc.pdf",
 please follow these instructions:
 
 \beginnumbers
-\item Take a PC with Debian Squeeze.
+\item Take a PC with Debian Wheezy.
  This is not strictly necessary, but,
  being the system I use,
  it is the only one where I am sure
@@ -48,7 +48,7 @@ Para producir la versión actual del fichero pdf, "edc.pdf",
 han de seguirse las siguientes instrucciones:
 
 \beginnumbers
-\item Disponer de una computadora con Debian Squeeze.
+\item Disponer de una computadora con Debian Wheezy.
  Esto no es estrictamente necesario, pero,
  como es el entorno que yo uso,
  es el único en el que estoy seguro de que todo funciona

@@ -11,6 +11,7 @@
 \newdimen\hpage \newdimen\vpage % already defined in crops.tex
 
 \def\[{\string\[} % to allow ^álgebra de \[Boole]^
+\def\pdfout#1#2#3{\ifnum#1=1 ^^a7#3 #2\else #2\fi}
 \files
 
 % Fonts
@@ -166,6 +167,8 @@
 \newcount\secno \secno=0
 \newcount\parno \parno=0
 
+\def\secid{\number\secno}
+
 \font\fonttwosym=cmbsy10 scaled\magstep1
 \def\Stitle{{\fonttwosym \char"78}} %"
 
@@ -229,14 +232,13 @@
 \Subtitle<La teoría de la información>
 \Author<Ramón Casares>
 
-\def\secid{\number\secno}
 \input edc1.tex
 \input edc2.tex
 \input edc3.tex
 \input edc4.tex
 \input edc5.tex
 \input edc6.tex
-\let\secid=\empty
+
 \vskip1pc
 \centerline{\bf Fin}
 
