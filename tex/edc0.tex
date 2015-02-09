@@ -2,8 +2,17 @@
 
 % Front matter
 
-\pdfcode
- \begingroup%\corkfont
+\begingroup %\corkfont
+ \ifcase\pdfoutput
+  \special{pdf: docinfo <<
+   /Author (© Ramón Casares 2010)
+   /Title (El doble compresor)
+   /Subject (La teoría de la información)
+   /Creator (Licencia http://creativecommons.org/licenses/by-sa/3.0/)
+   /Keywords (filosofía epistemología problema
+              sujeto objeto información)
+   >>}
+ \else
   \pdfinfo{
    /Author (© Ramón Casares 2010)
    /Title (El doble compresor)
@@ -11,27 +20,30 @@
    /Creator (Licencia http://creativecommons.org/licenses/by-sa/3.0/)
    /Keywords (filosofía epistemología problema
               sujeto objeto información)}
- \endgroup
-\pdfendcode
+ \fi
+\endgroup
 
-\shipout\vbox{\background
-\pdfWhite
-\hbox{}
-\vskip2in
+\ifcase\pdfoutput
+ \special{pdf: bgc [0 1 1 0]}\special{pdf: sc [0 0 0 0]}\else
+ \background \pdfliteral{0 0 0 0 k}\fi
+\hbox{}\vfill
 \centerline{\ptitlefont El doble}
 \vskip1pc
 \centerline{\ptitlefont compresor}
-\vskip10pc
+\vskip8pc
 \centerline{\psubtitlefont La teoría de la}
 \vskip6pt
 \centerline{\psubtitlefont información}
 \vskip2pc
 \centerline{\pauthorfont Ramón Casares}
-\pdfBlack
-}
+{\nopagenumbers\break}
+\ifcase\pdfoutput
+\special{pdf: bbc [0 0 0 0]}\special{pdf: sc [0 0 0 1]}
+\else \pdfliteral{0 0 0 1 k}\fi
 
 % [1] Autor y título
 
+\pageno=1
 \centerline{\fontone Ramón Casares}
 \vskip1pc
 \hrule height 1pt
@@ -55,10 +67,13 @@
 
 \null
 
-\def\URI#1#2{\leavevmode\pdfcode \pdfstartlink
-  attr {/Border [0 0 0]}
+\def\URI#1#2{\leavevmode
+\ifcase\pdfoutput
+ \special{html:<a href=\string"#2\string">}{\tt#1}%
+ \special{html:</a>}\else
+ \pdfstartlink attr {/Border [0 0 0]}
   user {/Subtype /Link /A << /Type /Action /S /URI /URI (#2) >>}%
- \pdfendcode{\tt#1}\pdfcode\pdfendlink\pdfendcode}
+ {\tt#1}\pdfendlink\fi}
 
 \vfill
  {\sl El doble compresor}\par

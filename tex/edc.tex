@@ -7,8 +7,17 @@
 \input index
 \input metatex
 
+% Page size
+
 %\input crops % OPTIONAL CROPS (Beware the next line!)
 \newdimen\hpage \newdimen\vpage % already defined in crops.tex
+\hpage=6in \vpage=9in
+
+\ifcase\pdfoutput
+ \special{pdf: pagesize width \the\hpage\space height \the\vpage}\else
+%% \special{papersize=\the\hpage,\the\vpage}\else
+ \pdfpageheight=\vpage \pdfpagewidth=\hpage \fi
+%\setcrops % OPTIONAL (Beware the top of this file!)
 
 \def\[{\string\[} % to allow ^álgebra de \[Boole]^
 \def\pdfout#1#2#3{\ifnum#1=1 ^^a7#3 #2\else #2\fi}
@@ -25,10 +34,10 @@
 
 \font\logo=logo10
 
-\pdfcode
- \pdfmapline{+SkakNew-DiagramT SkakNew-DiagramT <SkakNew-DiagramT.pfb}
- \pdfmapline{+ccicons CCIcons <ccicons.pfb}
-\pdfendcode
+%\ifcase\pdfoutput\else
+% \pdfmapline{+SkakNew-DiagramT SkakNew-DiagramT <SkakNew-DiagramT.pfb}
+% \pdfmapline{+ccicons CCIcons <ccicons.pfb}
+%\fi
 \font\ccicons=ccicons
 \def\ccbysa{{\ccicons \char0\kern1pt\char1\kern1pt\char2}}
 
@@ -38,11 +47,11 @@
 \font\pcitafont=texnansi-lmss10 at 21pt
 \font\ptextfont=texnansi-lmss10 at 14pt
 
-\def\pdfBlack{\pdfliteral{0 0 0 1 k 0 0 0 1 K}}
-\def\pdfWhite{\pdfliteral{0 0 0 0 k 0 0 0 0 K}}
-\def\pdfRed{\pdfliteral{0 1 1 0 k 0 1 1 0 K}}
-\def\pdfBlue{\pdfliteral{1 1 0 0 k 1 1 0 0 K}}
-\def\pdfGreen{\pdfliteral{1 0 1 0 k 1 0 1 0 K}}
+%\def\pdfBlack{\pdfliteral{0 0 0 1 k 0 0 0 1 K}}
+%\def\pdfWhite{\pdfliteral{0 0 0 0 k 0 0 0 0 K}}
+%\def\pdfRed{\pdfliteral{0 1 1 0 k 0 1 1 0 K}}
+%\def\pdfBlue{\pdfliteral{1 1 0 0 k 1 1 0 0 K}}
+%\def\pdfGreen{\pdfliteral{1 0 1 0 k 1 0 1 0 K}}
 
 \catcode`\@=11
 
@@ -54,36 +63,34 @@
 \footline={\tenrm\ifodd\pageno \docinfo\hfil\folio
             \else \folio\hfil\infodoc \fi\strut}
 
-\hpage=6in \hsize=10.5cm
+\hsize=10.5cm
  \hoffset\hpage \advance\hoffset-\hsize \divide\hoffset2
  \advance\hoffset-1in
-\vpage=9in \vsize=39\baselineskip \advance\vsize\topskip % 39 + 1 lines
+\vsize=39\baselineskip \advance\vsize\topskip % 39 + 1 lines
  \voffset\vpage \advance\voffset-\vsize \advance\voffset-2\baselineskip
  \divide\voffset2 \advance\voffset-1in
 
-\pdfcode \pdfpageheight=\vpage \pdfpagewidth=\hpage \pdfendcode
-%\setcrops % OPTIONAL (Beware the top of this file!)
-
 \parskip=0pt plus 0.0001pt minus 0.0001pt
-\parindent=20pt 
+\parindent=20pt
 \raggedbottom
 
 \def\breakif#1{\vskip#1\baselineskip \penalty-250 \vskip-#1\baselineskip}
 
-\def\background{\pdfcode
+\def\background{\ifcase\pdfoutput \else
   \pdfliteral{q}% save current graphic state in the stack
-  \pdfRed
+  \pdfliteral{0 1 1 0 k 0 1 1 0 K}% Red
   \pdfliteral{-67 -574 m}% 72 * 9 = 648, 72 * 8 = 576
   \pdfliteral{365 -574 l}% 72 * 6 = 432, 72 * 5 = 360
   \pdfliteral{365 74 l}%
   \pdfliteral{-67 74 l}%
   \pdfliteral{-67 -574 l}%
   \pdfliteral{b Q}% close, stroke, fill, and restore graphic state
- \pdfendcode}
+ \fi}
 
 %\colors      % OPTIONAL COLORS
-\def\RED{\ifx\Yellow\relax\else
- \hbox to0pt{\Yellow\vrule width20pt height8pt depth2pt\Black\hss}\fi}
+\def\defrelax{\relax}
+\def\RED{\ifx\defrelax\endcolor\else
+ \hbox to0pt{\color{Yellow}\vrule width20pt height8pt depth2pt\endcolor\hss}\fi}
 
 % Grid
 
@@ -154,8 +161,9 @@
 
 % Sectioning
 
-\def\Title<#1>{\vfill\break\pdflabel\toc0{#1}\vglue36pt % 10+12+12 no
- \begincenter \fontzero\baselineskip24pt #1\endcenter
+\def\Title<#1>{\vfill\break\vglue36pt % 10+12+12 no
+ \begincenter \fontzero\baselineskip24pt #1
+  \let\secid=\empty \dest\toc0{#1}\endcenter
  \nobreak\vskip0pt\relax}
 \def\Subtitle<#1>{\par
  \begincenter \fonttwo\baselineskip24pt #1\endcenter
@@ -167,16 +175,16 @@
 \newcount\secno \secno=0
 \newcount\parno \parno=0
 
-\def\secid{\number\secno}
+\def\secid{\S\number\secno}
 
 \font\fonttwosym=cmbsy10 scaled\magstep1
 \def\Stitle{{\fonttwosym \char"78}} %"
 
-\def\Section#1 \par{\everypar{}\parno=0  \advance\secno1 
+\def\Section#1 \par{\everypar{}\parno=0  \advance\secno1
  \vskip0pt plus 4\baselineskip\penalty-43
  \vskip0pt plus-4\baselineskip \vskip\baselineskip
  \titleline{\noindent\Stitle\fonttwo\secid\space}%
-   {\fonttwo#1\pdflabel\toc1{#1}\lbl{#1}{\secid}}%
+   {\fonttwo#1\dest\toc1{#1}\lbl{#1}{\secid}}%
  \everypar{\numberedpars}\nobreak}
 
 \def\titleline#1#2{\setbox0\hbox{#1}\dimen0=\hsize \advance\dimen0 -\wd0
@@ -184,7 +192,7 @@
 
 \newdimen\oldparindent \oldparindent=\parindent \parindent=0pt
 
-\def\numberedpars{\global\advance\parno1 \pdflabel
+\def\numberedpars{\global\advance\parno1 \dest
  \noindent\hbox to\oldparindent{{\sevensy\char"7B %" little par sign
   \teni\number\parno}\hfil$\cdot$\hfil}\ignorespaces}
 
@@ -211,8 +219,8 @@
 
 % Pdf Watermark
 \newtoks\oldheadline \oldheadline=\headline
-\pdfcode
- \def\watermark{% 
+\ifcase\pdfoutput\else
+ \def\watermark{%
   \pdfliteral{q 1 G 1 g 169 -32 m}%% ®
   \pdfliteral{82 -97 109 -111 110 -32 c}% Ramon
   \pdfliteral{67 -97 115 -97 114 -101 c}% Casare
@@ -220,7 +228,7 @@
   \pdfliteral{b Q}%
  }
  %\headline={\watermark\the\oldheadline } %%%%%%%%%%%%%%%%%%%%%%%
-\pdfendcode
+\fi
 
 \catcode`\@=12
 
@@ -244,10 +252,11 @@
 
 \vfill\break %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\let\secid=\empty
 \dimen0=\topskip \advance\dimen0 by2\baselineskip
 \vbox to\dimen0{\kern\baselineskip
- \centerline{\fontone Índice alfabético\pdflabel
-                \toc3{Índice alfabético}}\vss}
+ \centerline{\fontone Índice alfabético\dest
+                \toc1{Índice alfabético}}\vss}
 \vskip 2\baselineskip
 
 %Texto explicatorio, si es preciso.
@@ -317,7 +326,7 @@
     \ifnum\lastpgno=\thispgno \rangetrue \else
      \ifrange \advance\lastpgno-1 --\number\lastpgno\fi
      \lastpgno=#5\rangefalse
-     , \pdfgoto{\ifnum\level=3 {\bf#5}\else #5\fi}{#3}\fi\fi
+     , \goto{\ifnum\level=3 {\bf#5}\else #5\fi}{#3}\fi\fi
   \else % \newkey<>\oldkey
    \ifrange --\number\lastpgno\fi \rangefalse
    \ifnum\level<10 \newentry \else \newsubentry \fi
@@ -326,7 +335,7 @@
    \ifcase\level {\tt\newkey}\or{\rm\newkey}\or{\sc\newkey}\or
                  {\bf\newkey}\or{\it\newkey}\or{\sl\newkey}\else
                  {\Red \newkey\Black}\fi ,\space\space
-   \pdfgoto{\ifnum\level=3 {\bf#5}\else #5\fi}{#3}\fi\fi\ignorespaces}
+   \goto{\ifnum\level=3 {\bf#5}\else #5\fi}{#3}\fi\fi\ignorespaces}
 
 \begindoublecolumns
 \parindent=20pt \rightskip=0pt plus 4pc \hyphenpenalty=250
@@ -339,18 +348,17 @@
 
 \dimen0=\topskip \advance\dimen0 by2\baselineskip
 \vbox to\dimen0{\kern\baselineskip
- \centerline{\fontone Índice\pdflabel\toc3{Índice}}\vss}
+ \centerline{\fontone Índice\dest\toc1{Índice}}\vss}
 \vskip 2\baselineskip
 
 \def\tocline#1{\ifcase #1\let\next=\toclinezero \or
  \let\next=\toclineone \else \let\next=\toclineindex \fi \next}
 
-\def\toclinezero#1#2#3#4{\bigbreak \pdftocline{#1}{#2}%
- \line{\bf \pdfgoto{#1}{#2}\hfil}\ignorespaces}
-\def\toclineone#1#2#3#4{\par \pdftocline{\noexpand§#3 #1}{#2}%
- \contentsline{#1}{#2}{$\S#3$\quad}{#4}\ignorespaces}
-\def\toclineindex#1#2#3#4{\par \pdftocline{#1}{#2}%
- \contentsline{{\bf #1}}{#2}{}{#4}\ignorespaces}
+\def\toclinezero#1#2#3#4{\bigbreak %%\pdftocline{#1}{#2}%
+ \line{\bf \goto{#1}{#2}\hfil}\ignorespaces}
+\def\toclineone#1#2#3#4{\par \def\3{#3}\ifx\empty\3
+ \contentsline{{\bf #1}}{#2}{}{#4}\else
+ \contentsline{#1}{#2}{$#3$\quad}{#4}\fi\ignorespaces}
 
 \newdimen\tridig \setbox0=\hbox{$\S127$\quad}\tridig=\wd0
 
@@ -358,9 +366,9 @@
  \setbox0\hbox to\tridig{\hfil#3}%
  \dimen0=\hsize \advance\dimen0 by -\wd0
  \multiply\dimen0 by 8 \divide\dimen0 by 10
- \ifdim\dimen0>\wd2 \line{\box0 #1\tocleaders \pdfgoto{#4}{#2}}\else
+ \ifdim\dimen0>\wd2 \line{\box0 #1\tocleaders \goto{#4}{#2}}\else
   \line{\box0 \vtop{\hsize=\dimen0 \raggedright \normalbaselines
-   \let\\=\ \noindent #1\strut}\tocleaders \pdfgoto{#4}{#2}}\fi}
+   \let\\=\ \noindent #1\strut}\tocleaders \goto{#4}{#2}}\fi}
 \def\tocleaders{\leaders\hbox to\baselineskip{\hss\bf.\hss}\hfil}
 
 \ifauxf\input auxiliar.toc\fi
@@ -382,8 +390,10 @@
 \null
 \vfill\break
 
-\shipout\vbox{\background
-\pdfWhite
+\shipout\vbox{\ifcase\pdfoutput
+ \special{pdf: bbc [0 1 1 0]}\special{pdf: sc [0 0 0 0]}\else
+ \background \pdfliteral{0 0 0 0 k}\fi
+
 \hsize=5.5in
 \leftskip-0.55in
 \vskip-0.55in
@@ -427,15 +437,21 @@ También le explico la consciencia, pero, para alcanzar los detalles,
 ha de leer el interior de este libro.
 
 \endgroup
-
+\ifcase\pdfoutput
+ \special{pdf: sc [0 0 0 1]}\else
+ \pdfliteral{0 0 0 1 k}\fi
 \kern12bp
 
-\pdfBlack
 \input ean13
 \hbox{\kern-0.55in
-\pdfximage{cc-by-sa-www.pdf}\pdfrefximage\pdflastximage
+\ifcase\pdfoutput \special{pdf:epdf (cc-by-sa-www.pdf)}\kern 43mm
+\else \pdfximage{cc-by-sa-www.pdf}\pdfrefximage\pdflastximage \fi
 \kern2.05in
-\pdfliteral{q}% save current graphic state in the stack
+\ifcase\pdfoutput
+  \special{pdf: content
+   q 0 0 0 0 k 0 0 0 1 K -5 -5 m 110 -5 l 110 92 l -5 92 l -5 -5 l b Q}%
+\else
+  \pdfliteral{q}% save current graphic state in the stack
   \pdfliteral{0 0 0 0 k 0 0 0 1 K}% set black stroke on white fill
   \pdfliteral{-5 -5 m}% moves to the origin
   \pdfliteral{110 -5 l}%
@@ -443,6 +459,7 @@ ha de leer el interior de este libro.
   \pdfliteral{-5 92 l}%
   \pdfliteral{-5 -5 l}%
   \pdfliteral{b Q}% close, stroke, fill, and restore graphic state
+\fi
 \ISBN 978-1-4536-0915-6
 \barheight=2.5cm % this must be after \ISBN call
 \EAN 978-1-4536-0915-6
