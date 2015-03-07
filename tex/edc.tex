@@ -183,7 +183,7 @@
 \def\Section#1 \par{\everypar{}\parno=0  \advance\secno1
  \vskip0pt plus 4\baselineskip\penalty-43
  \vskip0pt plus-4\baselineskip \vskip\baselineskip
- \titleline{\noindent\Stitle\fonttwo\secid\space}%
+ \titleline{\noindent\Stitle\fonttwo\expandafter\gobble\secid\space}%
    {\fonttwo#1\dest\toc1{#1}\lbl{#1}{\secid}}%
  \everypar{\numberedpars}\nobreak}
 
